@@ -1,0 +1,179 @@
+---
+title: "Effect of school quality on housing prices in NRW"
+subtitle: " Project Outline - Hedonic Housing Models and School Quality"
+authors: 
+  - name: "Julian Schilling"
+  - name: "Benedikt Teuber"
+  - name: "Elena Preussner"
+aspectratio: 169
+#bibliography: references.bib
+date: today
+date-format: "DD.MM.YYYY"
+format:
+  beamer:
+    theme: Frankfurt
+    include-in-header:
+      - text: |
+          \usepackage{multicol} 
+      #- file: custom_theme.tex
+execute: 
+  echo: false
+---
+
+## Research Question
+   \begin{block}{Main question}
+To what extent does the local availability of upper secondary schools that offer an Abitur pathway, compared to other secondary schools, affect housing prices in North Rhine-Westphalia (NRW)?
+\end{block}
+- Goal: Estimating heterogeneity in the capitalization of secondary schools that offer the possibility to achieve higher educational outcomes.
+- We assume that parents are willing to pay a premium for their homes, if a school lies within 2km at which their children can make an Abitur (Gymnasium or Gesamtschule)
+- Therefore, we restrict our analysis on differen types of secondary schools and exclude elementary schools
+
+## Motivation
+- School quality is a major location factor in housing decisions.
+- Previous studies have shown that better schools are capitalized into higher housing prices.
+- However, the \textbf{magnitude of the effect may differ by school level or track} and most studies suffer from the endogeneity problem of hedonic price regressions
+- Germany's multi-track secondary school system is particularly suited to explore these differences.
+
+## Theoretical Framework
+- \textbf{Tiebout Sorting:} Households "vote with their feet" by moving into districts with desirable public goods – such as schools.
+- \textbf{Human Capital Channel:} Secondary schools (especially Gymnasien) impact long-run outcomes like university access, thus potentially commanding higher price premiums.
+
+## Institutional Context and Literature Insight
+- In Germany, parents enjoy considerable freedom in choosing schools — especially at the secondary level.
+- Although this weakens formal ties between residence and school assignment, it may \textbf{increase behavioral selection} into high-quality school areas.
+    
+   \begin{block}{Key Insight:}
+    When school choice is flexible, households with strong school preferences are more likely to relocate to access better schools — reinforcing the link between school quality and housing prices.
+    \end{block}
+    
+- \textit{Implication:} School choice flexibility does not reduce capitalization — it may even \textbf{enhance} it through self-selection.
+
+## Literature Insights (excerpt)
+- UK: Strong capitalization of \textbf{primary school} performance into housing prices.
+- US: Stronger price effects from \textbf{middle and high school} quality than from elementary schools.
+- France: Secondary school quality capitalized more strongly in areas without \textbf{private school alternatives}.
+\vspace{0.2cm}
+
+\textit{School type matters for the strength of the housing price effect.}#
+
+## Data and Variables
+\textbf{Housing Data:}
+
+- Geo-referenced listings of sales properties (e.g., ImmoScout).
+- Variables: living space, number of rooms, year built, condition, etc.
+
+\vspace{0.2cm}
+\textbf{School Data}:
+
+- Locations and types of schools (primary, Gymnasium, Gesamtschule, etc.)
+- School quality measured by the \textbf{School Social Index (SSI)} — lower values indicate better schools.
+
+\vspace{0.2cm}
+\textbf{Regional Data:}
+
+- Includes information on neighborhood characteristics (e.g. income levels, migration rates etc.)
+
+
+## Empirical Strategy
+\begin{columns}[T] % [T] = top aligned
+    \begin{column}{0.55\textwidth}
+        We define spatial treatment zones to estimate the causal effect of upper secondary schools on housing prices using grid-cells:
+    \end{column}
+
+  \begin{column}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{matching_ID.PNG}
+    \end{column}
+\end{columns}
+
+- \textbf{Treatment-Zone} Grid-cells \textbf{within ca. 2 km} radius
+- \textbf{Buffer zone:} within \textbf{1 km} are excluded to prevent spillover contamination
+- \textbf{Untreated zone:} Grid-cells \textbf{more than 3 km} from any school
+-  Houses that are exposed to different kinds of secondary schools at the same time (double-treated) are also excluded from the sample
+
+
+## Identification Strategy
+\textbf{Potential Outcome Model (POM):} following 
+$$\ln(P_{ijt}) =
+\begin{cases}
+\ln(P_{1ijt}) & \text{if } D_i = 1, \\
+\ln(P_{0ijt}) & \text{if } D_i = 0.
+\end{cases}
+\]
+\noindent\textbf{where:}
+\[
+\begin{aligned}
+\ln(P_{1ijt}) &:\ \text{Price of the house, when it lies in the treatment-zone}\\
+              &\quad \text{near to a Gymnasium or Gesamtschule}.\\
+\ln(P_{0ijt}) &:\ \text{Price of the house, when it would not have been 'exposed'}\\
+              &\quad \text{to a school (counterfactual)}.
+\end{aligned}$$
+\begin{block}{Note}
+Since the counterfactual is not observed, we use the most similar house
+lying in the non-treated zone as a proxy for the counterfactual.
+\end{block}
+
+
+## Matching Strategy
+Identification Assumption (CIA): $$ \ln(P_{0ijt}), \ln(P_{1ijt}) \;\perp\; D \;\big| X_i$$
+\textbf{Estimation method:} We use \textbf{matching} on observable covariates to compare treated and untreated buildings:
+
+- Building characteristics (e.g., floor area, construction year, amenities)
+- Neighborhood characteristics (e.g., income, urbanity, regional fixed effects)
+
+After successful matching, the treatment effect is estimated through the following equation:
+
+$$
+\begin{aligned}
+\tau_{\text{SSI}} 
+&= \mathbb{E}\!\left[ \ln(P_{1ijt}) - \ln(P_{0ijt}) \,\middle|\, X_i \right] \\
+&= \mathbb{E}\!\left[ \ln(P_{1ijt}) \,\middle|\, X_i, D = 1 \right]
+  - \mathbb{E}\!\left[ \ln(P_{0ijt}) \,\middle|\, X_i, D = 0 \right]
+\end{aligned}
+$$
+
+
+## Econometric Model (OLS Specification)
+We estimate the following log-linear autoregressive hedonic regression for elementary and secondary schools each:
+
+$$
+\log(\text{P}_i)
+= \alpha
++ \beta_1 \, D_i
++ \mathbf{X}_i' \boldsymbol{\gamma}
++ \mathbf{N}_i' \boldsymbol{\delta}
++ \text{FE}_{r(i)}
++ \varepsilon_i
+$$
+
+\textbf{Where:}
+
+- log($P_i$): price of a building per $m^2$
+- $\beta_1D_i$: Captures the effect of the treatment of the nearest upper secondary school
+- $\mathbf{X}_i$: vector of building characteristics 
+- $\mathbf{N}_i$: vector of neighborhood characteristics, includes the SSI for a proxy of the social composition
+- $\text{FE}_{r(i)}$: Regional fixed effects to account for spatial effects at the grid-cell level
+- $\varepsilon_i$: error term
+
+
+## Assumptions - Part 1
+- The School Social Index (SSI) serves as an indirect proxy for school quality since it captures the socio-economic composition of the student body and allocation of compensatory resources to schools
+- Parents consider the SSI in their housing decision
+- Within the treatment area and the control area, the effect is constant
+- Buildings inside and outside of the treatment zones share the same average housing and neighborhood chararcteristics
+
+
+## Assumptions - Part 2
+- Conditional on the controlling for both housing and neighborhood characteristics, the treatment assignment can considered to be random
+- Including the autoregressive term into the regression, we account for \textbf{unobservable regional differences and dependencies}
+- Sale prices are time-independently exceeding offer prices at a constant rat
+
+
+## Empirical Challenges and Limitations
+- \textbf{Endogeneity:} better schools tend to be located in affluent neighborhoods and students endowed with those priviledged backgrounds generally achieve higher educational outcomes 
+- \textbf{Measurement:} SSI is an aggregate proxy and may not fully capture educational quality.
+    \item \textbf{School access rules:} In some regions, school choice or private alternatives may weaken capitalization effects.
+- \textbf{Price validity:} Property prices from ImmoScout are \textit{asking prices} — not actual transaction prices. This has implications on the interpretations of the results and has to be taken into account.
+
+
+## Literature
