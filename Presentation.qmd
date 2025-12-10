@@ -7,6 +7,7 @@ authors:
   - name: "Elena Preussner"
 aspectratio: 169
 bibliography: references.bib
+csl: apa.csl
 date: today
 date-format: "DD.MM.YYYY"
 format:
@@ -174,4 +175,5 @@ $$
 - \textbf{Endogeneity:} better schools tend to be located in affluent neighborhoods and students endowed with those priviledged backgrounds generally achieve higher educational outcomes \parencite{fack2010}
 - \textbf{Measurement:} SSI is an aggregate proxy and may not fully capture educational quality.
     \item \textbf{School access rules:} In some regions, school choice or private alternatives may weaken capitalization effects.
+- \textbf{Interpretation:} It is arguably that property prices can be interpreted as the willingness to pay for amenities \parencite{jayantha2015} and therefore the difference between the groups as a premium for educational opportunities
 - \textbf{Price validity:} Property prices from ImmoScout are \textit{asking prices} — not actual transaction prices. This has implications on the interpretations of the results and has to be taken into account.
