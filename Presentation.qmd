@@ -28,7 +28,7 @@ To what extent does the local availability of upper secondary schools that offer
 \end{block}
 - Goal: Estimating heterogeneity in the capitalization of secondary schools that offer the possibility to achieve higher educational outcomes.
 - We assume that parents are willing to pay a premium for their homes, if a school lies within 2km at which their children can make an Abitur (Gymnasium or Gesamtschule)
-- Therefore, we restrict our analysis on differen types of secondary schools and exclude elementary schools
+- Therefore, we restrict our analysis on different types of secondary schools and exclude elementary schools
 
 ## Motivation
 - School quality is a major location factor in housing decisions.
@@ -66,14 +66,13 @@ Based on the theoretical background, we expect the following results:
 - Educational opportunities play a role in parents’ housing decisions
 - Parents are therefore willing to pay a premium for houses near a secondary school offering the opportunity to obtain an *Abitur*
 
-::: {.block}
-**Formal Hypothesis**
-
+\begin{block}{Formal Hypothesis}
 \[
-\tau_{\text{school}} &= \text{Estimated treatment effect}
-H_1 &: \beta_1 > 0
+\begin{aligned}
+\tau_{\text{school}} & \text{(Estimated treatment effect):} & H_1 &: \beta_1 > 0
+\end{aligned}
 \]
-:::
+\end{block}
 
 
 ## Institutional Context and Literature Insight
