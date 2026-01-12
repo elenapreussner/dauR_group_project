@@ -1,5 +1,5 @@
 ---
-title: "Effect of school quality on housing prices in NRW"
+title: "Availability of Abitur and Non-Abitur Upper Secondary Schools and Housing Prices in NRW"
 subtitle: " Project Outline - Hedonic Housing Models and School Quality"
 authors: 
   - name: "Julian Schilling"
@@ -31,10 +31,10 @@ To what extent does the local availability of upper secondary schools that offer
 - Therefore, we restrict our analysis on different types of secondary schools and exclude elementary schools
 
 ## Motivation
-- School quality is a major location factor in housing decisions.
-- Previous studies have shown that better schools are capitalized into higher housing prices.
-- However, the \textbf{magnitude of the effect may differ by school level or track} and most studies suffer from the endogeneity problem of hedonic price regressions
-- Germany's multi-track secondary school system is particularly suited to explore these differences.
+- School availability plays an important role in housing decisions.
+- Previous studies have shown capitalization of school quality into housing prices, but evidence on differences across upper secondary school tracks is limited.
+- However, the \textbf{magnitude of the effect may differ by school track} and most studies suffer from the endogeneity problem of hedonic price regressions.
+- Germany’s multi-track secondary school system provides a unique setting to study differential capitalization effects across educational tracks.
 
 ## Tiebout sorting
 
@@ -50,8 +50,13 @@ To what extent does the local availability of upper secondary schools that offer
 
 ## Theory 2
 
+<<<<<<< HEAD
 - Householts sort across boundaries generating differences related to neighborhood quality - in this case: Education
 - Parents are willing to pay a premium for housing units nearby top-tier schooling networks \parencite{jayantha2015}
+=======
+- Households sort across boundaries generating differences related to neighborhood quality - in this case: Education
+- Parents are willing to pay a premium for housing units nearby top-tier schooling networks (Jayantha 2015)
+>>>>>>> bf83ab28f56bb91f91ab524a40bdc0ebd99fc886
 
 This capitalizes into the housing market via two mechanisms (La 2015):
 
@@ -193,17 +198,13 @@ $$
 - $\varepsilon_i$: error term
 
 
-## Assumptions - Part 1
-- The School Social Index (SSI) serves as an indirect proxy for school quality since it captures the socio-economic composition of the student body and allocation of compensatory resources to schools
-- Parents consider the SSI in their housing decision
-- Within the treatment area and the control area, the effect is constant
-- Buildings inside and outside of the treatment zones share the same average housing and neighborhood chararcteristics
-
-
-## Assumptions - Part 2
-- Conditional on the controlling for both housing and neighborhood characteristics, the treatment assignment can considered to be random
-- Including the autoregressive term into the regression, we account for \textbf{unobservable regional differences and dependencies}
-- Sale prices are time-independently exceeding offer prices at a constant rat
+## Assumptions
+- The School Social Index (SSI) provides a reasonable proxy for neighborhood socio-economic composition, as it reflects the socio-economic background of students.
+- Parents consider the availability of Abitur and non-Abitur upper secondary schools in their housing decisions.
+- Within the treatment area and the control area, the effect is constant.
+- Buildings inside and outside of the treatment zones share the same average housing and neighborhood characteristics.
+- Conditional on the controlling for both housing and neighborhood characteristics, the treatment assignment can considered to be random.
+- Sale prices are time-independently exceeding offer prices at a constant rate.
 
 
 ## Empirical Challenges and Limitations
