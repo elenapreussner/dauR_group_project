@@ -90,9 +90,6 @@ Based on the theoretical background, we expect the following results:
 \]
 \end{block}
 
-    
-- \textit{Implication:} School choice flexibility does not reduce capitalization — it may even \textbf{enhance} it through self-selection.
-
 # Insights from relevant empirical literature
 
 
@@ -105,6 +102,9 @@ Based on the theoretical background, we expect the following results:
    \begin{block}{Key Insight:}
     When school choice is flexible, households with strong school preferences are more likely to relocate to access better schools — reinforcing the link between school quality and housing prices. \parencite{bayer2007}
     \end{block}
+    
+    
+- \textit{Implication:} School choice flexibility does not reduce capitalization — it may even \textbf{enhance} it through self-selection.
 
 # Empirical Design
 
