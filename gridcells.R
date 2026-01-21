@@ -2,7 +2,6 @@
 ##### preliminaries #####
 #########################
 
-
 ### load necessary packages
 
 library(tidyverse)
@@ -18,7 +17,6 @@ ssi_data <- read_csv2("2022_social_index.csv")
 ##### prepare datasets #####
 ############################
 
-
 #### create full school dataset
 
 ssi_data <- ssi_data %>%
@@ -33,7 +31,6 @@ schools <- schools %>%
   ) 
 
 #### clean-up housing data 
-
 ## remove NA's on grid
 
 housing_data <- housing_data %>%
@@ -76,14 +73,12 @@ treated_cells <- schools %>%
 treated_cells <- treated_cells %>%
   mutate(ergg_1km = paste0(x, "_", y))
 
-
 ### remove all multiple treated cells
 
 treated_once <- treated_cells %>%
   group_by(ergg_1km)%>%
   filter(n() == 1) %>%
   ungroup()
-
 
 #### create buffer-cells for the exclusion
 
@@ -111,7 +106,6 @@ buffer_cells <- schools %>%
 buffer_cells <- buffer_cells %>%
   mutate(ergg_1km = paste0(x, "_", y))
 
-
 #### check for overlaps
 
 any(treated_once$ergg_1km %in% buffer_cells$ergg_1km)
@@ -122,7 +116,6 @@ overlap_ids <- intersect(
 )
 
 length(overlap_ids)
-
 
 #### match datasets using grid-identifyer
 
@@ -158,22 +151,18 @@ all_cells <- bind_rows(
     .groups = "drop"
   )
 
-
 ##### code second order treatment
 
 all_cells <- all_cells %>%
   mutate(school_type_code = sub("t$", "", school_type))
 
-
 all_cells <- all_cells %>%
   mutate(abitur_nearby = if_else(school_type_code %in% c(15, 20), 1L, 0L))
-
 
 #### import school data
 
 all_cells <- all_cells %>%
   mutate(school_tag_code = sub("t$", "", school_tag))
-
 
 all_cells_school <- all_cells %>%
   left_join(
@@ -183,13 +172,10 @@ all_cells_school <- all_cells %>%
     by = c("school_tag_code" = "school_ID")
   )
 
-
 #### match information with housing data
 
 full_dataset <- housing_data %>%
   left_join(all_cells_school, by = "ergg_1km")
-
-
 
 #### create final treated data-set without overlaps 
 
