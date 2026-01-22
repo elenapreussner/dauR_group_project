@@ -11,11 +11,11 @@ treated_cells_robustness <- schools %>%
   rowwise() %>%
   reframe(
     school_ID = school_ID,
-    expand.grid(dx = c(-1, 0, 1), dy = c(-1, 0, 1)) %>%
+    expand.grid(dx = c(-1, 0, 1), dy = c(-1, 0, 1)) %>% # in this case, treatment area is smaller
       transmute(
         x = x + dx,
         y = y + dy,
-        school_tag = if_else(dx == 0 & dy == 0,
+        school_tag = if_else(dx == 0 & dy == 0, # keep relevant information on schools and create auxiliary variables for inspection
                              as.character(school_ID),
                              paste0(school_ID, "t")),
         school_type_tag = if_else(dx == 0 & dy == 0,
@@ -25,7 +25,7 @@ treated_cells_robustness <- schools %>%
   ) %>%
   ungroup()
 
-treated_cells_robustness <- treated_cells_robustness %>%
+treated_cells_robustness <- treated_cells_robustness %>% # reassemble grid-id
   mutate(ergg_1km = paste0(x, "_", y))
 
 ### remove all multiple treated cells
@@ -38,7 +38,7 @@ treated_once_robustness <- treated_cells_robustness %>%
 #### create buffer-cells for the exclusion
 
 buffer_cells_robustness <- schools %>%
-  rowwise() %>%
+  rowwise() %>% # get only the "circle" of cells with a distance of 2 around the school-cell
   reframe(
     tibble(
       x = c(
@@ -58,7 +58,7 @@ buffer_cells_robustness <- schools %>%
   ungroup() %>%
   distinct()
 
-buffer_cells_robustness <- buffer_cells_robustness %>%
+buffer_cells_robustness <- buffer_cells_robustness %>% # reassemble grid-id
   mutate(ergg_1km = paste0(x, "_", y))
 
 #### check for overlaps
@@ -81,7 +81,7 @@ control_cells_robustness <- schools %>%
     school_ID = school_ID,
     expand.grid(dx = -4:4, dy = -4:4) %>%
       mutate(dist = pmax(abs(dx), abs(dy))) %>%
-      filter(dist %in% c(3, 4)) %>%
+      filter(dist %in% c(3, 4)) %>% # the same as for the main treatment assignment
       transmute(
         x = x + dx,
         y = y + dy,
@@ -92,7 +92,7 @@ control_cells_robustness <- schools %>%
   ungroup() %>%
   distinct()
 
-control_cells_robustness <- control_cells_robustness %>%
+control_cells_robustness <- control_cells_robustness %>% # reassemble grid-id
   mutate(ergg_1km = paste0(x, "_", y))
 
 #### match datasets using grid-identifyer
@@ -101,7 +101,7 @@ all_cells_robustness <- bind_rows(
   treated_once_robustness %>%
     transmute(
       ergg_1km, x, y,
-      treated = 1L,
+      treated = 1L, # auxiliary variables for cell-status
       buffer  = 0L,
       control = 0L,
       source  = "treated_cells",
@@ -111,7 +111,7 @@ all_cells_robustness <- bind_rows(
   buffer_cells_robustness %>%
     transmute(
       ergg_1km, x, y,
-      treated = 0L,
+      treated = 0L, # auxiliary variables for cell-status
       buffer  = 1L,
       control = 0L,
       source  = "buffer_cells",
@@ -121,14 +121,14 @@ all_cells_robustness <- bind_rows(
   control_cells_robustness %>%
     transmute(
       ergg_1km, x, y,
-      treated = 0L,
+      treated = 0L, # auxiliary variables for cell-status
       buffer  = 0L,
       control = 1L,
       source = "control_cells",
       school_tag = NA_character_,
     )
 ) %>%
-  group_by(ergg_1km, x, y) %>%
+  group_by(ergg_1km, x, y) %>% # organize relevant information on auxiliary variables, treatment-status and school per grid-id
   summarise(
     treated = max(treated),
     buffer  = max(buffer),
@@ -154,9 +154,9 @@ all_cells_robustness_clean <- all_cells_robustness %>%
 all_cells_robustness_clean <- all_cells_robustness_clean %>%
   mutate(
     school_nearby = case_when(
-      treated == 1 & control == 0 ~ 1L,
-      treated == 1 & control == 1 ~ 1L,
-      treated == 0 & control == 1 ~ 0L,
+      treated == 1 & control == 0 ~ 1L, # unambiguous treated cells
+      treated == 1 & control == 1 ~ 1L, # for overlaps between treated cells and controls, they are consiered as treated
+      treated == 0 & control == 1 ~ 0L, # control cells
       TRUE ~ NA_integer_
     )
   ) 
@@ -164,13 +164,13 @@ all_cells_robustness_clean <- all_cells_robustness_clean %>%
 
 ##### code second order treatment
 
-all_cells_robustness_clean <- all_cells_robustness_clean %>%
+all_cells_robustness_clean <- all_cells_robustness_clean %>% # get school-type for every cell
   mutate(school_type_code = sub("t$", "", school_type))
 
-all_cells_robustness_clean <- all_cells_robustness_clean %>%
+all_cells_robustness_clean <- all_cells_robustness_clean %>% # if cell lies within x of a school offering academic track (1), otherwise (0)
   mutate(abitur_nearby = if_else(school_type_code %in% c(15, 20), 1L, 0L))
 
-all_cells_robustness_clean <- all_cells_robustness_clean %>%
+all_cells_robustness_clean <- all_cells_robustness_clean %>% # get school-id for every cell to import school data
   mutate(school_tag_code = sub("t$", "", school_tag))
 
 #### import school data
@@ -178,7 +178,7 @@ all_cells_robustness_clean <- all_cells_robustness_clean %>%
 all_cells_school_robustness <- all_cells_robustness_clean %>%
   left_join(
     schools %>%
-      mutate(school_ID = as.character(school_ID)) %>%
+      mutate(school_ID = as.character(school_ID)) %>% # import SSI in every cell
       select(school_ID, ssi),
     by = c("school_tag_code" = "school_ID")
   )
@@ -186,7 +186,7 @@ all_cells_school_robustness <- all_cells_robustness_clean %>%
 
 #### match information with housing data
 
-full_dataset_robustness <- housing_data_NRW %>%
+full_dataset_robustness <- housing_data_NRW %>% # import school data in the prepared housing data set for each property
   left_join(all_cells_school_robustness, by = "ergg_1km")
 
 
@@ -196,7 +196,7 @@ full_dataset_robustness <- housing_data_NRW %>%
 
 full_dataset_robustness_clean <- full_dataset_robustness %>%
   filter(
-    !if_all(
+    !if_all( # if a property has no information on the variables, it can be exluded since it is not located in any relevant cell
       c(
         treated,
         buffer,

@@ -22,9 +22,14 @@ ssi_data <- read_csv2("2022_social_index.csv")
 
 #### school dataset
 
+# rename school ID
+
 ssi_data <- ssi_data %>%
   rename(school_ID = Schulnummer,
          ssi = Sozialindexstufe)
+
+
+# get information on SSI
 
 schools <- schools %>%
   left_join(
@@ -34,18 +39,16 @@ schools <- schools %>%
   ) 
 
 
-#### filter school data regarding relevant school types
+#### filter school data regarding relevant school types (secondary schools)
 
 schools <- schools %>%
   filter(school_type %in% c(4, 10, 14, 15, 20))
 
-#### separate grid-id
+
+#### separate grid-id for the treatment assignent
 
 schools <- schools %>%
   separate(ergg_1km, c("x", "y"), "_", remove = FALSE, convert = TRUE)
-
-
-
 
 
 
@@ -58,10 +61,11 @@ schools <- schools %>%
 housing_data_NRW <- housing_data %>%
   filter(blid == "North Rhine-Westphalia")
 
-## remove NA's
+## remove NA's on the grid-cell ID
 
 housing_data_NRW <- housing_data_NRW %>%
   filter(ergg_1km != -9)
+
 
 #### recode controls
 
