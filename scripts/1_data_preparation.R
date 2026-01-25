@@ -11,10 +11,10 @@ library(readxl)
 
 setwd("C:/Users/bened/OneDrive/Desktop/Uni/Master Economic Policy Consulting/Wintersemester 2025-26/Data Analysis/Data-Analysis-Using-R-Group-Project/data")
 
-schools <- read_xlsx("school_data.xlsx")
+schools <- read_xlsx("data/school_data.xlsx")
 housing_data <- read.csv("C:/Users/bened/OneDrive/Desktop/Uni/Master Economic Policy Consulting/Wintersemester 2025-26/Data Analysis/CampusFile_HK_2022.csv")
 housing_data <- read_csv("~/Uni/Data Analysis Using R/CampusFile_HK_2022.csv")
-ssi_data <- read_csv2("2022_social_index.csv")
+ssi_data <- read_csv2("data/2022_social_index.csv")
 
 ############################
 ##### prepare datasets #####
