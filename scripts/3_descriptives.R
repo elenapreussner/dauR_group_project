@@ -51,7 +51,7 @@ stargazer(as.data.frame(price_table),
           rownames = FALSE)
 
 
-# balance table -> entfernen?
+# balance table 
 balance_table <- analysis_data %>%
   filter(!is.na(group)) %>%
   group_by(group) %>%
