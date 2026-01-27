@@ -2,7 +2,6 @@ library(tidyverse)
 library(ggplot2)
 library(stargazer)
 
-
 # temporary dataset for analysis
 analysis_data <- full_dataset_main_clean %>%
   mutate(
@@ -52,7 +51,7 @@ stargazer(as.data.frame(price_table),
           rownames = FALSE)
 
 
-# balance table
+# balance table -> entfernen?
 balance_table <- analysis_data %>%
   filter(!is.na(group)) %>%
   group_by(group) %>%
@@ -76,54 +75,6 @@ stargazer(as.data.frame(balance_table),
           summary = FALSE,
           title = "house characteristics by treatment status",
           digits = 2,
-          rownames = FALSE)
-
-
-# t-tests
-# abitur vs. control
-test_price_abitur_control <- t.test(
-  price_sqm ~ abitur_nearby,
-  data = analysis_data %>% filter(group %in% c("abitur", "control"))
-)
-
-# non-abitur vs. control
-test_price_non_abitur_control <- t.test(
-  price_sqm ~ non_abitur_nearby,
-  data = analysis_data %>% filter(group %in% c("non_abitur", "control"))
-)
-
-# abitur vs. non-abitur
-abitur_data <- analysis_data %>% filter(group == "abitur") %>% pull(price_sqm)
-non_abitur_data <- analysis_data %>% filter(group == "non_abitur") %>% pull(price_sqm)
-test_price_abitur_non_abitur <- t.test(abitur_data, non_abitur_data)
-
-# create t-test results table
-ttest_results <- data.frame(
-  comparison = c("abitur vs. control", 
-                 "non-abitur vs. control", 
-                 "abitur vs. non-abitur"),
-  difference = c(
-    test_price_abitur_control$estimate[1] - test_price_abitur_control$estimate[2],
-    test_price_non_abitur_control$estimate[1] - test_price_non_abitur_control$estimate[2],
-    test_price_abitur_non_abitur$estimate[1] - test_price_abitur_non_abitur$estimate[2]
-  ),
-  t_statistic = c(
-    test_price_abitur_control$statistic,
-    test_price_non_abitur_control$statistic,
-    test_price_abitur_non_abitur$statistic
-  ),
-  p_value = c(
-    test_price_abitur_control$p.value,
-    test_price_non_abitur_control$p.value,
-    test_price_abitur_non_abitur$p.value
-  )
-)
-
-stargazer(ttest_results,
-          type = "latex",
-          summary = FALSE,
-          title = "t-tests: price differences",
-          digits = 3,
           rownames = FALSE)
 
 
