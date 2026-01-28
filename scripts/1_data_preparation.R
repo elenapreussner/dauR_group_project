@@ -41,7 +41,7 @@ pois_muenster    <- st_read(file.path("data/regional_district_data/muenster", "g
 
 # grid-cell ID data-set
 
-grid_df <- st_read("grid.geojson")
+grid_df <- st_read("data/grids/grid.geojson")
 
 
 
