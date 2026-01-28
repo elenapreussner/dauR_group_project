@@ -133,7 +133,7 @@ available to their child
 \textbf{Housing Data:}
 
 - Geo-referenced listings of sales properties (e.g., ImmoScout).
-- Variables: living space, number of rooms, year built, condition, etc.
+- Variables: living area, site area, number of rooms, number of bathrooms, year of construction, cellar
 
 \vspace{0.2cm}
 \textbf{School Data}:
