@@ -14,7 +14,7 @@ grid_df <- st_read("grid.geojson")
 
 #### import data on POI's for different "Regierungsbezirke" in NRW
 
-railways_arnsberg    <- st_read(file.path( "arnsberg","gis_osm_pois_free_1.shp.shp"), quiet = TRUE)
+pois_arnsberg    <- st_read(file.path( "arnsberg","gis_osm_pois_free_1.shp"), quiet = TRUE)
 pois_detmold     <- st_read(file.path( "detmold",   "gis_osm_pois_free_1.shp"), quiet = TRUE)
 pois_duesseldorf <- st_read(file.path("duesseldorf", "gis_osm_pois_free_1.shp"), quiet = TRUE)
 pois_koeln       <- st_read(file.path( "koeln",       "gis_osm_pois_free_1.shp"), quiet = TRUE)
@@ -33,7 +33,6 @@ pois_muenster    <- st_transform(pois_muenster,    25832) %>% mutate(bezirk = "m
 pois_nrw <- bind_rows(
   pois_arnsberg, pois_detmold, pois_duesseldorf, pois_koeln, pois_muenster
 )
-
 
 ##### filter for relevant POI's
 # to keep it simlpe, we have chosen a few central district characteristics to control for their presence/absence in each grid-cell
