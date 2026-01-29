@@ -36,12 +36,13 @@ balance_check <- matchit(
 summary(balance_check)
 
 
-### applying the rule of thumb that all standard mean differences are >= 0.1, we assume that the CIA is not violated for the most controls
-## for some, standard mean differences exceed the thumb rule
-## CIA is violated
+### applying the rule of thumb that all standard mean differences >= 0.1, 
+## for some, standard mean differences exceed the threshold
+## indication that CIA is violated
 
 
 #### conduct matching on observable covariates
+# applying nearest neighbor and matching 1:1
 
 # estimate propensity score
 
