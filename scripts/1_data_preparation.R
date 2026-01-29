@@ -236,7 +236,7 @@ housing_full <- housing_data_NRW_control %>%
     by = "ergg_1km"
   ) %>%
   left_join(
-    grid_with_dummies_utm %>%
+    grid_full_with_district_dummies %>%
       select(grid_id, pharmacy, supermarket, hospital, doctors, park),
     by = c("ergg_1km" = "grid_id")
   )
