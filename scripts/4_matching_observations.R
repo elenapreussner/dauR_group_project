@@ -61,7 +61,7 @@ ps_main <- matchit(
 
 summary(ps_main)
 
-# exctract matched dataset
+# extract matched dataset
 
 matched_data_main <- match.data(ps_main)
 

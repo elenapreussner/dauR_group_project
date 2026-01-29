@@ -14,6 +14,8 @@ library(fixest)
 ####################################################
 
 
+###### Variant 1 -- without matching
+
 #### model estimation with successive addition of controls and regional FE  - Model 1
 
 
@@ -21,7 +23,7 @@ library(fixest)
 m1 <- feols(
   log(price_sqm) ~ school_nearby | gid2019,
   data = full_dataset_main_clean,
-  vcov = "HC3"
+  vcov = "HC1"
 )
 
 
@@ -30,9 +32,9 @@ m1 <- feols(
 
 m2 <- feols(
   log(price_sqm) ~ school_nearby + living_area +  site_area + 
-    rooms_n + baths_n + age_building +  I(age_building^2) | gid2019,
+    rooms_n + baths_n + age_building +  I(age_building^2) + cellar | gid2019,
   data = full_dataset_main_clean,
-  vcov = "HC3"
+  vcov = "HC1"
 )
 
 
@@ -45,7 +47,7 @@ m3 <- feols(
     immigrants_percents +  average_age +  pharmacy +  supermarket +
     hospital + doctors +  park| gid2019,
   data  = full_dataset_main_clean,
-  vcov = "HC3"
+  vcov = "HC1"
 )
 
 
@@ -57,28 +59,13 @@ modelsummary(
     "Model 2"  = m2,
     "Model 3"  = m3
   ),
-  coef_map = c(
-    "school_nearby"        = "School nearby",
-    "living_area"          = "living area",
-    "site_area"            = "Site area",
-    "rooms_n"              = "Number of rooms",
-    "baths_n"              = "Number of bathrooms",
-    "age_building"         = "Building age",
-    "I(age_building^2)"    = "Building age squared",
-    "cellar"               = "Cellar",
-    "immigrants_percents"   = "Immigrants (%)",
-    "average_age"          = "Average age",
-    "pharmacy"             = "Pharmacy nearby",
-    "supermaket"           = "Supermarket nearby",
-    "hospital"             = "Hospital nearby",
-    "doctors"              = "Doctor nearby",
-    "park"                 = "Park nearby"
-  ),
+  coef_omit = "^(?!school_nearby$).*",  
+  coef_map = c("school_nearby" = "School nearby"),
   add_rows = data.frame(
-    term = "Region fixed effects",
-    Baseline = "✔",
-    `Model 2` = "✔",
-    `Model 3` = "✔",
+    term = c("Building controls", "Neighborhood controls", "Region fixed effects"),
+    Baseline = c("-", "-", "✔"),
+    `Model 2`= c("✔", "-", "✔"),
+    `Model 3`= c("✔", "✔", "✔"),
     check.names = FALSE
   ),
   gof_map = data.frame(
@@ -86,10 +73,10 @@ modelsummary(
     clean = c("Observations", "R²"),
     fmt   = c(0, 3)
   ),
-  title = "Effect of secondary School Proximity on House Prices",
+  title = "Effect of Secondary School Proximity on House Prices - without matching",
   stars = TRUE,
   gof_omit = "IC|Log|Adj",
-  notes = "Note: Robust standard errors (HC3) in parentheses."
+  notes = "Note: Robust standard errors (HC1) in parentheses."
 )
 
 
@@ -97,88 +84,66 @@ modelsummary(
 #### Estimate treatment heterogeneity model - Model 2
 
 
-model_heterogeneity <- lm(
-  log(price_sqm) ~ school_nearby * abitur_nearby + living_area +  site_area + 
-    rooms_n + baths_n + age_building +  I(age_building^2)+  cellar +
+model_heterogeneity <- feols(
+  log(price_sqm) ~ school_nearby + school_nearby:abitur_nearby + living_area +  site_area + 
+    rooms_n + baths_n + age_building +  I(age_building^2) +  cellar +
     immigrants_percents +  average_age +  pharmacy +  supermarket +
-    hospital + doctors +  park,
+    hospital + doctors +  park | gid2019 ,
   data = full_dataset_main_clean,
-  vcov = "HC3"
+  vcov = "HC1"
 )
-
 
 
 modelsummary(
   model_heterogeneity,
-  vcov = "HC3",
   statistic = "({std.error})",
   stars = c('*' = .10, '**' = .05, '***' = .01),
-  coef_map = c(
-    "school_nearby" = "School nearby",
-    "abitur_nearby" = "Gymnasium nearby",
-    "school_nearby:abitur_nearby" = "School × Gymnasium",
-    "living_area" = "Living area",
-    "site_area" = "Site area",
-    "rooms_n" = "Number of rooms",
-    "baths_n" = "Number of bathrooms",
-    "age_building" = "Building age",
-    "I(age_building^2)" = "Building age²",
-    "cellar" = "Cellar",
-    "immigrants_percents" = "Immigrants (%)",
-    "average_age" = "Average age",
-    "pharmacy" = "Pharmacy nearby",
-    "supermarket" = "Supermarket nearby",
-    "hospital" = "Hospital nearby",
-    "doctors" = "Doctors nearby",
-    "park" = "Park nearby"
-  ),
+  coef_omit = "^(?!(school_nearby$|school_nearby:abitur_nearby$)).*",  
+  coef_map = c("school_nearby" = "School nearby",
+               "school_nearby:abitur_nearby" = "School nearby × Gymnasium nearby"),
   gof_map = data.frame(
     raw   = c("nobs", "r.squared"),
     clean = c("Observations", "R²"),
     fmt   = c(0, 3)
   ),
   add_rows = data.frame(
-    term = "Region fixed effects",
-    Baseline = "✔",
-    `Model 2` = "✔",
-    `Model 3` = "✔",
+    term = c("Building controls", "Neighborhood controls", "Region fixed effects"),
+    Model = c("✔", "✔", "✔"), 
     check.names = FALSE
   ),
-  title = "Effect of School with academic track Proximity on House Prices",
-  stars = TRUE,
+  title = "Effect of School with academic track Proximity on House Prices - without matching",
   gof_omit = "IC|Log|Adj",
-  notes = "Note: Robust standard errors (HC3) in parentheses."
+  notes = "Note: Robust standard errors (HC1) in parentheses."
 )
 
 
 
 
-###############################################
-####### second variant for matched data #######
-###############################################
+###### Variant 2 -- matched data
 
+#### model estimation with successive addition of controls and regional FE  - Model 1
 
-# only treatment indicator
+## only treatment indicator
 m1_matched <- feols(
   log(price_sqm) ~ school_nearby | gid2019,
   data = matched_data_main,
-  vcov = "HC3"
+  vcov = "HC1"
 )
 
 
 
-# treatment indicator + housing characteristics
+## treatment indicator + housing characteristics
 
 m2_matched <- feols(
   log(price_sqm) ~ school_nearby + living_area +  site_area + 
-    rooms_n + baths_n + age_building +  I(age_building^2) | gid2019,
+    rooms_n + baths_n + age_building +  I(age_building^2) + cellar | gid2019,
   data = matched_data_main,
-  vcov = "HC3"
+  vcov = "HC1"
 )
 
 
 
-# treatment indicator + housing and neighborhood characteristics
+## treatment indicator + housing and neighborhood characteristics
 
 m3_matched <- feols(
   log(price_sqm) ~ school_nearby + living_area +  site_area + 
@@ -186,7 +151,7 @@ m3_matched <- feols(
     immigrants_percents +  average_age +  pharmacy +  supermarket +
     hospital + doctors +  park| gid2019,
   data  = matched_data_main,
-  vcov = "HC3"
+  vcov = "HC1"
 )
 
 
@@ -198,28 +163,13 @@ modelsummary(
     "Model 2"  = m2_matched,
     "Model 3"  = m3_matched
   ),
-  coef_map = c(
-    "school_nearby"        = "School nearby",
-    "living_area"          = "living area",
-    "site_area"            = "Site area",
-    "rooms_n"              = "Number of rooms",
-    "baths_n"              = "Number of bathrooms",
-    "age_building"         = "Building age",
-    "I(age_building^2)"    = "Building age squared",
-    "cellar"               = "Cellar",
-    "immigrants_percents"   = "Immigrants (%)",
-    "average_age"          = "Average age",
-    "pharmacy"             = "Pharmacy nearby",
-    "supermaket"           = "Supermarket nearby",
-    "hospital"             = "Hospital nearby",
-    "doctors"              = "Doctor nearby",
-    "park"                 = "Park nearby"
-  ),
+  coef_omit = "^(?!school_nearby$).*",  
+  coef_map = c("school_nearby" = "School nearby"),
   add_rows = data.frame(
-    term = "Region fixed effects",
-    Baseline = "✔",
-    `Model 2` = "✔",
-    `Model 3` = "✔",
+    term = c("Building controls", "Neighborhood controls", "Region fixed effects"),
+    Baseline = c("-", "-", "✔"),
+    `Model 2`= c("✔", "-", "✔"),
+    `Model 3`= c("✔", "✔", "✔"),
     check.names = FALSE
   ),
   gof_map = data.frame(
@@ -227,16 +177,51 @@ modelsummary(
     clean = c("Observations", "R²"),
     fmt   = c(0, 3)
   ),
-  title = "Effect of secondary School Proximity on House Prices",
+  title = "Effect of secondary School Proximity on House Prices - with matching",
   stars = TRUE,
   gof_omit = "IC|Log|Adj",
-  notes = "Note: Robust standard errors (HC3) in parentheses."
+  notes = "Note: Robust standard errors (HC1) in parentheses."
 )
 
 
 
 
 
+#### Estimate treatment heterogeneity model - Model 2
+
+
+model_heterogeneity <- feols(
+  log(price_sqm) ~ school_nearby + school_nearby:abitur_nearby + living_area +  site_area + 
+    rooms_n + baths_n + age_building +  I(age_building^2) +  cellar +
+    immigrants_percents +  average_age +  pharmacy +  supermarket +
+    hospital + doctors +  park | gid2019 ,
+  data = matched_data_main,
+  vcov = "HC1"
+)
+
+
+modelsummary(
+  model_heterogeneity,
+  statistic = "({std.error})",
+  stars = c('*' = .10, '**' = .05, '***' = .01),
+  coef_omit = "^(?!(school_nearby$|school_nearby:abitur_nearby$)).*",  
+  coef_map = c("school_nearby" = "School nearby",
+               "school_nearby:abitur_nearby" = "School nearby × Gymnasium nearby"
+  ),
+  gof_map = data.frame(
+    raw   = c("nobs", "r.squared"),
+    clean = c("Observations", "R²"),
+    fmt   = c(0, 3)
+  ),
+  add_rows = data.frame(
+    term = c("Building controls", "Neighborhood controls", "Region fixed effects"),
+    Model = c("✔", "✔", "✔"), 
+    check.names = FALSE
+  ),
+  title = "Effect of School with academic track Proximity on House Prices - with matching",
+  gof_omit = "IC|Log|Adj",
+  notes = "Note: Robust standard errors (HC1) in parentheses."
+)
 
 
 

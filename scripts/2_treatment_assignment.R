@@ -1,5 +1,5 @@
 #########################
-##### preliminaries #####
+##### prerequisites #####
 #########################
 
 ### load necessary packages
@@ -189,8 +189,10 @@ full_dataset_main_clean <- full_dataset_main_clean %>%
     supermarket,
     hospital,
     doctors,
-    park
+    park,
+    gid2019
   )
+
 
 
 
