@@ -85,10 +85,14 @@ Based on the theoretical background, we expect the following results:
 \begin{block}{Formal Hypothesis}
 \[
 \begin{aligned}
-\tau_{\text{school}} & \text{(Estimated treatment effect):} & H_1 &: \beta_1 > 0
+\tau_{\text{school}} & \text{(Estimated treatment effect):} & H_1 &: \beta_1 (D_i) > 0 \\
+\tau_{\text{abitur}} & \text{(Estimated treatment heterogeneity):} & H_2 &: \beta_2 (D_i \times A_i)  > 0
 \end{aligned}
 \]
 \end{block}
+
+
+
 
 # Insights from relevant empirical literature
 
@@ -127,7 +131,7 @@ available to their child
 - Buildings inside and outside of the treatment zones share the same average housing and neighborhood characteristics.
 - Sale prices are time-independently exceeding offer prices at a constant rate.
 - Property prices can be interpreted as the willingness to pay for amenities because they are determined by relevant characteristics
-- The School Social Index (SSI) provides a reasonable proxy for neighborhood socio-economic composition, as it reflects the socio-economic background of students.
+
 
 ## Data and Variables
 \textbf{Housing Data:}
@@ -159,12 +163,12 @@ available to their child
     \end{column}
 \end{columns}
 
-- \textbf{Treatment-Zone} Grid-cells \textbf{within ca. 3 km} radius
-- \textbf{Untreated zone:} Grid-cells \textbf{3-4 km} from any school
+- \textbf{Treatment-Zone} Grid-cells \textbf{within ca. 2 km} radius
+- \textbf{Untreated zone:} Grid-cells \textbf{2-4 km} from any school
 -  Houses that are exposed to different kinds of secondary schools at the same time (double-treated) are also excluded from the sample
 
 \begin{block}{Robustness check}
-As a robustness check, we define the treatment zone within a 2 km radius and exclude a \textbf{Buffer zone} of 1km around it to prevent spillover contamination
+As a robustness check, we exclude a \textbf{Buffer zone} of 1km around the treatment zone to prevent spillover contamination, therefore reducing the amount of control units
 \end{block}
 
 
@@ -270,16 +274,7 @@ $$
 
 # Appendix
 
-## Control Variables
-
-**Structural/House Characteristics**
-
-number of bedrooms, full and half baths (full baths, half baths), the number of fireplaces, the age of the structure in linear and quadratic form (house age, age squared), the lot size on which 
-the structure is located, and size of the structure measured in square feet. (clark2002)
-
-**Neighborhood characteristics**
-
-## Controls
+## Controls (1/2)
 
 ```{r}
 library(tibble)
@@ -289,42 +284,53 @@ library(kableExtra)
 controls_table <- tibble(
   Variable = c(
     "living_area",
+    "site_area",
     "rooms_n",
+    "baths_n",
     "age_building",
+    "cellar",
     "immigrants_percents",
-    "average_age"
+    "average_age",
+    "average_income",
+    "pharmacy",
+    "hospital",
+    "doctors",
+    "park"
   ),
   Description = c(
     "Living area of the dwelling (m²)",
+    "Site area of the dwelling (m²)",
     "Number of rooms",
+    "Number of baths",
     "Age of the building (years)",
-    "Share of immigrants in the 1 km grid (%)",
-    "Average age of residents in the neighborhood"
-  ),
-  Category = c(
-    "Property characteristics",
-    "Property characteristics",
-    "Property characteristics",
-    "Neighborhood characteristics",
-    "Neighborhood characteristics"
+    "Dummy for presence/absence of a cellar",
+    "Share of immigrants in the 1 km² grid (%)",
+    "Average age of residents in the 1km² grid (years)",
+    "Average income of residents at the municipality level",
+    "(=1) if the grid-cell contains at least 1 pharmacy, (=0) otherwise",
+    "(=1) if the grid-cell contains at least 1 hospital, (=0) otherwise",
+    "(=1) if the grid-cell contains at least 1 doctor's office, (=0) otherwise",
+    "(=1) if the grid-cell contains at least 1 park, (=0) otherwise"
   )
 )
 
-kable(
-  controls_table,
-  booktabs = TRUE,
-  caption = "Control variables and categories"
-) %>%
-  group_rows(
-    "Property characteristics", 1, 3
-  ) %>%
-  group_rows(
-    "Neighborhood characteristics", 4, 5
+
+
+controls_table[1:6, ] %>%
+  kable(
+    booktabs = TRUE,
+    caption = "Property characteristics"
   )
 ```
 
-
-
+## Controls (1/2)
+```{r}
+controls_table[7:13, ] %>%
+  kable(
+    booktabs = TRUE,
+    caption = "Neighborhood characteristics"
+  )
+```
 # Literature
 
 
