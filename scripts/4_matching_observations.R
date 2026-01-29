@@ -45,7 +45,7 @@ summary(balance_check)
 
 # estimate propensity score
 
-ps_baseline <- matchit(
+ps_main <- matchit(
   school_nearby ~ living_area +  site_area + 
     rooms_n + baths_n + age_building +  cellar +
     immigrants_percents +  average_age +  pharmacy +  supermarket +
@@ -59,13 +59,13 @@ ps_baseline <- matchit(
 
 # inspection 
 
-summary(ps_baseline)
+summary(ps_main)
 
 # exctract matched dataset
 
-matched_data <- match.data(ps_baseline)
+matched_data_main <- match.data(ps_main)
 
 
-matched_data %>%
+matched_data_main %>%
   count(school_nearby)
 

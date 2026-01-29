@@ -186,8 +186,8 @@ lying in the non-treated zone as a proxy for the counterfactual.
 Identification Assumption (CIA): $$ \ln(P_{0ij}), \ln(P_{1ij}) \;\perp\; D \;\big| X_i$$
 \textbf{Estimation method:} We use \textbf{matching} on observable covariates to compare treated and untreated buildings:
 
-- Building characteristics (e.g., floor area, construction year, amenities)
-- Neighborhood characteristics (e.g., income, urbanity, regional fixed effects)
+- Building characteristics (e.g., living area, number of rooms, building age, )
+- Neighborhood characteristics (e.g., average income or age, share of immigrants, structural features)
 
 After successful matching, the treatment effect is estimated through the following equation \parencite{tchatoka2021}:
 
@@ -220,7 +220,7 @@ $$
 - $D_i$: Is within treatment distance to a secondary school (=1) or not (=0)
 - $\mathbf{X}_i$: set of building characteristics 
 - $\mathbf{N}_i$: set of neighborhood characteristics, includes the SSI for a proxy of the social composition
-- $\text{FE}_{r(i)}$: Regional fixed effects to account for spatial effects at the grid-cell level
+- $\text{FE}_{r(i)}$: Regional fixed effects to account for spatial effects at the municipality level
 - $\varepsilon_i$: error term
 
 

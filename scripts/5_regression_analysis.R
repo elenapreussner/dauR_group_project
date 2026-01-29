@@ -161,7 +161,7 @@ modelsummary(
 # only treatment indicator
 m1_matched <- feols(
   log(price_sqm) ~ school_nearby | gid2019,
-  data = matched_data,
+  data = matched_data_main,
   vcov = "HC3"
 )
 
@@ -172,7 +172,7 @@ m1_matched <- feols(
 m2_matched <- feols(
   log(price_sqm) ~ school_nearby + living_area +  site_area + 
     rooms_n + baths_n + age_building +  I(age_building^2) | gid2019,
-  data = matched_data,
+  data = matched_data_main,
   vcov = "HC3"
 )
 
@@ -185,7 +185,7 @@ m3_matched <- feols(
     rooms_n + baths_n + age_building +  I(age_building^2) +  cellar +
     immigrants_percents +  average_age +  pharmacy +  supermarket +
     hospital + doctors +  park| gid2019,
-  data  = matched_data,
+  data  = matched_data_main,
   vcov = "HC3"
 )
 
