@@ -34,7 +34,7 @@ summary(balance_check)
 
 
 ### applying the rule of thumb that all standard mean differences are >= 0.1, we assume that the CIA is not violated
-## therefore, matching on observables is not necessary
+## therefore, matching on observables is not necessary and we continue our anaylsis with the current data-set
 
 
 
