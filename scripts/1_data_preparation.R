@@ -17,7 +17,7 @@ user <- Sys.getenv("USERNAME")
 
 paths <- list(
   bened = "C:/Users/bened/OneDrive/Desktop/Uni/Master Economic Policy Consulting/Wintersemester 2025-26/Data Analysis/dauR_group_project"
-
+  
 )
 setwd(paths[[user]])
 getwd()
@@ -35,7 +35,12 @@ housing_data <- read_csv("~/Uni/Data Analysis Using R/CampusFile_HK_2022.csv", n
 # data for neighborhood controls
 
 neighborhood_data <- read_xlsx("data/neighborhood_data/neighborhood_controls.xlsx", na = c("â€“"))
-income_data <- read_xlsx("data/neighborhood_data/average_disposable_income_per_capita.xlsx")
+income_data <- read_xlsx(
+  "data/neighborhood_data/income_data.xlsx",
+  skip = 2
+  ) %>%
+  select(1, last_col()) %>%
+  slice(-(1:4))  
 
 # data for district/regional controls per "Regierungsbezirk
 
@@ -149,7 +154,30 @@ neighborhood_data <- neighborhood_data %>%
   )
 
 
+# clean and prepare income data for the join
 
+income_data <- income_data %>%
+  filter(
+    nchar(as.character(Gemeinden)) >= 5 &
+      nchar(as.character(Gemeinden)) <= 8 &
+      !is.na(as.numeric(Gemeinden))
+  ) %>%
+  rename(
+    "ags" = "Gemeinden",
+    "disposable_income_per_capita" = "Verfügbares Einkommen der privaten Haushalte je Einwohner/-in"
+  ) %>%
+  mutate( 
+    ags = case_when(
+      nchar(ags) == 5 ~ paste0(ags, "000"),      
+      nchar(ags) == 6 ~ paste0(ags, "00"),
+      nchar(ags) == 7 ~ paste0(ags, "0"),
+      TRUE ~ ags
+    )
+  ) %>%
+  mutate(ags = sub("^0", "", ags)) %>%
+  mutate(ags = as.numeric(ags))
+  
+  
 ###################
 ## district data ##
 ###################
@@ -235,8 +263,6 @@ grid_full_with_district_dummies <- grid_utm %>%
 #########################################################
 
 
-##### ergänze noch die income data pro grid-cell
-
 housing_full <- housing_data_NRW_control %>%
   left_join(
     neighborhood_data %>%
@@ -247,10 +273,15 @@ housing_full <- housing_data_NRW_control %>%
     grid_full_with_district_dummies %>%
       select(grid_id, pharmacy, supermarket, hospital, doctors, park),
     by = c("ergg_1km" = "grid_id")
+  )  %>%
+  rename(
+    "ags" = "gid2019"
+  ) %>%
+  left_join(
+    income_data %>%
+      select(ags, disposable_income_per_capita),
+    by = "ags"
   )
-
-
-
 
 
 
