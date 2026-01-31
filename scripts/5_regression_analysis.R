@@ -21,7 +21,7 @@ library(fixest)
 
 # only treatment indicator
 m1 <- feols(
-  log(price_sqm) ~ school_nearby | gid2019,
+  log(price_sqm) ~ school_nearby | ags,
   data = full_dataset_main_clean,
   vcov = "HC1"
 )
@@ -32,7 +32,7 @@ m1 <- feols(
 
 m2 <- feols(
   log(price_sqm) ~ school_nearby + living_area +  site_area + 
-    rooms_n + baths_n + age_building +  I(age_building^2) + cellar | gid2019,
+    rooms_n + baths_n + age_building +  I(age_building^2) + cellar | ags,
   data = full_dataset_main_clean,
   vcov = "HC1"
 )
@@ -45,7 +45,7 @@ m3 <- feols(
   log(price_sqm) ~ school_nearby + living_area +  site_area + 
     rooms_n + baths_n + age_building +  I(age_building^2) +  cellar +
     immigrants_percents +  average_age +  pharmacy +  supermarket +
-    hospital + doctors +  park| gid2019,
+    hospital + doctors +  park| ags,
   data  = full_dataset_main_clean,
   vcov = "HC1"
 )
@@ -88,7 +88,7 @@ model_heterogeneity <- feols(
   log(price_sqm) ~ school_nearby + school_nearby:abitur_nearby + living_area +  site_area + 
     rooms_n + baths_n + age_building +  I(age_building^2) +  cellar +
     immigrants_percents +  average_age +  pharmacy +  supermarket +
-    hospital + doctors +  park | gid2019 ,
+    hospital + doctors +  park | ags,
   data = full_dataset_main_clean,
   vcov = "HC1"
 )
@@ -125,7 +125,7 @@ modelsummary(
 
 ## only treatment indicator
 m1_matched <- feols(
-  log(price_sqm) ~ school_nearby | gid2019,
+  log(price_sqm) ~ school_nearby | ags,
   data = matched_data_main,
   vcov = "HC1"
 )
@@ -136,7 +136,7 @@ m1_matched <- feols(
 
 m2_matched <- feols(
   log(price_sqm) ~ school_nearby + living_area +  site_area + 
-    rooms_n + baths_n + age_building +  I(age_building^2) + cellar | gid2019,
+    rooms_n + baths_n + age_building +  I(age_building^2) + cellar | ags,
   data = matched_data_main,
   vcov = "HC1"
 )
@@ -149,7 +149,7 @@ m3_matched <- feols(
   log(price_sqm) ~ school_nearby + living_area +  site_area + 
     rooms_n + baths_n + age_building +  I(age_building^2) +  cellar +
     immigrants_percents +  average_age +  pharmacy +  supermarket +
-    hospital + doctors +  park| gid2019,
+    hospital + doctors +  park| ags,
   data  = matched_data_main,
   vcov = "HC1"
 )
@@ -194,7 +194,7 @@ model_heterogeneity <- feols(
   log(price_sqm) ~ school_nearby + school_nearby:abitur_nearby + living_area +  site_area + 
     rooms_n + baths_n + age_building +  I(age_building^2) +  cellar +
     immigrants_percents +  average_age +  pharmacy +  supermarket +
-    hospital + doctors +  park | gid2019 ,
+    hospital + doctors +  park | ags,
   data = matched_data_main,
   vcov = "HC1"
 )
