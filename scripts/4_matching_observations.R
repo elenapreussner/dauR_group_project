@@ -2,7 +2,8 @@
 #### prerequisites ####
 #######################
 
-
+install.packages("MatchIt")
+install.packages("rio")
 library(rio)
 library(MatchIt)
 library(car)
@@ -25,8 +26,8 @@ library(knitr)
 balance_check <- matchit(
   school_nearby ~ living_area +  site_area + 
     rooms_n + baths_n + age_building +  cellar +
-    immigrants_percents +  average_age +  pharmacy +  supermarket +
-    hospital + doctors +  park,
+    immigrants_percents +  average_age +  disposable_income_per_capita + 
+    pharmacy +  supermarket + hospital + doctors +  park,
   data = full_dataset_main_clean,
   method = NULL
 )
@@ -49,8 +50,8 @@ summary(balance_check)
 ps_main <- matchit(
   school_nearby ~ living_area +  site_area + 
     rooms_n + baths_n + age_building +  cellar +
-    immigrants_percents +  average_age +  pharmacy +  supermarket +
-    hospital + doctors +  park,
+    immigrants_percents +  average_age +  disposable_income_per_capita +
+    pharmacy +  supermarket + hospital + doctors +  park,
   data = full_dataset_main_clean,
   method = "nearest",
   distance = "logit",

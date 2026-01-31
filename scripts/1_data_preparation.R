@@ -160,24 +160,26 @@ income_data <- income_data %>%
   filter(
     nchar(as.character(Gemeinden)) >= 5 &
       nchar(as.character(Gemeinden)) <= 8 &
-      !is.na(as.numeric(Gemeinden))
+      !is.na(suppressWarnings(as.numeric(Gemeinden)))
   ) %>%
   rename(
     "ags" = "Gemeinden",
     "disposable_income_per_capita" = "Verfügbares Einkommen der privaten Haushalte je Einwohner/-in"
   ) %>%
-  mutate( 
+  mutate(
+    disposable_income_per_capita = as.numeric(disposable_income_per_capita),
+    
     ags = case_when(
       nchar(ags) == 5 ~ paste0(ags, "000"),      
       nchar(ags) == 6 ~ paste0(ags, "00"),
       nchar(ags) == 7 ~ paste0(ags, "0"),
       TRUE ~ ags
-    )
-  ) %>%
-  mutate(ags = sub("^0", "", ags)) %>%
-  mutate(ags = as.numeric(ags))
-  
-  
+    ),
+    ags = sub("^0", "", ags),
+    ags = as.numeric(ags)
+  )
+
+
 ###################
 ## district data ##
 ###################

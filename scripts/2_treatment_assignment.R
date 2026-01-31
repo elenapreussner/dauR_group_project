@@ -185,12 +185,13 @@ full_dataset_main_clean <- full_dataset_main_clean %>%
     price_sqm,
     immigrants_percents,
     average_age,
+    disposable_income_per_capita,
     pharmacy,
     supermarket,
     hospital,
     doctors,
     park,
-    gid2019
+    ags,
   )
 
 
