@@ -113,11 +113,11 @@ available to their child
 
 **Empirical Assumptions:**
 
-- The parents preferences regarding their children's education are reflected by hedonic price regressions
+- Parents’ preferences for their children’s education are reflected in hedonic price regressions.
 - Conditional on the controlling for both housing and neighborhood characteristics, the treatment assignment can considered to be random.
 - Within the treatment area and the control area, the capitalization effect is constant.
 
-## * Assumptions (II)
+## Assumptions (II)
 
 - Buildings inside and outside of the treatment zones share the same average housing and neighborhood characteristics.
 - Offer prices are time-independently exceeding sale prices at a constant rate.
@@ -127,13 +127,13 @@ available to their child
 ## Data and Variables
 \textbf{Housing Data:}
 
-- Geo-referenced listings of sales properties (Internet Platform lmmobilienScout24, 2022) 
+- Geo-referenced listings of sales properties (Internet platform lmmobilienScout24, 2022) 
 - Variables: living area, site area, number of rooms, number of bathrooms, year of construction, cellar
 
 \vspace{0.2cm}
 \textbf{School Data}:
 
-- Locations and types of schools (Gymnasium, Gesamtschule, etc.) 
+- Locations and types of schools (Grammar School, Comprehensive School, etc. based on grid cells) 
 
 \vspace{0.2cm}
 \textbf{Regional Data:}
