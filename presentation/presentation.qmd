@@ -142,24 +142,33 @@ available to their child
 
 
 ## Quasi-experimental approach
-\begin{columns}[T] % [T] = top aligned
-    \begin{column}{0.55\textwidth}
-        We define spatial treatment zones to estimate the causal effect of upper secondary schools on housing prices using grid-cells:
-    \end{column}
+\begin{columns}[T] % top aligned
 
+  % -------- LEFT COLUMN --------
+  \begin{column}{0.55\textwidth}
+    We define spatial treatment zones to estimate the causal effect of upper secondary schools on housing prices using grid-cells:
+
+    \vspace{0.6em}
+
+    \begin{itemize}
+      \item \textbf{Treatment-Zone:} Grid-cells \textbf{within 2 km} radius
+      \item \textbf{Untreated zone:} Grid-cells \textbf{2--4 km} from any school
+      \item Houses exposed to multiple secondary schools (double-treated) are excluded
+    \end{itemize}
+  \end{column}
+
+  % -------- RIGHT COLUMN --------
   \begin{column}{0.45\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{matching_ID.PNG}
-    \end{column}
-\end{columns}
+    \centering
+    \includegraphics[width=\linewidth]{Matching_ID_final}
+  \end{column}
 
-- \textbf{Treatment-Zone} Grid-cells \textbf{within ca. 2 km} radius
-- \textbf{Untreated zone:} Grid-cells \textbf{2-4 km} from any school
--  Houses that are exposed to different kinds of secondary schools at the same time (double-treated) are also excluded from the sample
+\end{columns}
 
 \begin{block}{Robustness check}
 As a robustness check, we exclude a \textbf{Buffer zone} of 1km around the treatment zone to prevent spillover contamination, therefore reducing the amount of control units
 \end{block}
+
 
 
 ## Identification Framework
