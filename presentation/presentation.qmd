@@ -16,10 +16,36 @@ format:
     biblatexoptions: 
       - style=apa
       - backend=biber
-    theme: Frankfurt
+    theme: default
     header-includes: |
+          \usepackage{tcolorbox}
+            \tcbset{
+             colback=blue!5,
+             colframe=blue!50!black,
+             boxrule=0.4pt,
+             arc=2pt,
+             left=4pt,
+             right=4pt,
+             top=3pt,
+             bottom=3pt
+           }
+          \usepackage{lmodern}
+          \usefonttheme{serif}
+          \setbeamercolor{structure}{fg=black}
+          \setbeamerfont{frametitle}{series=\bfseries}
+          \setbeamerfont{section title}{series=\bfseries}
+          \setbeamertemplate{itemize item}{\textbullet}
+          \setbeamertemplate{itemize subitem}{\textbullet}
+          \setbeamertemplate{itemize subsubitem}{\textbullet}
           \usepackage{multicol}
+          \tcolorboxenvironment{block}{}
+          \tcolorboxenvironment{alertblock}{}
+          \tcolorboxenvironment{exampleblock}{}
+          \usepackage{graphicx}
+          
+     
       #- file: custom_theme.tex
+      
 execute: 
   echo: false
   
