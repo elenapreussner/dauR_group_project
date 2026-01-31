@@ -280,7 +280,6 @@ controls_table <- tibble(
     "cellar",
     "immigrants_percents",
     "average_age",
-    "average_income",
     "pharmacy",
     "hospital",
     "doctors",
@@ -295,7 +294,6 @@ controls_table <- tibble(
     "Dummy for presence/absence of a cellar",
     "Share of immigrants in the 1 km² grid (%)",
     "Average age of residents in the 1km² grid (years)",
-    "Average income of residents at the municipality level",
     "(=1) if the grid-cell contains at least 1 pharmacy, (=0) otherwise",
     "(=1) if the grid-cell contains at least 1 hospital, (=0) otherwise",
     "(=1) if the grid-cell contains at least 1 doctor's office, (=0) otherwise",
@@ -314,7 +312,7 @@ controls_table[1:6, ] %>%
 
 ## Controls (1/2)
 ```{r}
-controls_table[7:13, ] %>%
+controls_table[7:12, ] %>%
   kable(
     booktabs = TRUE,
     caption = "Neighborhood characteristics"
