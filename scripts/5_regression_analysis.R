@@ -41,7 +41,7 @@ matched_data_main %>%
 
 # dataset contains singletons at the municipality level, there will be excluded before estimating the models
 
-matched_data_main_nos <- full_dataset_main_clean %>%
+matched_data_main_nos <- matched_data_main %>%
   add_count(ags, name = "n_ags") %>%
   filter(n_ags > 1) %>%
   select(-n_ags)
@@ -226,7 +226,7 @@ modelsummary(
 #### Estimate treatment heterogeneity model - Model 2
 
 
-model_heterogeneity <- feols(
+model_heterogeneity_matched <- feols(
   log(price_sqm) ~ school_nearby + school_nearby:abitur_nearby + living_area +  site_area + 
     rooms_n + baths_n + age_building +  I(age_building^2) +  cellar +
     immigrants_percents +  average_age +  pharmacy +  supermarket +
@@ -237,7 +237,7 @@ model_heterogeneity <- feols(
 
 
 modelsummary(
-  model_heterogeneity,
+  model_heterogeneity_matched,
   statistic = "({std.error})",
   stars = c('*' = .10, '**' = .05, '***' = .01),
   coef_omit = "^(?!(school_nearby$|school_nearby:abitur_nearby$)).*",  
@@ -258,6 +258,7 @@ modelsummary(
   gof_omit = "IC|Log|Adj",
   notes = "Note: Robust standard errors clustered at the municipality level in parentheses."
 )
+
 
 
 
