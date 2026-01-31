@@ -22,6 +22,7 @@ format:
       #- file: custom_theme.tex
 execute: 
   echo: false
+  
 ---
 
 # Introduction
@@ -258,6 +259,11 @@ $$
 
 # Results
 
+## Descriptives
+
+## Main specification
+
+## Heterogeneity Model
 
 # Policy Implications and further research
 

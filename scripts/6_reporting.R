@@ -5,17 +5,19 @@
 library(modelsummary)
 library(kableExtra)
 
+is_latex <- knitr::is_latex_output()
 
 #### main specification
 
 models_main <- list(
-  "Baseline" = m1,
-  "Model 2"  = m2,
-  "Model 3"  = m3,
-  "Baseline " = m1_matched,
-  "Model 2 "  = m2_matched,
-  "Model 3 "  = m3_matched
+  "Baseline"      = m1,
+  "Intermediate"  = m2,
+  "Full"          = m3,
+  "Baseline "     = m1_matched,
+  "Intermediate " = m2_matched,
+  "Full "         = m3_matched
 )
+
 
 table_main <- modelsummary(
   models_main,
@@ -24,12 +26,12 @@ table_main <- modelsummary(
   
   add_rows = data.frame(
     term = c("Building controls", "Neighborhood controls", "Region fixed effects"),
-    Baseline  = c("-", "-", "✔"),
-    `Model 2` = c("✔", "-", "✔"),
-    `Model 3` = c("✔", "✔", "✔"),
-    `Baseline `  = c("-", "-", "✔"),
-    `Model 2 `   = c("✔", "-", "✔"),
-    `Model 3 `   = c("✔", "✔", "✔"),
+    "(1)" = c("-", "-", "✔"),
+    "(2)" = c("✔", "-", "✔"),
+    "(3)" = c("✔", "✔", "✔"),
+    "(4)" = c("-", "-", "✔"),
+    "(5)" = c("✔", "-", "✔"),
+    "(6)" = c("✔", "✔", "✔"),
     check.names = FALSE
   ),
   
@@ -47,20 +49,22 @@ table_main <- modelsummary(
   output = "kableExtra"
 ) |>
   add_header_above(c(" " = 1, "Unmatched sample" = 3, "Matched sample" = 3)) |>
-  kable_styling(full_width = FALSE)
+  kable_styling(
+    full_width = FALSE,
+    position = "center",
+    latex_options = if (is_latex) c("hold_position", "booktabs") else NULL,
+    bootstrap_options = if (!is_latex) c("striped", "condensed") else NULL
+  )
 
 table_main
-
-
 
 #### heterogeneity model
 
 
-
-modelsummary(
+table_herogeneity <- modelsummary(
   list(
-    "Unmatched sample" = model_heterogeneity,
-    "Matched sample"   = model_heterogeneity_matched
+    "Full (U)" = model_heterogeneity,
+    "Full (M)" = model_heterogeneity_matched
   ),
   statistic = "({std.error})",
   stars = c('*' = .10, '**' = .05, '***' = .01),
@@ -79,15 +83,26 @@ modelsummary(
   
   add_rows = data.frame(
     term = c("Building controls", "Neighborhood controls", "Region fixed effects"),
-    `Unmatched sample` = c("✔", "✔", "✔"),
-    `Matched sample`   = c("✔", "✔", "✔"),
+    "(1)" = c("✔", "✔", "✔"),
+    "(2)" = c("✔", "✔", "✔"),
     check.names = FALSE
   ),
   
   title = "Effect of School with academic track proximity on House Prices",
   gof_omit = "IC|Log|Adj",
-  notes = "Note: Standard errors clustered at the municipality level in parentheses."
-)
+  notes = "Note: Standard errors clustered at the municipality level in parentheses.",
+  
+  output = "kableExtra"
+) |>
+  add_header_above(c(" " = 1, "Unmatched sample" = 1, "Matched sample" = 1)) |>
+  kable_styling(
+    full_width = FALSE,
+    position = "center",
+    latex_options = if (is_latex) c("hold_position", "booktabs") else NULL,
+    bootstrap_options = if (!is_latex) c("striped", "condensed") else NULL
+  )
+
+table_herogeneity
 
 
 
