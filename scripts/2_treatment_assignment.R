@@ -195,6 +195,14 @@ full_dataset_main_clean <- full_dataset_main_clean %>%
   )
 
 
+# check
 
+vars <- c(
+  "living_area", "site_area", "rooms_n", "baths_n", "age_building", "cellar",
+  "price_sqm", "immigrants_percents", "average_age",
+  "disposable_income_per_capita",
+  "pharmacy", "supermarket", "hospital", "doctors", "park", "ags"
+)
 
-
+full_dataset_main_clean %>%
+  summarise(across(all_of(vars), ~ sum(is.na(.))))

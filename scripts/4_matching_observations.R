@@ -2,8 +2,6 @@
 #### prerequisites ####
 #######################
 
-install.packages("MatchIt")
-install.packages("rio")
 library(rio)
 library(MatchIt)
 library(car)
@@ -71,4 +69,6 @@ matched_data_main <- match.data(ps_main)
 # check N
 matched_data_main %>%
   count(school_nearby)
+
+
 
