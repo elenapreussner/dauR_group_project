@@ -11,16 +11,16 @@ grid <- expand.grid(x = x_start:(x_start + 10), y = y_start:(y_start + 10)) %>%
       dist <= 1 ~ "Treatment-Zone",
       dist == 2 ~ "Buffer-Zone",
       dist %in% 3:4 ~ "Control-Zone",
-      TRUE ~ "Untreated"
+      TRUE ~ "Not considered"
     ),
-    zone = factor(zone, levels = c("Treatment-Zone", "Buffer-Zone", "Control-Zone", "Untreated"))
+    zone = factor(zone, levels = c("Treatment-Zone", "Buffer-Zone", "Control-Zone", "Not considered"))
   )
 
 # Definiere feste Farben für jede Zone
 zone_colors <- c("Treatment-Zone" = "#7FC97F",
                  "Buffer-Zone" = "#BEAED4",
                  "Control-Zone" = "#FDC086",
-                 "Untreated" = "#FFFF99")
+                 "Not considered" = "#808080")
 
 # Version 1: Mit Buffer-Zone
 plot_with_buffer <- ggplot(grid, aes(x, y, fill = zone)) +
@@ -47,15 +47,15 @@ grid_no_buffer <- grid %>%
     zone_no_buffer = case_when(
       dist <= 1 ~ "Treatment-Zone",
       dist >= 2 & dist <= 4 ~ "Control-Zone",
-      TRUE ~ "Untreated"
+      TRUE ~ "Not considered"
     ),
-    zone_no_buffer = factor(zone_no_buffer, levels = c("Treatment-Zone", "Control-Zone", "Untreated"))
+    zone_no_buffer = factor(zone_no_buffer, levels = c("Treatment-Zone", "Control-Zone", "Not considered"))
   )
 
 # Verwende dieselben Farben, aber nur für die relevanten Zonen
 zone_colors_no_buffer <- c("Treatment-Zone" = "#7FC97F",
                            "Control-Zone" = "#FDC086",
-                           "Untreated" = "#FFFF99")
+                           "Not considered" = "#808080")
 
 plot_no_buffer <- ggplot(grid_no_buffer, aes(x, y, fill = zone_no_buffer)) +
   geom_tile(color = "black", linewidth = 0.5) +
