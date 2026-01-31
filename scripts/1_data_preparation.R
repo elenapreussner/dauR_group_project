@@ -297,4 +297,3 @@ housing_full <- housing_data_NRW_control %>%
 
 
 
-
