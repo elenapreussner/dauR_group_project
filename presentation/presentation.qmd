@@ -47,6 +47,24 @@ execute:
   
 ---
 
+```{r setup}
+#| include: false
+library(tidyverse)
+library(ggplot2)
+library(knitr)
+library(kableExtra)
+library(stargazer)
+library(tibble)
+
+setwd("..")
+
+source("scripts/1_data_preparation.R")
+source("scripts/2_treatment_assignment.R")
+source("scripts/3_descriptives.R")
+source("scripts/4_matching_observations.R")
+source("scripts/5_regression_analysis.R")
+```
+
 # Introduction
 
 ## Research Question
@@ -290,7 +308,102 @@ $$
 
 # Results
 
-## Descriptives
+## Descriptives - Price Summary
+
+**Two Groups**
+```{r}
+#| echo: false
+
+summary_2groups %>%
+  select(group, n, price_sqm_mean, price_sqm_sd) %>%
+  kable(
+    format = "latex",
+    booktabs = TRUE,
+    digits = 2,
+    col.names = c("Group", "N", "Mean", "Std. Dev.")
+  ) %>%
+  add_header_above(c(" " = 2, "Price per sqm" = 2)) %>%
+  kable_styling(font_size = 9)
+```
+
+**Three Groups**
+```{r}
+#| echo: false
+
+summary_3groups %>%
+  select(group, n, price_sqm_mean, price_sqm_sd) %>%
+  kable(
+    format = "latex",
+    booktabs = TRUE,
+    digits = 2,
+    col.names = c("Group", "N", "Mean", "Std. Dev.")
+  ) %>%
+  add_header_above(c(" " = 2, "Price per sqm" = 2)) %>%
+  kable_styling(font_size = 9)
+```
+
+## Descriptives - Housing Characteristics Summary
+
+**Two Groups**
+```{r}
+#| echo: false
+
+summary_2groups %>%
+  select(group, living_area_mean, living_area_sd, site_area_mean, site_area_sd,
+         rooms_n_mean, rooms_n_sd, baths_n_mean, baths_n_sd) %>%
+  kable(
+    format = "latex",
+    booktabs = TRUE,
+    digits = 2,
+    col.names = c("Group", rep(c("Mean", "Std. Dev."), 4))
+  ) %>%
+  add_header_above(c(" " = 1, "Living Area" = 2, "Site Area" = 2, 
+                     "Rooms" = 2, "Baths" = 2)) %>%
+  kable_styling(font_size = 7)
+```
+
+**Three Groups**
+```{r}
+#| echo: false
+
+summary_3groups %>%
+  select(group, living_area_mean, living_area_sd, site_area_mean, site_area_sd,
+         rooms_n_mean, rooms_n_sd, baths_n_mean, baths_n_sd) %>%
+  kable(
+    format = "latex",
+    booktabs = TRUE,
+    digits = 2,
+    col.names = c("Group", rep(c("Mean", "Std. Dev."), 4))
+  ) %>%
+  add_header_above(c(" " = 1, "Living Area" = 2, "Site Area" = 2,
+                     "Rooms" = 2, "Baths" = 2)) %>%
+  kable_styling(font_size = 6)
+```
+
+## Descriptives - Balance Test
+
+**School nearby vs. Control**
+```{r}
+#| echo: false
+
+balance_tests_2groups %>%
+  kable(
+    format = "latex",
+    booktabs = TRUE,
+    row.names = FALSE,
+    digits = 3,
+    linesep = "",   # 🔥 DAS ist der Fix
+    col.names = c("Variable", "Mean Treatment", "Mean Control", 
+                  "Difference", "t-statistic", "p-value")
+  ) %>%
+  kable_styling(font_size = 8)
+```
+
+## Descriptives - Boxplot
+```{r, out.width= "80%", fig.align= "center"}
+plot_boxplot_2groups
+```
+
 
 ## Main specification
 
@@ -305,10 +418,6 @@ $$
 ## Controls (1/2)
 
 ```{r}
-library(tibble)
-library(knitr)
-library(kableExtra)
-
 controls_table <- tibble(
   Variable = c(
     "living_area",
