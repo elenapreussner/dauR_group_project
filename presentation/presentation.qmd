@@ -41,9 +41,6 @@ format:
           \tcolorboxenvironment{block}{}
           \tcolorboxenvironment{alertblock}{}
           \tcolorboxenvironment{exampleblock}{}
-          \usepackage{graphicx}
-          
-     
       #- file: custom_theme.tex
       
 execute: 
