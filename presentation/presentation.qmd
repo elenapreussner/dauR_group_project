@@ -200,7 +200,7 @@ available to their child
   % -------- RIGHT COLUMN --------
   \begin{column}{0.45\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{Matching_ID_final}
+    \includegraphics[width=\linewidth]{plot_zones_no_buffer.pdf}
   \end{column}
 
 \end{columns}
@@ -270,7 +270,7 @@ $$
 - log($P_i$): price of a building per $m^2$
 - $D_i$: Is within treatment distance to a secondary school (=1) or not (=0)
 - $\mathbf{X}_i$: set of building characteristics 
-- $\mathbf{N}_i$: set of neighborhood characteristics, includes the SSI for a proxy of the social composition
+- $\mathbf{N}_i$: set of neighborhood characteristics
 - $\text{FE}_{r(i)}$: Regional fixed effects to account for spatial effects at the municipality level
 - $\varepsilon_i$: error term
 
