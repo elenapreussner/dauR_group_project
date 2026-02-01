@@ -88,36 +88,6 @@ m3 <- feols(
 )
 
 
-## create model summary for main specification
-
-modelsummary(
-  list(
-    "Baseline" = m1,
-    "Model 2"  = m2,
-    "Model 3"  = m3
-  ),
-  coef_omit = "^(?!school_nearby$).*",  
-  coef_map = c("school_nearby" = "School nearby"),
-  add_rows = data.frame(
-    term = c("Building controls", "Neighborhood controls", "Region fixed effects"),
-    Baseline = c("-", "-", "✔"),
-    `Model 2`= c("✔", "-", "✔"),
-    `Model 3`= c("✔", "✔", "✔"),
-    check.names = FALSE
-  ),
-  gof_map = data.frame(
-    raw   = c("nobs", "r.squared"),
-    clean = c("Observations", "R²"),
-    fmt   = c(0, 3)
-  ),
-  title = "Effect of Secondary School Proximity on House Prices - without matching",
-  stars = TRUE,
-  gof_omit = "IC|Log|Adj",
-  notes = "Note: Robust standard errors clustered at the municipality level in parentheses."
-)
-
-
-
 #### Estimate treatment heterogeneity model - Model 2
 
 
@@ -129,30 +99,6 @@ model_heterogeneity <- feols(
   data = full_dataset_main_clean_nos,
   vcov = ~ags
 )
-
-
-modelsummary(
-  model_heterogeneity,
-  statistic = "({std.error})",
-  stars = c('*' = .10, '**' = .05, '***' = .01),
-  coef_omit = "^(?!(school_nearby$|school_nearby:abitur_nearby$)).*",  
-  coef_map = c("school_nearby" = "School nearby",
-               "school_nearby:abitur_nearby" = "School nearby × Gymnasium nearby"),
-  gof_map = data.frame(
-    raw   = c("nobs", "r.squared"),
-    clean = c("Observations", "R²"),
-    fmt   = c(0, 3)
-  ),
-  add_rows = data.frame(
-    term = c("Building controls", "Neighborhood controls", "Region fixed effects"),
-    Model = c("✔", "✔", "✔"), 
-    check.names = FALSE
-  ),
-  title = "Effect of School with academic track Proximity on House Prices - without matching",
-  gof_omit = "IC|Log|Adj",
-  notes = "Note: Robust standard errors clustered at the municipality level in parentheses."
-)
-
 
 
 ###### Variant 2 -- matched data
@@ -190,39 +136,6 @@ m3_matched <- feols(
   vcov = ~ags
 )
 
-
-## create model summary for main specification
-
-modelsummary(
-  list(
-    "Baseline" = m1_matched,
-    "Model 2"  = m2_matched,
-    "Model 3"  = m3_matched
-  ),
-  coef_omit = "^(?!school_nearby$).*",  
-  coef_map = c("school_nearby" = "School nearby"),
-  add_rows = data.frame(
-    term = c("Building controls", "Neighborhood controls", "Region fixed effects"),
-    Baseline = c("-", "-", "✔"),
-    `Model 2`= c("✔", "-", "✔"),
-    `Model 3`= c("✔", "✔", "✔"),
-    check.names = FALSE
-  ),
-  gof_map = data.frame(
-    raw   = c("nobs", "r.squared"),
-    clean = c("Observations", "R²"),
-    fmt   = c(0, 3)
-  ),
-  title = "Effect of secondary School Proximity on House Prices - with matching",
-  stars = TRUE,
-  gof_omit = "IC|Log|Adj",
-  notes = "Note: Robust standard errors clustered at the municipality level in parentheses."
-)
-
-
-
-
-
 #### Estimate treatment heterogeneity model - Model 2
 
 
@@ -233,30 +146,6 @@ model_heterogeneity_matched <- feols(
     hospital + doctors +  park | ags,
   data = matched_data_main_nos,
   vcov = ~ags
-)
-
-
-modelsummary(
-  model_heterogeneity_matched,
-  statistic = "({std.error})",
-  stars = c('*' = .10, '**' = .05, '***' = .01),
-  coef_omit = "^(?!(school_nearby$|school_nearby:abitur_nearby$)).*",  
-  coef_map = c("school_nearby" = "School nearby",
-               "school_nearby:abitur_nearby" = "School nearby × Gymnasium nearby"
-  ),
-  gof_map = data.frame(
-    raw   = c("nobs", "r.squared"),
-    clean = c("Observations", "R²"),
-    fmt   = c(0, 3)
-  ),
-  add_rows = data.frame(
-    term = c("Building controls", "Neighborhood controls", "Region fixed effects"),
-    Model = c("✔", "✔", "✔"), 
-    check.names = FALSE
-  ),
-  title = "Effect of School with academic track Proximity on House Prices - with matching",
-  gof_omit = "IC|Log|Adj",
-  notes = "Note: Robust standard errors clustered at the municipality level in parentheses."
 )
 
 
