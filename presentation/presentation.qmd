@@ -295,7 +295,11 @@ $$
 
 ## Main specification
 
+\input{results/tables/results_main_specification.tex}
+
 ## Heterogeneity Model
+
+\input{results/tables/results_heterogeneity.tex}
 
 # Policy Implications and further research
 
