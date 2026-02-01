@@ -40,6 +40,7 @@ format:
           \tcolorboxenvironment{block}{}
           \tcolorboxenvironment{alertblock}{}
           \tcolorboxenvironment{exampleblock}{}
+          \usepackage{amssymb}
       #- file: custom_theme.tex
       
 execute: 
@@ -413,12 +414,12 @@ plot_boxplot_2groups
 #| echo: false
 
 models_main <- list(
-  "Baseline"      = m1,
-  "Intermediate"  = m2,
-  "Full"          = m3,
-  "Baseline "     = m1_matched,
-  "Intermediate " = m2_matched,
-  "Full "         = m3_matched
+  "(1)"      = m1,
+  "(2)"  = m2,
+  "(3)"          = m3,
+  "(1)"     = m1_matched,
+  "(2)" = m2_matched,
+  "(3)"         = m3_matched
 )
 
 modelsummary(
@@ -428,12 +429,12 @@ modelsummary(
   
   add_rows = data.frame(
     term = c("Building controls", "Neighborhood controls", "Region fixed effects"),
-    "(1)" = c("-", "-", "$\\checkmark$"),
-    "(2)" = c("✔", "-", "✔"),
-    "(3)" = c("✔", "✔", "✔"),
-    "(4)" = c("-", "-", "✔"),
-    "(5)" = c("✔", "-", "✔"),
-    "(6)" = c("✔", "✔", "✔"),
+    "(1)" = c("-", "-", "Yes"),
+    "(2)" = c("Yes", "-", "Yes"),
+    "(3)" = c("Yes", "Yes", "Yes"),
+    "(4)" = c("-", "-", "Yes"),
+    "(5)" = c("Yes", "-", "Yes"),
+    "(6)" = c("Yes", "Yes", "Yes"),
     check.names = FALSE
   ),
   
@@ -446,7 +447,7 @@ modelsummary(
   title = "Effect of Secondary School Proximity on House Prices",
   stars = TRUE,
   gof_omit = "IC|Log|Adj",
-  notes = "Note: Standard errors clustered at the municipality level in parentheses.",
+  notes = "Note: Robust standard errors clustered at the municipality level in parentheses.",
   
   output = "latex"
 )
@@ -485,14 +486,14 @@ modelsummary(
   
   add_rows = data.frame(
     term = c("Building controls", "Neighborhood controls", "Region fixed effects"),
-    "(1)" = c("✔", "✔", "✔"),
-    "(2)" = c("✔", "✔", "✔"),
+    "(1)" = c("Yes", "Yes", "Yes"),
+    "(2)" = c("Yes", "Yes", "Yes"),
     check.names = FALSE
   ),
   
   title = "Effect of School with academic track proximity on House Prices",
   gof_omit = "IC|Log|Adj",
-  notes = "Note: Standard errors clustered at the municipality level in parentheses.",
+  notes = "Note: Robust standard errors clustered at the municipality level in parentheses.",
   
   output = "latex"  
 )

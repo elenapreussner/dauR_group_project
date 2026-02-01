@@ -1,0 +1,1525 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/apasortcite//global/global/global}
+    \entry{bayer2007}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=053a35659f0c41752a2bd8a0f1e7416d}{%
+           family={Bayer},
+           familyi={B\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ce1999a2def4b3e68b1e891baff26fee}{%
+           family={Ferreira},
+           familyi={F\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b7080ff9388f2b176cfc2b90ff29f7d5}{%
+           family={McMillan},
+           familyi={M\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {The University of Chicago Press}%
+      }
+      \strng{namehash}{54b61f8917261204e4904c8626f7c84c}
+      \strng{fullhash}{1881bf581089bc8325e688153c2e6638}
+      \strng{fullhashraw}{1881bf581089bc8325e688153c2e6638}
+      \strng{bibnamehash}{1881bf581089bc8325e688153c2e6638}
+      \strng{authorbibnamehash}{1881bf581089bc8325e688153c2e6638}
+      \strng{authornamehash}{54b61f8917261204e4904c8626f7c84c}
+      \strng{authorfullhash}{1881bf581089bc8325e688153c2e6638}
+      \strng{authorfullhashraw}{1881bf581089bc8325e688153c2e6638}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00223808, 1537534X}
+      \field{journaltitle}{Journal of Political Economy}
+      \field{number}{4}
+      \field{title}{A Unified Framework for Measuring Preferences for Schools and Neighborhoods}
+      \field{urlday}{2}
+      \field{urlmonth}{12}
+      \field{urlyear}{2025}
+      \field{volume}{115}
+      \field{year}{2007}
+      \field{urldateera}{ce}
+      \field{pages}{588\bibrangedash 638}
+      \range{pages}{51}
+      \verb{urlraw}
+      \verb http://www.jstor.org/stable/10.1086/522381
+      \endverb
+      \verb{url}
+      \verb http://www.jstor.org/stable/10.1086/522381
+      \endverb
+    \endentry
+    \entry{brunner2012}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=2181a4d9b46979f989fc26b923f8762a}{%
+           family={Brunner},
+           familyi={B\bibinitperiod},
+           given={Eric\bibnamedelima J.},
+           giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5ad72b02e68d1aae8097afcb84b9f42f}{%
+           family={Cho},
+           familyi={C\bibinitperiod},
+           given={Sung-Woo},
+           giveni={S\bibinithyphendelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a14fbfe32c5a180d29f5f302d2d177b2}{%
+           family={Reback},
+           familyi={R\bibinitperiod},
+           given={Randall},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{be2bf70dc01933d55c38d6e525c6b96e}
+      \strng{fullhash}{9d2f4c3c32256581aa5d3d189f97163a}
+      \strng{fullhashraw}{9d2f4c3c32256581aa5d3d189f97163a}
+      \strng{bibnamehash}{9d2f4c3c32256581aa5d3d189f97163a}
+      \strng{authorbibnamehash}{9d2f4c3c32256581aa5d3d189f97163a}
+      \strng{authornamehash}{be2bf70dc01933d55c38d6e525c6b96e}
+      \strng{authorfullhash}{9d2f4c3c32256581aa5d3d189f97163a}
+      \strng{authorfullhashraw}{9d2f4c3c32256581aa5d3d189f97163a}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In theoretical models of residential sorting, a household's location decision is closely linked to its demand for local public services, such as schooling. Since school choice programs weaken the link between residential location and schooling options, they have the potential to affect both property values and residential location choices. Results derived from computable general equilibrium models suggest these effects could be large, but there is limited empirical evidence concerning whether they actually occur. This paper develops and tests predictions concerning the impact of inter-district choice programs on housing values and residential location decisions. Our empirical results strongly confirm our theoretical predictions and the findings of the computable general equilibrium literature: after their states adopt inter-district choice programs, districts with desirable nearby, out-of-district schooling options experience relatively large increases in housing values, residential income, and population density.}
+      \field{issn}{0047-2727}
+      \field{journaltitle}{Journal of Public Economics}
+      \field{number}{7}
+      \field{title}{Mobility, housing markets, and schools: Estimating the effects of inter-district choice programs}
+      \field{volume}{96}
+      \field{year}{2012}
+      \field{pages}{604\bibrangedash 614}
+      \range{pages}{11}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.jpubeco.2012.04.002
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0047272712000369
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0047272712000369
+      \endverb
+      \keyw{Open enrollment,General equilibrium,School choice,Capitalization}
+    \endentry
+    \entry{tchatoka2021}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=4a307675cccbf0d3c74f9934eba8fab6}{%
+           family={Doko\bibnamedelima Tchatoka},
+           familyi={D\bibinitperiod\bibinitdelim T\bibinitperiod},
+           given={Firmin},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5f82733848755b741a9f337fa8e3b17b}{%
+           family={Varvaris},
+           familyi={V\bibinitperiod},
+           given={Vanessa},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{dbdb7b8fb51039688e4d54293275905c}
+      \strng{fullhash}{dbdb7b8fb51039688e4d54293275905c}
+      \strng{fullhashraw}{dbdb7b8fb51039688e4d54293275905c}
+      \strng{bibnamehash}{dbdb7b8fb51039688e4d54293275905c}
+      \strng{authorbibnamehash}{dbdb7b8fb51039688e4d54293275905c}
+      \strng{authornamehash}{dbdb7b8fb51039688e4d54293275905c}
+      \strng{authorfullhash}{dbdb7b8fb51039688e4d54293275905c}
+      \strng{authorfullhashraw}{dbdb7b8fb51039688e4d54293275905c}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Housing Economics}
+      \field{number}{C}
+      \field{title}{Neighbourhood, school zoning and the housing market: Evidence from New South Wales}
+      \field{volume}{54}
+      \field{year}{2021}
+      \verb{doi}
+      \verb 10.1016/j.jhe.2021.101790
+      \endverb
+      \verb{urlraw}
+      \verb https://ideas.repec.org/a/eee/jhouse/v54y2021ics1051137721000401.html
+      \endverb
+      \verb{url}
+      \verb https://ideas.repec.org/a/eee/jhouse/v54y2021ics1051137721000401.html
+      \endverb
+      \keyw{School zoning; House prices; Boundary discontinuity design; Regression discontinuity design; Price p}
+    \endentry
+    \entry{fack2010}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=f20819b6afc2c3af6134ef8f3196c9a3}{%
+           family={Fack},
+           familyi={F\bibinitperiod},
+           given={Gabrielle},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=22ec09a446c4c69b272bc53121b552d4}{%
+           family={Grenet},
+           familyi={G\bibinitperiod},
+           given={Julien},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f9b71468d6b38cfe49b7967572df9317}
+      \strng{fullhash}{f9b71468d6b38cfe49b7967572df9317}
+      \strng{fullhashraw}{f9b71468d6b38cfe49b7967572df9317}
+      \strng{bibnamehash}{f9b71468d6b38cfe49b7967572df9317}
+      \strng{authorbibnamehash}{f9b71468d6b38cfe49b7967572df9317}
+      \strng{authornamehash}{f9b71468d6b38cfe49b7967572df9317}
+      \strng{authorfullhash}{f9b71468d6b38cfe49b7967572df9317}
+      \strng{authorfullhashraw}{f9b71468d6b38cfe49b7967572df9317}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0047-2727}
+      \field{journaltitle}{Journal of Public Economics}
+      \field{number}{1}
+      \field{title}{When do better schools raise housing prices? Evidence from Paris public and private schools}
+      \field{volume}{94}
+      \field{year}{2010}
+      \field{pages}{59\bibrangedash 77}
+      \range{pages}{19}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.jpubeco.2009.10.009
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0047272709001388
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0047272709001388
+      \endverb
+      \keyw{School attendance zones,Private schools,Housing markets,Residential segregation}
+    \endentry
+    \entry{gibbons2003}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=91d1d18089022ac841192f4159f0b87c}{%
+           family={Gibbons},
+           familyi={G\bibinitperiod},
+           given={Steve},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d805cb2e720d45cb623715f0750f64b0}{%
+           family={Machin},
+           familyi={M\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{19254bd7ff8c6258fdc58365d385bf7e}
+      \strng{fullhash}{19254bd7ff8c6258fdc58365d385bf7e}
+      \strng{fullhashraw}{19254bd7ff8c6258fdc58365d385bf7e}
+      \strng{bibnamehash}{19254bd7ff8c6258fdc58365d385bf7e}
+      \strng{authorbibnamehash}{19254bd7ff8c6258fdc58365d385bf7e}
+      \strng{authornamehash}{19254bd7ff8c6258fdc58365d385bf7e}
+      \strng{authorfullhash}{19254bd7ff8c6258fdc58365d385bf7e}
+      \strng{authorfullhashraw}{19254bd7ff8c6258fdc58365d385bf7e}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0094-1190}
+      \field{journaltitle}{Journal of Urban Economics}
+      \field{number}{2}
+      \field{title}{Valuing English primary schools}
+      \field{volume}{53}
+      \field{year}{2003}
+      \field{pages}{197\bibrangedash 219}
+      \range{pages}{23}
+      \verb{doi}
+      \verb https://doi.org/10.1016/S0094-1190(02)00516-8
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0094119002005168
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0094119002005168
+      \endverb
+      \keyw{House prices,School performance}
+    \endentry
+    \entry{hornig2025}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=16c4176621e67d11b2abc72242862479}{%
+           family={Hörnig},
+           familyi={H\bibinitperiod},
+           given={Lukas},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4331e12eb19a9addb7dc34ed87820d6a}{%
+           family={Schäfer},
+           familyi={S\bibinitperiod},
+           given={Max},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1ec1a56e59d195e31cf6ed0c1294bba7}
+      \strng{fullhash}{1ec1a56e59d195e31cf6ed0c1294bba7}
+      \strng{fullhashraw}{1ec1a56e59d195e31cf6ed0c1294bba7}
+      \strng{bibnamehash}{1ec1a56e59d195e31cf6ed0c1294bba7}
+      \strng{authorbibnamehash}{1ec1a56e59d195e31cf6ed0c1294bba7}
+      \strng{authornamehash}{1ec1a56e59d195e31cf6ed0c1294bba7}
+      \strng{authorfullhash}{1ec1a56e59d195e31cf6ed0c1294bba7}
+      \strng{authorfullhashraw}{1ec1a56e59d195e31cf6ed0c1294bba7}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0927-5371}
+      \field{journaltitle}{Labour Economics}
+      \field{note}{The European Association for Labour Economists (EALE) Conference 2024, Bergen, Norway, 5-7 September 2024}
+      \field{title}{The value of school choice opportunities}
+      \field{volume}{95}
+      \field{year}{2025}
+      \field{pages}{102742}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.labeco.2025.102742
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0927537125000661
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0927537125000661
+      \endverb
+      \keyw{School choice,Housing demand,Real estate markets}
+    \endentry
+    \entry{jayantha2015}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=bef3af3db954ad3d163074a48bd78f92}{%
+           family={Jayantha},
+           familyi={J\bibinitperiod},
+           given={Wadu\bibnamedelima Mesthrige},
+           giveni={W\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aa7113696206ebbffb41e4e848a5b102}{%
+           family={Lam},
+           familyi={L\bibinitperiod},
+           given={Siu\bibnamedelima Oi},
+           giveni={S\bibinitperiod\bibinitdelim O\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{1aab24bb04a69a7e2f95b75712cc0a88}
+      \strng{fullhash}{1aab24bb04a69a7e2f95b75712cc0a88}
+      \strng{fullhashraw}{1aab24bb04a69a7e2f95b75712cc0a88}
+      \strng{bibnamehash}{1aab24bb04a69a7e2f95b75712cc0a88}
+      \strng{authorbibnamehash}{1aab24bb04a69a7e2f95b75712cc0a88}
+      \strng{authornamehash}{1aab24bb04a69a7e2f95b75712cc0a88}
+      \strng{authorfullhash}{1aab24bb04a69a7e2f95b75712cc0a88}
+      \strng{authorfullhashraw}{1aab24bb04a69a7e2f95b75712cc0a88}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Habitat International}
+      \field{title}{Capitalization of secondary school education into property values: A case study in Hong Kong}
+      \field{volume}{50}
+      \field{year}{2015}
+      \field{pages}{12\bibrangedash 22}
+      \range{pages}{11}
+    \endentry
+    \entry{la2015}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=54e312e5b17e71e2556e1d112c79f991}{%
+           family={La},
+           familyi={L\bibinitperiod},
+           given={Vincent},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{54e312e5b17e71e2556e1d112c79f991}
+      \strng{fullhash}{54e312e5b17e71e2556e1d112c79f991}
+      \strng{fullhashraw}{54e312e5b17e71e2556e1d112c79f991}
+      \strng{bibnamehash}{54e312e5b17e71e2556e1d112c79f991}
+      \strng{authorbibnamehash}{54e312e5b17e71e2556e1d112c79f991}
+      \strng{authornamehash}{54e312e5b17e71e2556e1d112c79f991}
+      \strng{authorfullhash}{54e312e5b17e71e2556e1d112c79f991}
+      \strng{authorfullhashraw}{54e312e5b17e71e2556e1d112c79f991}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Economics Letters}
+      \field{month}{None}
+      \field{number}{C}
+      \field{title}{Capitalization of school quality into housing prices: Evidence from Boston Public School district walk zones}
+      \field{volume}{134}
+      \field{year}{2015}
+      \field{pages}{102\bibrangedash 106}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1016/j.econlet.2015.07.001
+      \endverb
+      \verb{urlraw}
+      \verb https://ideas.repec.org/a/eee/ecolet/v134y2015icp102-106.html
+      \endverb
+      \verb{url}
+      \verb https://ideas.repec.org/a/eee/ecolet/v134y2015icp102-106.html
+      \endverb
+      \keyw{Housing demand; School quality; Capitalization}
+    \endentry
+    \entry{lu2023}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=82ecbae219cd3e89336a57aaa4226294}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Yi},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4ebdf60bc32a30450fa0c24c72eb9604}{%
+           family={Shi},
+           familyi={S\bibinitperiod},
+           given={Vivien},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1e4e21429a8af8593c6972d7af986af4}{%
+           family={Pettit},
+           familyi={P\bibinitperiod},
+           given={Christopher},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9daa5d342a30fdacf1963bc46a1d954f}
+      \strng{fullhash}{a822c89540c4f5fa399fcb1b0e10b66c}
+      \strng{fullhashraw}{a822c89540c4f5fa399fcb1b0e10b66c}
+      \strng{bibnamehash}{a822c89540c4f5fa399fcb1b0e10b66c}
+      \strng{authorbibnamehash}{a822c89540c4f5fa399fcb1b0e10b66c}
+      \strng{authornamehash}{9daa5d342a30fdacf1963bc46a1d954f}
+      \strng{authorfullhash}{a822c89540c4f5fa399fcb1b0e10b66c}
+      \strng{authorfullhashraw}{a822c89540c4f5fa399fcb1b0e10b66c}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ISPRS International Journal of Geo-Information}
+      \field{month}{07}
+      \field{title}{The Impacts of Public Schools on Housing Prices of Residential Properties: A Case Study of Greater Sydney, Australia}
+      \field{volume}{12}
+      \field{year}{2023}
+      \field{pages}{298}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/ijgi12070298
+      \endverb
+    \endentry
+    \entry{machin2011}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=d805cb2e720d45cb623715f0750f64b0}{%
+           family={Machin},
+           familyi={M\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{d805cb2e720d45cb623715f0750f64b0}
+      \strng{fullhash}{d805cb2e720d45cb623715f0750f64b0}
+      \strng{fullhashraw}{d805cb2e720d45cb623715f0750f64b0}
+      \strng{bibnamehash}{d805cb2e720d45cb623715f0750f64b0}
+      \strng{authorbibnamehash}{d805cb2e720d45cb623715f0750f64b0}
+      \strng{authornamehash}{d805cb2e720d45cb623715f0750f64b0}
+      \strng{authorfullhash}{d805cb2e720d45cb623715f0750f64b0}
+      \strng{authorfullhashraw}{d805cb2e720d45cb623715f0750f64b0}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Labour Economics}
+      \field{month}{None}
+      \field{number}{6}
+      \field{title}{Houses and schools: Valuation of school quality through the housing market}
+      \field{volume}{18}
+      \field{year}{2011}
+      \field{pages}{723\bibrangedash 729}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1016/j.labeco.2011.05.005
+      \endverb
+      \verb{urlraw}
+      \verb https://ideas.repec.org/a/eee/labeco/v18y2011i6p723-729.html
+      \endverb
+      \verb{url}
+      \verb https://ideas.repec.org/a/eee/labeco/v18y2011i6p723-729.html
+      \endverb
+    \endentry
+    \entry{Rubin1974}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=49a367b6280de8a239f8bbdd573f996f}{%
+           family={Rubin},
+           familyi={R\bibinitperiod},
+           given={Donald\bibnamedelima B.},
+           giveni={D\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{49a367b6280de8a239f8bbdd573f996f}
+      \strng{fullhash}{49a367b6280de8a239f8bbdd573f996f}
+      \strng{fullhashraw}{49a367b6280de8a239f8bbdd573f996f}
+      \strng{bibnamehash}{49a367b6280de8a239f8bbdd573f996f}
+      \strng{authorbibnamehash}{49a367b6280de8a239f8bbdd573f996f}
+      \strng{authornamehash}{49a367b6280de8a239f8bbdd573f996f}
+      \strng{authorfullhash}{49a367b6280de8a239f8bbdd573f996f}
+      \strng{authorfullhashraw}{49a367b6280de8a239f8bbdd573f996f}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Educational Psychology}
+      \field{title}{Estimating causal effects of treatments in randomized and nonrandomized studies.}
+      \field{volume}{66}
+      \field{year}{1974}
+      \field{pages}{688\bibrangedash 701}
+      \range{pages}{14}
+      \verb{urlraw}
+      \verb https://api.semanticscholar.org/CorpusID:52832751
+      \endverb
+      \verb{url}
+      \verb https://api.semanticscholar.org/CorpusID:52832751
+      \endverb
+    \endentry
+    \entry{sedgley2008}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=450dffd45fdea82a38636915557a250e}{%
+           family={Sedgley},
+           familyi={S\bibinitperiod},
+           given={Norman\bibnamedelima H.},
+           giveni={N\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7275aec1dbff3d70a2c33ed9904201f4}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Nancy\bibnamedelima A.},
+           giveni={N\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1f4ac97cac829ea7049424022ecf4990}{%
+           family={Derrick},
+           familyi={D\bibinitperiod},
+           given={Frederick\bibnamedelima W.},
+           giveni={F\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{308e54a9462ee555d35ab8db9a9fbccd}
+      \strng{fullhash}{8db40b3f3eb80545bd8fee45ca7cbd2f}
+      \strng{fullhashraw}{8db40b3f3eb80545bd8fee45ca7cbd2f}
+      \strng{bibnamehash}{8db40b3f3eb80545bd8fee45ca7cbd2f}
+      \strng{authorbibnamehash}{8db40b3f3eb80545bd8fee45ca7cbd2f}
+      \strng{authornamehash}{308e54a9462ee555d35ab8db9a9fbccd}
+      \strng{authorfullhash}{8db40b3f3eb80545bd8fee45ca7cbd2f}
+      \strng{authorfullhashraw}{8db40b3f3eb80545bd8fee45ca7cbd2f}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1051-1377}
+      \field{journaltitle}{Journal of Housing Economics}
+      \field{number}{2}
+      \field{title}{The effect of educational test scores on house prices in a model with spatial dependence}
+      \field{volume}{17}
+      \field{year}{2008}
+      \field{pages}{191\bibrangedash 200}
+      \range{pages}{10}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.jhe.2007.12.003
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S1051137708000090
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S1051137708000090
+      \endverb
+      \keyw{Hedonic pricing,Spatial modeling,School quality}
+    \endentry
+    \entry{tiebout1956}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ff9f3b308b0c32e582fa2ac8c718001d}{%
+           family={Tiebout},
+           familyi={T\bibinitperiod},
+           given={Charles\bibnamedelima M.},
+           giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {University of Chicago Press}%
+      }
+      \strng{namehash}{ff9f3b308b0c32e582fa2ac8c718001d}
+      \strng{fullhash}{ff9f3b308b0c32e582fa2ac8c718001d}
+      \strng{fullhashraw}{ff9f3b308b0c32e582fa2ac8c718001d}
+      \strng{bibnamehash}{ff9f3b308b0c32e582fa2ac8c718001d}
+      \strng{authorbibnamehash}{ff9f3b308b0c32e582fa2ac8c718001d}
+      \strng{authornamehash}{ff9f3b308b0c32e582fa2ac8c718001d}
+      \strng{authorfullhash}{ff9f3b308b0c32e582fa2ac8c718001d}
+      \strng{authorfullhashraw}{ff9f3b308b0c32e582fa2ac8c718001d}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00223808, 1537534X}
+      \field{journaltitle}{Journal of Political Economy}
+      \field{number}{5}
+      \field{title}{A Pure Theory of Local Expenditures}
+      \field{urlday}{8}
+      \field{urlmonth}{12}
+      \field{urlyear}{2025}
+      \field{volume}{64}
+      \field{year}{1956}
+      \field{urldateera}{ce}
+      \field{pages}{416\bibrangedash 424}
+      \range{pages}{9}
+      \verb{urlraw}
+      \verb http://www.jstor.org/stable/1826343
+      \endverb
+      \verb{url}
+      \verb http://www.jstor.org/stable/1826343
+      \endverb
+    \endentry
+    \entry{wen2018}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=558489e4b3dc0d7b4f9b2bde9e3d1538}{%
+           family={Wen},
+           familyi={W\bibinitperiod},
+           given={Haizhen},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=99663f49679bcecfa3fa3eaf8ccd45bc}{%
+           family={Xiao},
+           familyi={X\bibinitperiod},
+           given={Yue},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b0fad8aa797504860463be3b8eeb6d27}{%
+           family={Hui},
+           familyi={H\bibinitperiod},
+           given={Eddie\bibnamedelima C.M.},
+           giveni={E\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=880bd45fc914edafbb19fcf1b8e46840}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Ling},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a0458f1bedc8803fb5e327d3323faf95}
+      \strng{fullhash}{014ee339815c26c9e169e1239a632a5f}
+      \strng{fullhashraw}{014ee339815c26c9e169e1239a632a5f}
+      \strng{bibnamehash}{014ee339815c26c9e169e1239a632a5f}
+      \strng{authorbibnamehash}{014ee339815c26c9e169e1239a632a5f}
+      \strng{authornamehash}{a0458f1bedc8803fb5e327d3323faf95}
+      \strng{authorfullhash}{014ee339815c26c9e169e1239a632a5f}
+      \strng{authorfullhashraw}{014ee339815c26c9e169e1239a632a5f}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0197-3975}
+      \field{journaltitle}{Habitat International}
+      \field{title}{Education quality, accessibility, and housing price: Does spatial heterogeneity exist in education capitalization?}
+      \field{volume}{78}
+      \field{year}{2018}
+      \field{pages}{68\bibrangedash 82}
+      \range{pages}{15}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.habitatint.2018.05.012
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0197397517311001
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0197397517311001
+      \endverb
+      \keyw{Housing price,Educational capitalization,Spatial heterogeneity,Geographically weighted regression}
+    \endentry
+    \entry{zhang2020}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=6d736e96ff3873287be230aca56f1a7d}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Jingke},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dfc6f7a4b00413383cf25590adf08077}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Huan},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=66ede8f35947d0ba01c8193d12b704b0}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Jingxia},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=05edb8a94ec5138c0c48591d67c83166}{%
+           family={Zheng},
+           familyi={Z\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=466d90849ccf7e74e32d338b7c35491d}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Heng},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5d8cc12b338ca04698b547a0f8f1e2dd}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Zhigang},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{07091b122aaa0c642b61facc9d62b66a}
+      \strng{fullhash}{6683e2b14188f32f683c3d0764129148}
+      \strng{fullhashraw}{6683e2b14188f32f683c3d0764129148}
+      \strng{bibnamehash}{6683e2b14188f32f683c3d0764129148}
+      \strng{authorbibnamehash}{6683e2b14188f32f683c3d0764129148}
+      \strng{authornamehash}{07091b122aaa0c642b61facc9d62b66a}
+      \strng{authorfullhash}{6683e2b14188f32f683c3d0764129148}
+      \strng{authorfullhashraw}{6683e2b14188f32f683c3d0764129148}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0264-8377}
+      \field{journaltitle}{Land Use Policy}
+      \field{title}{Meta-analysis of the relationship between high quality basic education resources and housing prices}
+      \field{volume}{99}
+      \field{year}{2020}
+      \field{pages}{104843}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.landusepol.2020.104843
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0264837719321817
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0264837719321817
+      \endverb
+      \keyw{School district housing,High quality,Basic education resources,Housing prices,Premium rate}
+    \endentry
+  \enddatalist
+  \datalist[entry]{apa/global//global/global/global}
+    \entry{bayer2007}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=053a35659f0c41752a2bd8a0f1e7416d}{%
+           family={Bayer},
+           familyi={B\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ce1999a2def4b3e68b1e891baff26fee}{%
+           family={Ferreira},
+           familyi={F\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b7080ff9388f2b176cfc2b90ff29f7d5}{%
+           family={McMillan},
+           familyi={M\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {The University of Chicago Press}%
+      }
+      \strng{namehash}{54b61f8917261204e4904c8626f7c84c}
+      \strng{fullhash}{1881bf581089bc8325e688153c2e6638}
+      \strng{fullhashraw}{1881bf581089bc8325e688153c2e6638}
+      \strng{bibnamehash}{1881bf581089bc8325e688153c2e6638}
+      \strng{authorbibnamehash}{1881bf581089bc8325e688153c2e6638}
+      \strng{authornamehash}{54b61f8917261204e4904c8626f7c84c}
+      \strng{authorfullhash}{1881bf581089bc8325e688153c2e6638}
+      \strng{authorfullhashraw}{1881bf581089bc8325e688153c2e6638}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00223808, 1537534X}
+      \field{journaltitle}{Journal of Political Economy}
+      \field{number}{4}
+      \field{title}{A Unified Framework for Measuring Preferences for Schools and Neighborhoods}
+      \field{urlday}{2}
+      \field{urlmonth}{12}
+      \field{urlyear}{2025}
+      \field{volume}{115}
+      \field{year}{2007}
+      \field{urldateera}{ce}
+      \field{pages}{588\bibrangedash 638}
+      \range{pages}{51}
+      \verb{urlraw}
+      \verb http://www.jstor.org/stable/10.1086/522381
+      \endverb
+      \verb{url}
+      \verb http://www.jstor.org/stable/10.1086/522381
+      \endverb
+    \endentry
+    \entry{brunner2012}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=2181a4d9b46979f989fc26b923f8762a}{%
+           family={Brunner},
+           familyi={B\bibinitperiod},
+           given={Eric\bibnamedelima J.},
+           giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5ad72b02e68d1aae8097afcb84b9f42f}{%
+           family={Cho},
+           familyi={C\bibinitperiod},
+           given={Sung-Woo},
+           giveni={S\bibinithyphendelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a14fbfe32c5a180d29f5f302d2d177b2}{%
+           family={Reback},
+           familyi={R\bibinitperiod},
+           given={Randall},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{be2bf70dc01933d55c38d6e525c6b96e}
+      \strng{fullhash}{9d2f4c3c32256581aa5d3d189f97163a}
+      \strng{fullhashraw}{9d2f4c3c32256581aa5d3d189f97163a}
+      \strng{bibnamehash}{9d2f4c3c32256581aa5d3d189f97163a}
+      \strng{authorbibnamehash}{9d2f4c3c32256581aa5d3d189f97163a}
+      \strng{authornamehash}{be2bf70dc01933d55c38d6e525c6b96e}
+      \strng{authorfullhash}{9d2f4c3c32256581aa5d3d189f97163a}
+      \strng{authorfullhashraw}{9d2f4c3c32256581aa5d3d189f97163a}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In theoretical models of residential sorting, a household's location decision is closely linked to its demand for local public services, such as schooling. Since school choice programs weaken the link between residential location and schooling options, they have the potential to affect both property values and residential location choices. Results derived from computable general equilibrium models suggest these effects could be large, but there is limited empirical evidence concerning whether they actually occur. This paper develops and tests predictions concerning the impact of inter-district choice programs on housing values and residential location decisions. Our empirical results strongly confirm our theoretical predictions and the findings of the computable general equilibrium literature: after their states adopt inter-district choice programs, districts with desirable nearby, out-of-district schooling options experience relatively large increases in housing values, residential income, and population density.}
+      \field{issn}{0047-2727}
+      \field{journaltitle}{Journal of Public Economics}
+      \field{number}{7}
+      \field{title}{Mobility, housing markets, and schools: Estimating the effects of inter-district choice programs}
+      \field{volume}{96}
+      \field{year}{2012}
+      \field{pages}{604\bibrangedash 614}
+      \range{pages}{11}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.jpubeco.2012.04.002
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0047272712000369
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0047272712000369
+      \endverb
+      \keyw{Open enrollment,General equilibrium,School choice,Capitalization}
+    \endentry
+    \entry{tchatoka2021}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=4a307675cccbf0d3c74f9934eba8fab6}{%
+           family={Doko\bibnamedelima Tchatoka},
+           familyi={D\bibinitperiod\bibinitdelim T\bibinitperiod},
+           given={Firmin},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5f82733848755b741a9f337fa8e3b17b}{%
+           family={Varvaris},
+           familyi={V\bibinitperiod},
+           given={Vanessa},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{dbdb7b8fb51039688e4d54293275905c}
+      \strng{fullhash}{dbdb7b8fb51039688e4d54293275905c}
+      \strng{fullhashraw}{dbdb7b8fb51039688e4d54293275905c}
+      \strng{bibnamehash}{dbdb7b8fb51039688e4d54293275905c}
+      \strng{authorbibnamehash}{dbdb7b8fb51039688e4d54293275905c}
+      \strng{authornamehash}{dbdb7b8fb51039688e4d54293275905c}
+      \strng{authorfullhash}{dbdb7b8fb51039688e4d54293275905c}
+      \strng{authorfullhashraw}{dbdb7b8fb51039688e4d54293275905c}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Housing Economics}
+      \field{number}{C}
+      \field{title}{Neighbourhood, school zoning and the housing market: Evidence from New South Wales}
+      \field{volume}{54}
+      \field{year}{2021}
+      \verb{doi}
+      \verb 10.1016/j.jhe.2021.101790
+      \endverb
+      \verb{urlraw}
+      \verb https://ideas.repec.org/a/eee/jhouse/v54y2021ics1051137721000401.html
+      \endverb
+      \verb{url}
+      \verb https://ideas.repec.org/a/eee/jhouse/v54y2021ics1051137721000401.html
+      \endverb
+      \keyw{School zoning; House prices; Boundary discontinuity design; Regression discontinuity design; Price p}
+    \endentry
+    \entry{fack2010}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=f20819b6afc2c3af6134ef8f3196c9a3}{%
+           family={Fack},
+           familyi={F\bibinitperiod},
+           given={Gabrielle},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=22ec09a446c4c69b272bc53121b552d4}{%
+           family={Grenet},
+           familyi={G\bibinitperiod},
+           given={Julien},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f9b71468d6b38cfe49b7967572df9317}
+      \strng{fullhash}{f9b71468d6b38cfe49b7967572df9317}
+      \strng{fullhashraw}{f9b71468d6b38cfe49b7967572df9317}
+      \strng{bibnamehash}{f9b71468d6b38cfe49b7967572df9317}
+      \strng{authorbibnamehash}{f9b71468d6b38cfe49b7967572df9317}
+      \strng{authornamehash}{f9b71468d6b38cfe49b7967572df9317}
+      \strng{authorfullhash}{f9b71468d6b38cfe49b7967572df9317}
+      \strng{authorfullhashraw}{f9b71468d6b38cfe49b7967572df9317}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0047-2727}
+      \field{journaltitle}{Journal of Public Economics}
+      \field{number}{1}
+      \field{title}{When do better schools raise housing prices? Evidence from Paris public and private schools}
+      \field{volume}{94}
+      \field{year}{2010}
+      \field{pages}{59\bibrangedash 77}
+      \range{pages}{19}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.jpubeco.2009.10.009
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0047272709001388
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0047272709001388
+      \endverb
+      \keyw{School attendance zones,Private schools,Housing markets,Residential segregation}
+    \endentry
+    \entry{gibbons2003}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=91d1d18089022ac841192f4159f0b87c}{%
+           family={Gibbons},
+           familyi={G\bibinitperiod},
+           given={Steve},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d805cb2e720d45cb623715f0750f64b0}{%
+           family={Machin},
+           familyi={M\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{19254bd7ff8c6258fdc58365d385bf7e}
+      \strng{fullhash}{19254bd7ff8c6258fdc58365d385bf7e}
+      \strng{fullhashraw}{19254bd7ff8c6258fdc58365d385bf7e}
+      \strng{bibnamehash}{19254bd7ff8c6258fdc58365d385bf7e}
+      \strng{authorbibnamehash}{19254bd7ff8c6258fdc58365d385bf7e}
+      \strng{authornamehash}{19254bd7ff8c6258fdc58365d385bf7e}
+      \strng{authorfullhash}{19254bd7ff8c6258fdc58365d385bf7e}
+      \strng{authorfullhashraw}{19254bd7ff8c6258fdc58365d385bf7e}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0094-1190}
+      \field{journaltitle}{Journal of Urban Economics}
+      \field{number}{2}
+      \field{title}{Valuing English primary schools}
+      \field{volume}{53}
+      \field{year}{2003}
+      \field{pages}{197\bibrangedash 219}
+      \range{pages}{23}
+      \verb{doi}
+      \verb https://doi.org/10.1016/S0094-1190(02)00516-8
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0094119002005168
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0094119002005168
+      \endverb
+      \keyw{House prices,School performance}
+    \endentry
+    \entry{hornig2025}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=16c4176621e67d11b2abc72242862479}{%
+           family={Hörnig},
+           familyi={H\bibinitperiod},
+           given={Lukas},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4331e12eb19a9addb7dc34ed87820d6a}{%
+           family={Schäfer},
+           familyi={S\bibinitperiod},
+           given={Max},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1ec1a56e59d195e31cf6ed0c1294bba7}
+      \strng{fullhash}{1ec1a56e59d195e31cf6ed0c1294bba7}
+      \strng{fullhashraw}{1ec1a56e59d195e31cf6ed0c1294bba7}
+      \strng{bibnamehash}{1ec1a56e59d195e31cf6ed0c1294bba7}
+      \strng{authorbibnamehash}{1ec1a56e59d195e31cf6ed0c1294bba7}
+      \strng{authornamehash}{1ec1a56e59d195e31cf6ed0c1294bba7}
+      \strng{authorfullhash}{1ec1a56e59d195e31cf6ed0c1294bba7}
+      \strng{authorfullhashraw}{1ec1a56e59d195e31cf6ed0c1294bba7}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0927-5371}
+      \field{journaltitle}{Labour Economics}
+      \field{note}{The European Association for Labour Economists (EALE) Conference 2024, Bergen, Norway, 5-7 September 2024}
+      \field{title}{The value of school choice opportunities}
+      \field{volume}{95}
+      \field{year}{2025}
+      \field{pages}{102742}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.labeco.2025.102742
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0927537125000661
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0927537125000661
+      \endverb
+      \keyw{School choice,Housing demand,Real estate markets}
+    \endentry
+    \entry{jayantha2015}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=bef3af3db954ad3d163074a48bd78f92}{%
+           family={Jayantha},
+           familyi={J\bibinitperiod},
+           given={Wadu\bibnamedelima Mesthrige},
+           giveni={W\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aa7113696206ebbffb41e4e848a5b102}{%
+           family={Lam},
+           familyi={L\bibinitperiod},
+           given={Siu\bibnamedelima Oi},
+           giveni={S\bibinitperiod\bibinitdelim O\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{1aab24bb04a69a7e2f95b75712cc0a88}
+      \strng{fullhash}{1aab24bb04a69a7e2f95b75712cc0a88}
+      \strng{fullhashraw}{1aab24bb04a69a7e2f95b75712cc0a88}
+      \strng{bibnamehash}{1aab24bb04a69a7e2f95b75712cc0a88}
+      \strng{authorbibnamehash}{1aab24bb04a69a7e2f95b75712cc0a88}
+      \strng{authornamehash}{1aab24bb04a69a7e2f95b75712cc0a88}
+      \strng{authorfullhash}{1aab24bb04a69a7e2f95b75712cc0a88}
+      \strng{authorfullhashraw}{1aab24bb04a69a7e2f95b75712cc0a88}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Habitat International}
+      \field{title}{Capitalization of secondary school education into property values: A case study in Hong Kong}
+      \field{volume}{50}
+      \field{year}{2015}
+      \field{pages}{12\bibrangedash 22}
+      \range{pages}{11}
+    \endentry
+    \entry{la2015}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=54e312e5b17e71e2556e1d112c79f991}{%
+           family={La},
+           familyi={L\bibinitperiod},
+           given={Vincent},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{54e312e5b17e71e2556e1d112c79f991}
+      \strng{fullhash}{54e312e5b17e71e2556e1d112c79f991}
+      \strng{fullhashraw}{54e312e5b17e71e2556e1d112c79f991}
+      \strng{bibnamehash}{54e312e5b17e71e2556e1d112c79f991}
+      \strng{authorbibnamehash}{54e312e5b17e71e2556e1d112c79f991}
+      \strng{authornamehash}{54e312e5b17e71e2556e1d112c79f991}
+      \strng{authorfullhash}{54e312e5b17e71e2556e1d112c79f991}
+      \strng{authorfullhashraw}{54e312e5b17e71e2556e1d112c79f991}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Economics Letters}
+      \field{month}{None}
+      \field{number}{C}
+      \field{title}{Capitalization of school quality into housing prices: Evidence from Boston Public School district walk zones}
+      \field{volume}{134}
+      \field{year}{2015}
+      \field{pages}{102\bibrangedash 106}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1016/j.econlet.2015.07.001
+      \endverb
+      \verb{urlraw}
+      \verb https://ideas.repec.org/a/eee/ecolet/v134y2015icp102-106.html
+      \endverb
+      \verb{url}
+      \verb https://ideas.repec.org/a/eee/ecolet/v134y2015icp102-106.html
+      \endverb
+      \keyw{Housing demand; School quality; Capitalization}
+    \endentry
+    \entry{lu2023}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=82ecbae219cd3e89336a57aaa4226294}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Yi},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4ebdf60bc32a30450fa0c24c72eb9604}{%
+           family={Shi},
+           familyi={S\bibinitperiod},
+           given={Vivien},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1e4e21429a8af8593c6972d7af986af4}{%
+           family={Pettit},
+           familyi={P\bibinitperiod},
+           given={Christopher},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9daa5d342a30fdacf1963bc46a1d954f}
+      \strng{fullhash}{a822c89540c4f5fa399fcb1b0e10b66c}
+      \strng{fullhashraw}{a822c89540c4f5fa399fcb1b0e10b66c}
+      \strng{bibnamehash}{a822c89540c4f5fa399fcb1b0e10b66c}
+      \strng{authorbibnamehash}{a822c89540c4f5fa399fcb1b0e10b66c}
+      \strng{authornamehash}{9daa5d342a30fdacf1963bc46a1d954f}
+      \strng{authorfullhash}{a822c89540c4f5fa399fcb1b0e10b66c}
+      \strng{authorfullhashraw}{a822c89540c4f5fa399fcb1b0e10b66c}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ISPRS International Journal of Geo-Information}
+      \field{month}{07}
+      \field{title}{The Impacts of Public Schools on Housing Prices of Residential Properties: A Case Study of Greater Sydney, Australia}
+      \field{volume}{12}
+      \field{year}{2023}
+      \field{pages}{298}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/ijgi12070298
+      \endverb
+    \endentry
+    \entry{machin2011}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=d805cb2e720d45cb623715f0750f64b0}{%
+           family={Machin},
+           familyi={M\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{d805cb2e720d45cb623715f0750f64b0}
+      \strng{fullhash}{d805cb2e720d45cb623715f0750f64b0}
+      \strng{fullhashraw}{d805cb2e720d45cb623715f0750f64b0}
+      \strng{bibnamehash}{d805cb2e720d45cb623715f0750f64b0}
+      \strng{authorbibnamehash}{d805cb2e720d45cb623715f0750f64b0}
+      \strng{authornamehash}{d805cb2e720d45cb623715f0750f64b0}
+      \strng{authorfullhash}{d805cb2e720d45cb623715f0750f64b0}
+      \strng{authorfullhashraw}{d805cb2e720d45cb623715f0750f64b0}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Labour Economics}
+      \field{month}{None}
+      \field{number}{6}
+      \field{title}{Houses and schools: Valuation of school quality through the housing market}
+      \field{volume}{18}
+      \field{year}{2011}
+      \field{pages}{723\bibrangedash 729}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1016/j.labeco.2011.05.005
+      \endverb
+      \verb{urlraw}
+      \verb https://ideas.repec.org/a/eee/labeco/v18y2011i6p723-729.html
+      \endverb
+      \verb{url}
+      \verb https://ideas.repec.org/a/eee/labeco/v18y2011i6p723-729.html
+      \endverb
+    \endentry
+    \entry{Rubin1974}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=49a367b6280de8a239f8bbdd573f996f}{%
+           family={Rubin},
+           familyi={R\bibinitperiod},
+           given={Donald\bibnamedelima B.},
+           giveni={D\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{49a367b6280de8a239f8bbdd573f996f}
+      \strng{fullhash}{49a367b6280de8a239f8bbdd573f996f}
+      \strng{fullhashraw}{49a367b6280de8a239f8bbdd573f996f}
+      \strng{bibnamehash}{49a367b6280de8a239f8bbdd573f996f}
+      \strng{authorbibnamehash}{49a367b6280de8a239f8bbdd573f996f}
+      \strng{authornamehash}{49a367b6280de8a239f8bbdd573f996f}
+      \strng{authorfullhash}{49a367b6280de8a239f8bbdd573f996f}
+      \strng{authorfullhashraw}{49a367b6280de8a239f8bbdd573f996f}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Educational Psychology}
+      \field{title}{Estimating causal effects of treatments in randomized and nonrandomized studies.}
+      \field{volume}{66}
+      \field{year}{1974}
+      \field{pages}{688\bibrangedash 701}
+      \range{pages}{14}
+      \verb{urlraw}
+      \verb https://api.semanticscholar.org/CorpusID:52832751
+      \endverb
+      \verb{url}
+      \verb https://api.semanticscholar.org/CorpusID:52832751
+      \endverb
+    \endentry
+    \entry{sedgley2008}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=450dffd45fdea82a38636915557a250e}{%
+           family={Sedgley},
+           familyi={S\bibinitperiod},
+           given={Norman\bibnamedelima H.},
+           giveni={N\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7275aec1dbff3d70a2c33ed9904201f4}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Nancy\bibnamedelima A.},
+           giveni={N\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1f4ac97cac829ea7049424022ecf4990}{%
+           family={Derrick},
+           familyi={D\bibinitperiod},
+           given={Frederick\bibnamedelima W.},
+           giveni={F\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{308e54a9462ee555d35ab8db9a9fbccd}
+      \strng{fullhash}{8db40b3f3eb80545bd8fee45ca7cbd2f}
+      \strng{fullhashraw}{8db40b3f3eb80545bd8fee45ca7cbd2f}
+      \strng{bibnamehash}{8db40b3f3eb80545bd8fee45ca7cbd2f}
+      \strng{authorbibnamehash}{8db40b3f3eb80545bd8fee45ca7cbd2f}
+      \strng{authornamehash}{308e54a9462ee555d35ab8db9a9fbccd}
+      \strng{authorfullhash}{8db40b3f3eb80545bd8fee45ca7cbd2f}
+      \strng{authorfullhashraw}{8db40b3f3eb80545bd8fee45ca7cbd2f}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1051-1377}
+      \field{journaltitle}{Journal of Housing Economics}
+      \field{number}{2}
+      \field{title}{The effect of educational test scores on house prices in a model with spatial dependence}
+      \field{volume}{17}
+      \field{year}{2008}
+      \field{pages}{191\bibrangedash 200}
+      \range{pages}{10}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.jhe.2007.12.003
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S1051137708000090
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S1051137708000090
+      \endverb
+      \keyw{Hedonic pricing,Spatial modeling,School quality}
+    \endentry
+    \entry{tiebout1956}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ff9f3b308b0c32e582fa2ac8c718001d}{%
+           family={Tiebout},
+           familyi={T\bibinitperiod},
+           given={Charles\bibnamedelima M.},
+           giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {University of Chicago Press}%
+      }
+      \strng{namehash}{ff9f3b308b0c32e582fa2ac8c718001d}
+      \strng{fullhash}{ff9f3b308b0c32e582fa2ac8c718001d}
+      \strng{fullhashraw}{ff9f3b308b0c32e582fa2ac8c718001d}
+      \strng{bibnamehash}{ff9f3b308b0c32e582fa2ac8c718001d}
+      \strng{authorbibnamehash}{ff9f3b308b0c32e582fa2ac8c718001d}
+      \strng{authornamehash}{ff9f3b308b0c32e582fa2ac8c718001d}
+      \strng{authorfullhash}{ff9f3b308b0c32e582fa2ac8c718001d}
+      \strng{authorfullhashraw}{ff9f3b308b0c32e582fa2ac8c718001d}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00223808, 1537534X}
+      \field{journaltitle}{Journal of Political Economy}
+      \field{number}{5}
+      \field{title}{A Pure Theory of Local Expenditures}
+      \field{urlday}{8}
+      \field{urlmonth}{12}
+      \field{urlyear}{2025}
+      \field{volume}{64}
+      \field{year}{1956}
+      \field{urldateera}{ce}
+      \field{pages}{416\bibrangedash 424}
+      \range{pages}{9}
+      \verb{urlraw}
+      \verb http://www.jstor.org/stable/1826343
+      \endverb
+      \verb{url}
+      \verb http://www.jstor.org/stable/1826343
+      \endverb
+    \endentry
+    \entry{wen2018}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=558489e4b3dc0d7b4f9b2bde9e3d1538}{%
+           family={Wen},
+           familyi={W\bibinitperiod},
+           given={Haizhen},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=99663f49679bcecfa3fa3eaf8ccd45bc}{%
+           family={Xiao},
+           familyi={X\bibinitperiod},
+           given={Yue},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b0fad8aa797504860463be3b8eeb6d27}{%
+           family={Hui},
+           familyi={H\bibinitperiod},
+           given={Eddie\bibnamedelima C.M.},
+           giveni={E\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=880bd45fc914edafbb19fcf1b8e46840}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Ling},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a0458f1bedc8803fb5e327d3323faf95}
+      \strng{fullhash}{014ee339815c26c9e169e1239a632a5f}
+      \strng{fullhashraw}{014ee339815c26c9e169e1239a632a5f}
+      \strng{bibnamehash}{014ee339815c26c9e169e1239a632a5f}
+      \strng{authorbibnamehash}{014ee339815c26c9e169e1239a632a5f}
+      \strng{authornamehash}{a0458f1bedc8803fb5e327d3323faf95}
+      \strng{authorfullhash}{014ee339815c26c9e169e1239a632a5f}
+      \strng{authorfullhashraw}{014ee339815c26c9e169e1239a632a5f}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0197-3975}
+      \field{journaltitle}{Habitat International}
+      \field{title}{Education quality, accessibility, and housing price: Does spatial heterogeneity exist in education capitalization?}
+      \field{volume}{78}
+      \field{year}{2018}
+      \field{pages}{68\bibrangedash 82}
+      \range{pages}{15}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.habitatint.2018.05.012
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0197397517311001
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0197397517311001
+      \endverb
+      \keyw{Housing price,Educational capitalization,Spatial heterogeneity,Geographically weighted regression}
+    \endentry
+    \entry{zhang2020}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=6d736e96ff3873287be230aca56f1a7d}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Jingke},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dfc6f7a4b00413383cf25590adf08077}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Huan},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=66ede8f35947d0ba01c8193d12b704b0}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Jingxia},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=05edb8a94ec5138c0c48591d67c83166}{%
+           family={Zheng},
+           familyi={Z\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=466d90849ccf7e74e32d338b7c35491d}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Heng},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5d8cc12b338ca04698b547a0f8f1e2dd}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Zhigang},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{07091b122aaa0c642b61facc9d62b66a}
+      \strng{fullhash}{6683e2b14188f32f683c3d0764129148}
+      \strng{fullhashraw}{6683e2b14188f32f683c3d0764129148}
+      \strng{bibnamehash}{6683e2b14188f32f683c3d0764129148}
+      \strng{authorbibnamehash}{6683e2b14188f32f683c3d0764129148}
+      \strng{authornamehash}{07091b122aaa0c642b61facc9d62b66a}
+      \strng{authorfullhash}{6683e2b14188f32f683c3d0764129148}
+      \strng{authorfullhashraw}{6683e2b14188f32f683c3d0764129148}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0264-8377}
+      \field{journaltitle}{Land Use Policy}
+      \field{title}{Meta-analysis of the relationship between high quality basic education resources and housing prices}
+      \field{volume}{99}
+      \field{year}{2020}
+      \field{pages}{104843}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.landusepol.2020.104843
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0264837719321817
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0264837719321817
+      \endverb
+      \keyw{School district housing,High quality,Basic education resources,Housing prices,Premium rate}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
