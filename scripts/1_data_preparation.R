@@ -3,16 +3,13 @@
 #########################
 
 ### load necessary packages
-library(stargazer)
-library(rlang)
-#install.packages("stargazer")
 library(tidyverse)
 library(readxl)
 library(sf)
 library(here)
 #here("C:/Users/bened/OneDrive/Desktop/Uni/Master Economic Policy Consulting/Wintersemester 2025-26/Data Analysis/dauR_group_project")
 
-setwd("C:/Users/bened/OneDrive/Desktop/Uni/Master Economic Policy Consulting/Wintersemester 2025-26/Data Analysis/dauR_group_project")
+#setwd("C:/Users/bened/OneDrive/Desktop/Uni/Master Economic Policy Consulting/Wintersemester 2025-26/Data Analysis/dauR_group_project")
 
 
 # user <- Sys.getenv("USERNAME")

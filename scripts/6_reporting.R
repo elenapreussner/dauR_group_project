@@ -113,19 +113,19 @@ table_heterogeneity
 
 # main specification
 
-writeLines(
-  as.character(table_main),
-  file.path("presentation/results_main_specification.tex")
-)
-  
-# heterogeneity model
-
-
-writeLines(
-  as.character(table_heterogeneity),
-  file.path("presentation/results_heterogeneity.tex")
-)
-
+# writeLines(
+#   as.character(table_main),
+#   file.path("presentation/results_main_specification.tex")
+# )
+#   
+# # heterogeneity model
+# 
+# 
+# writeLines(
+#   as.character(table_heterogeneity),
+#   file.path("presentation/results_heterogeneity.tex")
+# )
+# 
 
 
 
