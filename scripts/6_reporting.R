@@ -18,7 +18,6 @@ models_main <- list(
   "Full "         = m3_matched
 )
 
-
 table_main <- modelsummary(
   models_main,
   coef_omit = "^(?!school_nearby$).*",
@@ -46,22 +45,24 @@ table_main <- modelsummary(
   gof_omit = "IC|Log|Adj",
   notes = "Note: Standard errors clustered at the municipality level in parentheses.",
   
-  output = "kableExtra"
+  output = "latex"   
 ) |>
-  add_header_above(c(" " = 1, "Unmatched sample" = 3, "Matched sample" = 3)) |>
+  add_header_above(
+    c(" " = 1, "Unmatched sample" = 3, "Matched sample" = 3)
+  ) |>
   kable_styling(
     full_width = FALSE,
     position = "center",
-    latex_options = if (is_latex) c("hold_position", "booktabs") else NULL,
-    bootstrap_options = if (!is_latex) c("striped", "condensed") else NULL
+    latex_options = c("hold_position", "booktabs")
   )
+
 
 table_main
 
 #### heterogeneity model
 
 
-table_herogeneity <- modelsummary(
+table_heterogeneity <- modelsummary(
   list(
     "Full (U)" = model_heterogeneity,
     "Full (M)" = model_heterogeneity_matched
@@ -92,17 +93,39 @@ table_herogeneity <- modelsummary(
   gof_omit = "IC|Log|Adj",
   notes = "Note: Standard errors clustered at the municipality level in parentheses.",
   
-  output = "kableExtra"
+  output = "latex"  
 ) |>
   add_header_above(c(" " = 1, "Unmatched sample" = 1, "Matched sample" = 1)) |>
   kable_styling(
     full_width = FALSE,
     position = "center",
-    latex_options = if (is_latex) c("hold_position", "booktabs") else NULL,
-    bootstrap_options = if (!is_latex) c("striped", "condensed") else NULL
+    latex_options = c("hold_position", "booktabs")
   )
 
-table_herogeneity
+table_heterogeneity
+
+
+###############################
+#### save for presentation ####
+###############################
+
+
+
+# main specification
+
+writeLines(
+  as.character(table_main),
+  file.path("presentation/results_main_specification.tex")
+)
+  
+# heterogeneity model
+
+
+writeLines(
+  as.character(table_heterogeneity),
+  file.path("presentation/results_heterogeneity.tex")
+)
+
 
 
 

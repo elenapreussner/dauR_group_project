@@ -295,11 +295,35 @@ $$
 
 ## Main specification
 
-\input{results/tables/results_main_specification.tex}
+\begin{table}
+\centering
+\begin{talltblr}[         %% tabularray outer open
+caption={Effect of Secondary School Proximity on House Prices},
+note{}={+ p \num{< 0.1}, * p \num{< 0.05}, ** p \num{< 0.01}, *** p \num{< 0.001}},
+note{ }={Note: Standard errors clustered at the municipality level in parentheses.},
+]                     %% tabularray outer close
+{                     %% tabularray inner open
+colspec={Q[]Q[]Q[]Q[]Q[]Q[]Q[]},
+hline{2}={1-7}{solid, black, 0.05em},
+hline{4}={1-7}{solid, black, 0.05em},
+hline{1}={1-7}{solid, black, 0.1em},
+hline{9}={1-7}{solid, black, 0.1em},
+column{2-7}={}{halign=c},
+column{1}={}{halign=l},
+}                     %% tabularray inner close
+& Baseline & Intermediate & Full & Baseline  & Intermediate  & Full  \\
+School nearby & \num{0.015} & \num{0.006} & \num{0.005} & \num{0.003} & \num{0.010} & \num{0.010} \\
+& (\num{0.012}) & (\num{0.009}) & (\num{0.009}) & (\num{0.013}) & (\num{0.010}) & (\num{0.011}) \\
+Observations & \num{18703} & \num{18703} & \num{18703} & \num{9537} & \num{9537} & \num{9537} \\
+R² & \num{0.397} & \num{0.614} & \num{0.617} & \num{0.415} & \num{0.626} & \num{0.629} \\
+Building controls & - & ✔ & ✔ & - & ✔ & ✔ \\
+Neighborhood controls & - & - & ✔ & - & - & ✔ \\
+Region fixed effects & ✔ & ✔ & ✔ & ✔ & ✔ & ✔ \\
+\end{talltblr}
+\end{table} 
 
 ## Heterogeneity Model
 
-\input{results/tables/results_heterogeneity.tex}
 
 # Policy Implications and further research
 

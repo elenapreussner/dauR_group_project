@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2026.1.28)  1 FEB 2026 12:28
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2026.1.28)  1 FEB 2026 12:43
  restricted system commands enabled.
 **presentation.tex
 (./presentation.tex
@@ -1807,25 +1807,22 @@ LaTeX Warning: Citation 'jayantha2015' on page 22 undefined on input line 664.
 
 ]
 
-! LaTeX Error: File `results/tables/results_main_specification.tex' not found.
+! LaTeX Error: Environment talltblr undefined.
 
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: tex)
-
-Enter file name: 
-! Emergency stop.
-<read *> 
-   
-l.675 \end{frame}
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.700 \end{frame}
                
 
 Here is how much of LuaTeX's memory you used:
- 44968 strings out of 476076
+ 44971 strings out of 476076
  100000,2373549 words of node,token memory allocated
- 1455 words of node memory still in use:
-   17 hlist, 11 vlist, 4 rule, 2 disc, 2 local_par, 2 dir, 28 glue, 5 kern, 11 penalty, 15 glyph, 51 attribute, 83 glue_spec, 51 attribute_list, 1 temp, 1 shape, 5 write, 2 pdf_dest, 10 pdf_colorstack nodes
-   avail lists: 1:2,2:728,3:360,4:198,5:269,6:36,7:3600,8:49,9:474,10:17,11:295
- 66326 multiletter control sequences out of 65536+600000
- 60 fonts using 17206135 bytes
+ 1617 words of node memory still in use:
+   19 hlist, 11 vlist, 4 rule, 2 disc, 2 local_par, 2 dir, 35 glue, 5 kern, 14 penalty, 15 glyph, 58 attribute, 93 glue_spec, 58 attribute_list, 1 temp, 1 shape, 5 write, 2 pdf_dest, 12 pdf_colorstack nodes
+   avail lists: 1:2,2:714,3:357,4:196,5:259,6:36,7:3593,8:49,9:472,10:17,11:295
+ 66328 multiletter control sequences out of 65536+600000
+ 60 fonts using 17206199 bytes
  101i,16n,114p,700b,5048s stack positions out of 10000i,1000n,20000p,200000b,200000s
 !  ==> Fatal error occurred, no output PDF file produced!
