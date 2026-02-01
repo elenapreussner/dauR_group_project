@@ -428,13 +428,14 @@ modelsummary(
   coef_map  = c("school_nearby" = "School nearby"),
   
   add_rows = data.frame(
-    term = c("Building controls", "Neighborhood controls", "Region fixed effects"),
-    "(1)" = c("-", "-", "Yes"),
-    "(2)" = c("Yes", "-", "Yes"),
-    "(3)" = c("Yes", "Yes", "Yes"),
-    "(4)" = c("-", "-", "Yes"),
-    "(5)" = c("Yes", "-", "Yes"),
-    "(6)" = c("Yes", "Yes", "Yes"),
+    term = c("Building controls", "Neighborhood controls", "Region fixed effects",
+             "Matching"),
+    "(1)" = c("-", "-", "Yes", "-"),
+    "(2)" = c("Yes", "-", "Yes", "-"),
+    "(3)" = c("Yes", "Yes", "Yes", "-"),
+    "(4)" = c("-", "-", "Yes", "Yes"),
+    "(5)" = c("Yes", "-", "Yes", "Yes"),
+    "(6)" = c("Yes", "Yes", "Yes", "Yes"),
     check.names = FALSE
   ),
   
@@ -449,7 +450,7 @@ modelsummary(
   gof_omit = "IC|Log|Adj",
   notes = "Note: Robust standard errors clustered at the municipality level in parentheses.",
   
-  output = "latex"
+  output = "kableExtra"
 )
 
 
@@ -495,7 +496,7 @@ modelsummary(
   gof_omit = "IC|Log|Adj",
   notes = "Note: Robust standard errors clustered at the municipality level in parentheses.",
   
-  output = "latex"  
+  output = "kableExtra"  
 )
 ```
 # Policy Implications and further research
