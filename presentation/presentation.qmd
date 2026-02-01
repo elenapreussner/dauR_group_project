@@ -407,7 +407,7 @@ plot_boxplot_2groups
 
 ## Main specification
 
-```{r}
+```{r, out.width= "80%"}
 #| label: table-main
 #| results: asis
 #| echo: false
@@ -420,7 +420,6 @@ models_main <- list(
   "Intermediate " = m2_matched,
   "Full "         = m3_matched
 )
-options(knitr.table.format = "latex")
 
 modelsummary(
   models_main,
@@ -449,8 +448,9 @@ modelsummary(
   gof_omit = "IC|Log|Adj",
   notes = "Note: Standard errors clustered at the municipality level in parentheses.",
   
-  output = "latex"  
-) 
+  output = "latex"
+)
+
 
 
 
