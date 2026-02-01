@@ -428,14 +428,13 @@ modelsummary(
   coef_map  = c("school_nearby" = "School nearby"),
   
   add_rows = data.frame(
-    term = c("Building controls", "Neighborhood controls", "Region fixed effects",
-             "Matching"),
-    "(1)" = c("-", "-", "Yes", "-"),
-    "(2)" = c("Yes", "-", "Yes", "-"),
-    "(3)" = c("Yes", "Yes", "Yes", "-"),
-    "(4)" = c("-", "-", "Yes", "Yes"),
-    "(5)" = c("Yes", "-", "Yes", "Yes"),
-    "(6)" = c("Yes", "Yes", "Yes", "Yes"),
+    term = c("Building controls", "Neighborhood controls", "Region fixed effects"),
+    "(1)" = c("-", "-", "Yes"),
+    "(2)" = c("Yes", "-", "Yes"),
+    "(3)" = c("Yes", "Yes", "Yes"),
+    "(4)" = c("-", "-", "Yes"),
+    "(5)" = c("Yes", "-", "Yes"),
+    "(6)" = c("Yes", "Yes", "Yes"),
     check.names = FALSE
   ),
   
@@ -451,11 +450,14 @@ modelsummary(
   notes = "Note: Robust standard errors clustered at the municipality level in parentheses.",
   
   output = "kableExtra"
-)
-
-
-
-
+) %>%
+  add_header_above(
+    c(
+      " " = 1,
+      "Unmatched sample" = 3,
+      "Matched sample"   = 3
+    )
+  )
 ```
 
 ## Heterogeneity Model
@@ -467,8 +469,8 @@ modelsummary(
 
 modelsummary(
   list(
-    "Full (U)" = model_heterogeneity,
-    "Full (M)" = model_heterogeneity_matched
+    "Full" = model_heterogeneity,
+    "Full" = model_heterogeneity_matched
   ),
   statistic = "({std.error})",
   stars = c('*' = .10, '**' = .05, '***' = .01),
@@ -497,7 +499,14 @@ modelsummary(
   notes = "Note: Robust standard errors clustered at the municipality level in parentheses.",
   
   output = "kableExtra"  
-)
+) %>%
+  add_header_above(
+    c(
+      " " = 1,
+      "Unmatched sample" = 1,
+      "Matched sample"   = 1
+    )
+  )
 ```
 # Policy Implications and further research
 
