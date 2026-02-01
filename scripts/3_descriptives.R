@@ -1,22 +1,18 @@
 library(tidyverse)
 library(ggplot2)
-library(stargazer)
 
 #####################################
 #### general summary statistics 
 #####################################
 
-# summary statistics for entire dataset 
-summary_stats_all <- full_dataset_main_clean %>%
-  filter(price_sqm < 10000) %>%
-  select(price_sqm, living_area, site_area, rooms_n, baths_n, cellar, 
-         age_building)
+# define variable groups
+housing_vars <- c("living_area", "site_area", "rooms_n", "baths_n", 
+                  "age_building", "cellar")
+neighborhood_vars <- c("immigrants_percents", "average_age", 
+                       "pharmacy", "hospital", "doctors", "park")
+price_var <- c("price_sqm")
 
-stargazer(as.data.frame(summary_stats_all),
-          type = "latex",
-          title = "Summary Statistics",
-          summary = TRUE,
-          digits = 2)
+all_vars <- c(price_var, housing_vars, neighborhood_vars)
 
 
 #####################################
@@ -37,6 +33,19 @@ analysis_data_3groups <- full_dataset_main_clean %>%
     group = factor(group, levels = c("abitur", "non_abitur", "control"))
   )
 
+# summary statistics for 3 groups
+summary_3groups <- analysis_data_3groups %>%
+  filter(!is.na(group)) %>%
+  group_by(group) %>%
+  summarise(
+    n = n(),
+    across(all_of(all_vars), 
+           list(mean = ~mean(., na.rm = TRUE),
+                sd = ~sd(., na.rm = TRUE)),
+           .names = "{.col}_{.fn}"),
+    .groups = "drop"
+  )
+
 # price table by group
 price_table_3groups <- analysis_data_3groups %>%
   filter(!is.na(group)) %>%
@@ -50,13 +59,6 @@ price_table_3groups <- analysis_data_3groups %>%
     max = max(price_sqm, na.rm = TRUE),
     .groups = "drop"
   )
-
-stargazer(as.data.frame(price_table_3groups),
-          type = "latex",
-          summary = FALSE,
-          title = "Average Prices by Group (Abitur vs. Non-Abitur vs. Control)",
-          digits = 2,
-          rownames = FALSE)
 
 # balance tests - three comparisons
 vars <- c("price_sqm", "living_area", "site_area", "rooms_n", "baths_n", 
@@ -115,14 +117,6 @@ balance_tests_3groups <- bind_rows(
   ) %>%
   select(comparison, variable, mean_diff, t_stat, p_value)
 
-stargazer(as.data.frame(balance_tests_3groups),
-          type = "latex",
-          summary = FALSE,
-          title = "Balance Tests: Three-way Comparison",
-          digits = 3,
-          no.space = TRUE,
-          rownames = FALSE)
-
 # plots 
 plot_distribution_3groups <- analysis_data_3groups %>%
   filter(!is.na(group)) %>%
@@ -138,8 +132,6 @@ plot_distribution_3groups <- analysis_data_3groups %>%
   theme_minimal() +
   theme(legend.position = "none")
 
-ggsave("plot_distribution_3groups.pdf", plot_distribution_3groups, width = 8, height = 10)
-
 plot_boxplot_3groups <- analysis_data_3groups %>%
   filter(!is.na(group)) %>%
   ggplot(aes(x = group, y = price_sqm, fill = group)) +
@@ -153,9 +145,6 @@ plot_boxplot_3groups <- analysis_data_3groups %>%
   theme_minimal() +
   theme(legend.position = "none")
 
-ggsave("plot_boxplot_3groups.pdf", plot_boxplot_3groups, width = 8, height = 6)
-
-
 #####################################
 #### simple comparison
 #####################################
@@ -166,6 +155,18 @@ analysis_data_2groups <- full_dataset_main_clean %>%
   mutate(
     group = if_else(school_nearby == 1, "School nearby", "Control"),
     group = factor(group, levels = c("School nearby", "Control"))
+  )
+
+# summary statistics for 2 groups
+summary_2groups <- analysis_data_2groups %>%
+  group_by(group) %>%
+  summarise(
+    n = n(),
+    across(all_of(all_vars), 
+           list(mean = ~mean(., na.rm = TRUE),
+                sd = ~sd(., na.rm = TRUE)),
+           .names = "{.col}_{.fn}"),
+    .groups = "drop"
   )
 
 # price table by group
@@ -180,13 +181,6 @@ price_table_2groups <- analysis_data_2groups %>%
     max = max(price_sqm, na.rm = TRUE),
     .groups = "drop"
   )
-
-stargazer(as.data.frame(price_table_2groups),
-          type = "latex",
-          summary = FALSE,
-          title = "Average Prices by Group (School Nearby vs. Control)",
-          digits = 2,
-          rownames = FALSE)
 
 # balance tests - school_nearby vs. control
 balance_tests_2groups <- lapply(vars, function(v) {
@@ -210,15 +204,7 @@ balance_tests_2groups <- lapply(vars, function(v) {
     p_value = sprintf("%.3f", p_value)
   )
 
-stargazer(as.data.frame(balance_tests_2groups),
-          type = "latex",
-          summary = FALSE,
-          title = "Balance Tests: School Nearby vs. Control",
-          digits = 3,
-          no.space = TRUE,
-          rownames = FALSE)
-
-# plots
+# plots 
 plot_distribution_2groups <- analysis_data_2groups %>%
   ggplot(aes(x = price_sqm, fill = group)) +
   geom_histogram(bins = 50, alpha = 0.7, position = "identity") +
@@ -232,8 +218,6 @@ plot_distribution_2groups <- analysis_data_2groups %>%
   theme_minimal() +
   theme(legend.position = "none")
 
-ggsave("plot_distribution_2groups.pdf", plot_distribution_2groups, width = 8, height = 8)
-
 plot_boxplot_2groups <- analysis_data_2groups %>%
   ggplot(aes(x = group, y = price_sqm, fill = group)) +
   geom_boxplot() +
@@ -245,5 +229,3 @@ plot_boxplot_2groups <- analysis_data_2groups %>%
   ) +
   theme_minimal() +
   theme(legend.position = "none")
-
-ggsave("plot_boxplot_2groups.pdf", plot_boxplot_2groups, width = 8, height = 6)
