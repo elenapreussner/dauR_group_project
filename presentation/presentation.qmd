@@ -1,6 +1,6 @@
 ---
 title: "Availability of Abitur and Non-Abitur Upper Secondary Schools and Housing Prices in NRW"
-authors: 
+authors:
   - name: "Julian Schilling"
   - name: "Benedikt Teuber"
   - name: "Elena Preussner"
@@ -8,42 +8,98 @@ aspectratio: 169
 bibliography: references.bib
 date: today
 date-format: "DD.MM.YYYY"
+
 format:
   beamer:
     toc: true
     cite-method: biblatex
-    biblatexoptions: 
+    biblatexoptions:
       - style=apa
       - backend=biber
     theme: default
-    header-includes: |
-          \usepackage{tcolorbox}
-            \tcbset{
-             colback=blue!5,
-             colframe=blue!50!black,
-             boxrule=0.4pt,
-             arc=2pt,
-             left=4pt,
-             right=4pt,
-             top=3pt,
-             bottom=3pt
-           }
-          \usepackage{lmodern}
-          \usefonttheme{serif}
-          \setbeamercolor{structure}{fg=black}
-          \setbeamerfont{frametitle}{series=\bfseries}
-          \setbeamerfont{section title}{series=\bfseries}
-          \setbeamertemplate{itemize item}{\textbullet}
-          \setbeamertemplate{itemize subitem}{\textbullet}
-          \setbeamertemplate{itemize subsubitem}{\textbullet}
-          \usepackage{multicol}
-          \tcolorboxenvironment{block}{}
-          \tcolorboxenvironment{alertblock}{}
-          \tcolorboxenvironment{exampleblock}{}
-          \usepackage{amssymb}
-      #- file: custom_theme.tex
-      
-execute: 
+
+    include-in-header:
+      text: |
+        % --- Fonts ---
+        \usepackage[sfdefault]{FiraSans}
+        \usefonttheme{professionalfonts}
+
+        % --- Logo + Seminarinfos NUR auf der Titelfolie ---
+        \usepackage{graphicx}
+        \usepackage{tikz}
+
+        \newcommand{\seminartitel}{Course: Data Analysis using R}
+        \newcommand{\fakultaet}{Chair: Chair of empirical economics}
+        \newcommand{\lehrperson}{Lecturer: Sven Werenbeck-Ueding}
+
+        \addtobeamertemplate{title page}{}{%
+          \begin{tikzpicture}[remember picture,overlay]
+            \node[anchor=south west, xshift=0.5cm, yshift=0.5cm]
+              at (current page.south west) {%
+              \begin{minipage}[c]{0.9\textwidth}
+                \begin{minipage}[c]{0.40\textwidth}
+                  \includegraphics[height=0.9cm]{Logo_rub.jpg}
+                \end{minipage}\hspace{0.03\textwidth}%
+                \begin{minipage}[c]{0.62\textwidth}
+                  {\small \fakultaet\par}
+                  {\small \seminartitel\par}
+                  {\small \lehrperson\par}
+                \end{minipage}
+              \end{minipage}
+            };
+          \end{tikzpicture}
+        }
+
+        % --- Slide numbers ---
+        \setbeamertemplate{footline}{%
+          \hfill\usebeamerfont{page number in head/foot}%
+          \insertframenumber/\inserttotalframenumber\kern1em\vskip2pt%
+        }
+        \setbeamertemplate{navigation symbols}{}
+
+        % --- Tables/captions ---
+        \usepackage{caption}
+        \usepackage{etoolbox}
+
+
+        \addtobeamertemplate{frametitle}{}{\vspace{6pt}}
+        \AtBeginEnvironment{table}{\raggedright}
+
+        \captionsetup[table]{justification=raggedright,singlelinecheck=false,skip=0pt}
+        \setlength{\abovecaptionskip}{0pt}
+        \setlength{\belowcaptionskip}{0pt}
+
+        % --- Your styling ---
+        \usepackage{tcolorbox}
+        \tcbset{
+          colback=blue!5,
+          colframe=blue!50!black,
+          boxrule=0.4pt,
+          arc=2pt,
+          left=4pt,
+          right=4pt,
+          top=3pt,
+          bottom=3pt
+        }
+        \setbeamercolor{structure}{fg=black}
+        \setbeamerfont{frametitle}{series=\bfseries}
+        \setbeamerfont{section title}{series=\bfseries}
+        \setbeamertemplate{itemize item}{\textbullet}
+        \setbeamertemplate{itemize subitem}{\textbullet}
+        \setbeamertemplate{itemize subsubitem}{\textbullet}
+        \usepackage{multicol}
+        \tcolorboxenvironment{block}{}
+        \tcolorboxenvironment{alertblock}{}
+        \tcolorboxenvironment{exampleblock}{}
+        \usepackage{amssymb}
+        \usepackage{booktabs}
+        \setlength{\abovetopsep}{2pt}
+        \setlength{\aboverulesep}{2pt}
+        \setlength{\belowrulesep}{2pt}
+        \setlength{\textfloatsep}{3pt}
+        \setlength{\intextsep}{3pt}
+
+execute:
   echo: false
   
 ---
@@ -421,6 +477,8 @@ models_main <- list(
   "(2)" = m2_matched,
   "(3)"         = m3_matched
 )
+cat("\\begin{minipage}{\\linewidth}\n")
+cat("\\textbf{Effect of Secondary School Proximity on House Prices}\\par\\vspace*{-3em}\n")
 
 modelsummary(
   models_main,
@@ -444,20 +502,20 @@ modelsummary(
     fmt   = c(0, 3)
   ),
   
-  title = "Effect of Secondary School Proximity on House Prices",
+  #title = "Effect of Secondary School Proximity on House Prices",
   stars = TRUE,
   gof_omit = "IC|Log|Adj",
   notes = "Note: Robust standard errors clustered at the municipality level in parentheses.",
   
   output = "kableExtra"
-) %>%
-  add_header_above(
-    c(
-      " " = 1,
-      "Unmatched sample" = 3,
-      "Matched sample"   = 3
-    )
+)%>%
+  kableExtra::kable_styling(full_width = FALSE, position = "left") %>%
+  # 1) Erst die Gruppenzeile
+  kableExtra::add_header_above(
+    c(" " = 1, "Unmatched sample" = 3, "Matched sample" = 3),
+    bold = FALSE, line = TRUE
   )
+cat("\\end{minipage}\n")
 ```
 
 ## Heterogeneity Model
@@ -467,6 +525,8 @@ modelsummary(
 #| results: asis
 #| echo: false
 
+cat("\\begin{minipage}{\\linewidth}\n")
+cat("\\textbf{Effect of School with academic track proximity on House Prices}\\par\\vspace*{-3em}\n")
 modelsummary(
   list(
     "Full" = model_heterogeneity,
@@ -494,12 +554,13 @@ modelsummary(
     check.names = FALSE
   ),
   
-  title = "Effect of School with academic track proximity on House Prices",
+  #title = "Effect of School with academic track proximity on House Prices",
   gof_omit = "IC|Log|Adj",
   notes = "Note: Robust standard errors clustered at the municipality level in parentheses.",
   
   output = "kableExtra"  
 ) %>%
+  kableExtra::kable_styling(full_width = FALSE, position = "left") %>%
   add_header_above(
     c(
       " " = 1,
@@ -507,7 +568,14 @@ modelsummary(
       "Matched sample"   = 1
     )
   )
+cat("\\end{minipage}\n")
 ```
+
+## Robustness check
+
+
+
+
 # Policy Implications and further research
 
 # Appendix
