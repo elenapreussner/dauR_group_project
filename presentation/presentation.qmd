@@ -224,7 +224,7 @@ available to their child
 ## Data and Variables
 \textbf{Housing Data:}
 
-- Geo-referenced listings of sales properties (Internet platform lmmobilienScout24, 2022) 
+- Geo-referenced listings of sales properties 
 - Variables: living area, site area, number of rooms, number of bathrooms, year of construction, cellar
 
 \vspace{0.2cm}
