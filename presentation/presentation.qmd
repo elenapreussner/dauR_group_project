@@ -117,8 +117,8 @@ setwd("..")
 
 source("scripts/1_data_preparation.R")
 source("scripts/2_treatment_assignment.R")
-source("scripts/3_descriptives.R")
 source("scripts/4_matching_observations.R")
+source("scripts/3_descriptives.R")
 source("scripts/5_regression_analysis.R")
 source("scripts/7_robustness_checks.R")
 ```
@@ -366,101 +366,29 @@ $$
 
 # Results
 
-## Descriptives - Price Summary
-
-**Two Groups**
+## Descriptives - Summary Statistics
 ```{r}
 #| echo: false
-
-summary_2groups %>%
-  select(group, n, price_sqm_mean, price_sqm_sd) %>%
-  kable(
-    format = "latex",
-    booktabs = TRUE,
-    digits = 2,
-    col.names = c("Group", "N", "Mean", "Std. Dev.")
-  ) %>%
-  add_header_above(c(" " = 2, "Price per sqm" = 2)) %>%
-  kable_styling(font_size = 9)
+summary_4groups_table %>%
+  kable(format = "latex", booktabs = TRUE, digits = 2, linesep = "",
+        col.names = c("Variable", rep(c("Mean", "SD"), 4))) %>%
+  add_header_above(c(" " = 1, "Any School" = 2, "Abitur" = 2, 
+                     "Non-Abitur" = 2, "Control" = 2)) %>%
+  kable_styling(font_size = 7, latex_options = "scale_down")
 ```
 
-**Three Groups**
-```{r}
-#| echo: false
-
-summary_3groups %>%
-  select(group, n, price_sqm_mean, price_sqm_sd) %>%
-  kable(
-    format = "latex",
-    booktabs = TRUE,
-    digits = 2,
-    col.names = c("Group", "N", "Mean", "Std. Dev.")
-  ) %>%
-  add_header_above(c(" " = 2, "Price per sqm" = 2)) %>%
-  kable_styling(font_size = 9)
-```
-
-## Descriptives - Housing Characteristics Summary
-
-**Two Groups**
-```{r}
-#| echo: false
-
-summary_2groups %>%
-  select(group, living_area_mean, living_area_sd, site_area_mean, site_area_sd,
-         rooms_n_mean, rooms_n_sd, baths_n_mean, baths_n_sd) %>%
-  kable(
-    format = "latex",
-    booktabs = TRUE,
-    digits = 2,
-    col.names = c("Group", rep(c("Mean", "Std. Dev."), 4))
-  ) %>%
-  add_header_above(c(" " = 1, "Living Area" = 2, "Site Area" = 2, 
-                     "Rooms" = 2, "Baths" = 2)) %>%
-  kable_styling(font_size = 7)
-```
-
-**Three Groups**
-```{r}
-#| echo: false
-
-summary_3groups %>%
-  select(group, living_area_mean, living_area_sd, site_area_mean, site_area_sd,
-         rooms_n_mean, rooms_n_sd, baths_n_mean, baths_n_sd) %>%
-  kable(
-    format = "latex",
-    booktabs = TRUE,
-    digits = 2,
-    col.names = c("Group", rep(c("Mean", "Std. Dev."), 4))
-  ) %>%
-  add_header_above(c(" " = 1, "Living Area" = 2, "Site Area" = 2,
-                     "Rooms" = 2, "Baths" = 2)) %>%
-  kable_styling(font_size = 6)
-```
-
-## Descriptives - Balance Test
+## Descriptives - Balance Check
 
 **School nearby vs. Control**
 ```{r}
 #| echo: false
-
-balance_tests_2groups %>%
-  kable(
-    format = "latex",
-    booktabs = TRUE,
-    row.names = FALSE,
-    digits = 3,
-    linesep = "",   
-    col.names = c("Variable", "Mean Treatment", "Mean Control", 
-                  "Difference", "t-statistic", "p-value")
-  ) %>%
-  kable_styling(font_size = 8)
+balance_table %>%
+  kable(format = "latex", booktabs = TRUE, digits = 3, linesep = "",
+        col.names = c("Variable", "Treatment", "Control", "Std. Diff.", "t-stat")) %>%
+  kable_styling(font_size = 8, latex_options = "scale_down")
 ```
 
-## Descriptives - Boxplot
-```{r, out.width= "80%", fig.align= "center"}
-plot_boxplot_2groups
-```
+## Descriptives - Scatterplot
 
 
 ## Main specification
