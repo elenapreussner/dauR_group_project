@@ -4,6 +4,16 @@
 # here, we exclude "buffer-cells" with the distance of 2 around the treated-cells
 
 library(tidyverse)
+library(olsrr)
+library(lmtest)
+library(sandwich)
+library(modelsummary)
+library(zoo)
+library(fixest)
+library(rio)
+library(MatchIt)
+library(car)
+library(knitr)
 
 #### create treated-cell dataset for secondary schools (first order treatment)
 
@@ -173,21 +183,11 @@ all_cells_robustness_clean <- all_cells_robustness_clean %>% # if cell lies with
 all_cells_robustness_clean <- all_cells_robustness_clean %>% # get school-id for every cell to import school data
   mutate(school_tag_code = sub("t$", "", school_tag))
 
-#### import school data
-
-all_cells_school_robustness <- all_cells_robustness_clean %>%
-  left_join(
-    schools %>%
-      mutate(school_ID = as.character(school_ID)) %>% # import SSI in every cell
-      select(school_ID, ssi),
-    by = c("school_tag_code" = "school_ID")
-  )
-
 
 #### match information with housing data
 
-full_dataset_robustness <- housing_data_NRW %>% # import school data in the prepared housing data set for each property
-  left_join(all_cells_school_robustness, by = "ergg_1km")
+full_dataset_robustness <- housing_full %>% # import school data in the prepared housing data set for each property
+  left_join(all_cells_robustness_clean, by = "ergg_1km")
 
 
 
@@ -218,3 +218,153 @@ full_dataset_robustness_clean <- full_dataset_robustness %>%
 
 full_dataset_robustness_clean %>%
   count(school_nearby)
+
+#### clean dataset of unnecessary variables and ovservations with NA's on relevant variables
+
+full_dataset_robustness_clean <- full_dataset_robustness_clean %>%
+  select(-geometry, -x, -y, -treated, -control, -source, -school_tag, -school_type) %>%
+  drop_na(
+    living_area,
+    site_area,
+    rooms_n,
+    baths_n,
+    age_building,
+    cellar,
+    price_sqm,
+    immigrants_percents,
+    average_age,
+    disposable_income_per_capita,
+    pharmacy,
+    supermarket,
+    hospital,
+    doctors,
+    park,
+    ags,
+  )
+
+
+#############################
+#### regression analysis ####
+#############################
+
+##### conduct matching procedure for robustness data
+
+# estimate propensity score
+
+ps_robustness <- matchit(
+  school_nearby ~ living_area +  site_area + 
+    rooms_n + baths_n + age_building +  cellar +
+    immigrants_percents +  average_age +  disposable_income_per_capita +
+    pharmacy +  supermarket + hospital + doctors +  park,
+  data = full_dataset_robustness_clean,
+  method = "nearest",
+  distance = "logit",
+  ratio = 1         
+)
+
+
+# inspection 
+
+summary(ps_robustness)
+
+# extract matched dataset
+
+matched_data_robustness <- match.data(ps_robustness)
+
+
+
+
+##### check for and remove singletons
+
+#### for unmatched data 
+
+full_dataset_robustness_clean %>%
+  count(ags) %>%
+  summarise(singletons = sum(n == 1),
+            obs_lost   = sum(n[n == 1]))
+
+
+
+# dataset contains singletons at the municipality level, there will be excluded before estimating the models
+
+full_dataset_robustness_clean_nos <- full_dataset_robustness_clean %>%
+  add_count(ags, name = "n_ags") %>%
+  filter(n_ags > 1) %>%
+  select(-n_ags)
+
+
+#### for matched data
+
+
+matched_data_robustness %>%
+  count(ags) %>%
+  summarise(singletons = sum(n == 1),
+            obs_lost   = sum(n[n == 1]))
+
+
+
+# dataset contains singletons at the municipality level, there will be excluded before estimating the models
+
+matched_data_robustness_nos <- matched_data_robustness %>%
+  add_count(ags, name = "n_ags") %>%
+  filter(n_ags > 1) %>%
+  select(-n_ags)
+
+
+
+
+#### Main specification ##### 
+
+#### Unmatched data
+
+## treatment indicator + housing and neighborhood characteristics
+
+model_robustness <- feols(
+  log(price_sqm) ~ school_nearby + living_area +  site_area + 
+    rooms_n + baths_n + age_building +  I(age_building^2) +  cellar +
+    immigrants_percents +  average_age +  pharmacy +  supermarket +
+    hospital + doctors +  park| ags,
+  data  = full_dataset_robustness_clean_nos,
+  vcov = ~ags
+)
+
+
+#### Estimate treatment heterogeneity model - Model 2
+
+
+model_heterogeneity_robustness <- feols(
+  log(price_sqm) ~ school_nearby + school_nearby:abitur_nearby + living_area +  site_area + 
+    rooms_n + baths_n + age_building +  I(age_building^2) +  cellar +
+    immigrants_percents +  average_age +  pharmacy +  supermarket +
+    hospital + doctors +  park | ags,
+  data = full_dataset_robustness_clean_nos,
+  vcov = ~ags
+)
+
+
+#### Matched data
+
+
+model_robustness_matched <- feols(
+  log(price_sqm) ~ school_nearby + living_area +  site_area + 
+    rooms_n + baths_n + age_building +  I(age_building^2) +  cellar +
+    immigrants_percents +  average_age +  pharmacy +  supermarket +
+    hospital + doctors +  park| ags,
+  data  = matched_data_robustness_nos,
+  vcov = ~ags
+)
+
+
+#### Estimate treatment heterogeneity model - Model 2
+
+
+model_heterogeneity_robustness_matched <- feols(
+  log(price_sqm) ~ school_nearby + school_nearby:abitur_nearby + living_area +  site_area + 
+    rooms_n + baths_n + age_building +  I(age_building^2) +  cellar +
+    immigrants_percents +  average_age +  pharmacy +  supermarket +
+    hospital + doctors +  park | ags,
+  data = matched_data_robustness_nos,
+  vcov = ~ags
+)
+
+

@@ -120,6 +120,7 @@ source("scripts/2_treatment_assignment.R")
 source("scripts/3_descriptives.R")
 source("scripts/4_matching_observations.R")
 source("scripts/5_regression_analysis.R")
+source("scripts/7_robustness_checks.R")
 ```
 
 # Introduction
@@ -224,7 +225,7 @@ available to their child
 ## Data and Variables
 \textbf{Housing Data:}
 
-- Geo-referenced listings of sales properties 
+- Geo-referenced listings of sales properties \parencite{FDZ2023}
 - Variables: living area, site area, number of rooms, number of bathrooms, year of construction, cellar
 
 \vspace{0.2cm}
@@ -573,8 +574,51 @@ cat("\\end{minipage}\n")
 
 ## Robustness check
 
+```{r}
+#| label: table-robustness
+#| results: asis
+#| echo: false
 
+cat("\\begin{minipage}{\\linewidth}\n")
+cat("\\textbf{Effect on housing prices}\\par\\vspace*{-3em}\n")
+modelsummary(
+  list(
+    "(1)"      = model_robustness,
+    "(2)" = model_heterogeneity_robustness,
+    "(1)"      = model_robustness_matched,
+    "(2)" = model_heterogeneity_robustness_matched
+  ),
+  statistic = "({std.error})",
+  stars = c('*' = .10, '**' = .05, '***' = .01),
+  coef_omit = "^(?!(school_nearby$|school_nearby:abitur_nearby$)).*",
+  coef_map  = c(
+    "school_nearby" = "School nearby",
+    "school_nearby:abitur_nearby" = "School nearby × Gymnasium nearby"
+  ),
+  add_rows = data.frame(
+    term = c("Building controls", "Neighborhood controls", "Region fixed effects"),
+    "(1)" = c("Yes", "Yes", "Yes"),
+    "(2)" = c("Yes", "Yes", "Yes"),
+    "(3)" = c("Yes", "Yes", "Yes"),
+    "(4)" = c("Yes", "Yes", "Yes"),
+    check.names = FALSE
+  ),
+  gof_map = data.frame(
+    raw   = c("nobs", "r.squared"),
+    clean = c("Observations", "R²"),
+    fmt   = c(0, 3)
+  ),
+  gof_omit = "IC|Log|Adj",
+  notes = "Note: Robust standard errors clustered at the municipality level in parentheses.",
+  output = "kableExtra"
+) %>%
+  kableExtra::kable_styling(full_width = FALSE, position = "left") %>%
+  kableExtra::add_header_above(
+    c(" " = 1, "Unmatched sample" = 2, "Matched sample" = 2)
+  )
 
+cat("\\end{minipage}\n")
+```
 
 # Policy Implications and further research
 
