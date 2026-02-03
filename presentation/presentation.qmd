@@ -145,8 +145,7 @@ and exclude elementary schools and other specialised or private schools
 - School availability and quality in general are important determinants of 
 housing decisions and are capitalized into housing prices (..)
 - However, existing evidence on capitalization differences across upper 
-secondary school tracks is limited, while most hedonic price studies face 
-endogeneity concerns.
+secondary school tracks is limited and faces endogeneity concerns
 - The \textbf{magnitude of capitalization effects may differ by school track}
 - Germany’s multi-track secondary school system provides a unique setting to 
 study differential capitalization effects.
@@ -195,7 +194,7 @@ This capitalizes into the housing market via two mechanisms \parencite{la2015}:
 walking zone of a school
 - generation of spillovers through changes in neighborhood composition
 
-## Hypothesis
+## Hypotheses
 
 Based on the theoretical background, we expect the following results:
 
@@ -209,7 +208,7 @@ outcomes
 school offering the opportunity to obtain an *Abitur*
 
 
-\begin{block}{Formal Hypothesis}
+\begin{block}{Formal Hypotheses}
 \[
 \begin{aligned}
 \tau_{\text{school}} & \text{(Estimated treatment effect):} & H_1 &: \beta_1 (D_i) > 0 \\
@@ -272,15 +271,15 @@ because they are determined by relevant characteristics
 \vspace{0.2cm}
 \textbf{School Data}:
   
-- Locations and types of schools (Grammar School, Comprehensive School, etc. based on grid cells) \parencite {nrw_schulministerium_opendata}
+- Locations and types of schools (Grammar School, Comprehensive School, etc. based on grid cells) provided by the NRW ministry of education \parencite {nrw_schulministerium_opendata}
 
 
 ## Data and Variables
 \textbf{Regional Data:}
 
-- Includes information on neighborhood characteristics (e.g. income levels, migration rates, average age and the availability of infrastructure such as doctors or a supermarket) \parencite {destatis_auslaenderanteil_gitterzellen_2022, destatis_durchschnittsalter_gitterzellen, ldbnrw_verfuegbares_einkommen_gemeinden_2022, 
-geofabrik_nrw, 
+- Data from the Zensus 2022 or the Federal Statistical Office on neighborhood characteristics (e.g. income levels, migration rates, average age and the availability of infrastructure such as doctors or a supermarket) \parencite{destatis_auslaenderanteil_gitterzellen_2022, destatis_durchschnittsalter_gitterzellen, ldbnrw_verfuegbares_einkommen_gemeinden_2022, 
 zensus2022_gitterzellen}
+- Information on structural characteristics of the grid-cells/municipalities from Geofabrik GmbH on NRW's administrative districts (e.g. locations of supermarkets, parks) \parencite{geofabrik_nrw}
 
 
 ## Quasi-experimental approach
@@ -597,14 +596,15 @@ modelsummary(
 cat("\\end{minipage}\n")
 ```
 
-# Conclusion 
-- Empirical studies on the capitalization of distance to (upper) secondary schools in housing prices are limited in the German context. 
+## Conclusion 
+- Empirical studies on the capitalization of availability and quality of (upper) secondary schools in housing prices are limited in the German context. 
 - However, our results indicate no statistically significant effects, in contrast to previous studies that find significant capitalization of school quality into housing prices.
-- That indicates that school quality may capitalize more strongly than distance to schools 
-- But our results are probably insignificant due to limitations of our analysis
+- That indicates that school quality may capitalize more strongly than availability of schools within near distances.
+- It may be that the capitalization effects strongly occur in the case of elementary schools, a direction the empirical literature already points at
+- Our results are probably insignificant due to methodological and data driven limitations of our approach
 
 
-# Limitations
+## Limitations
 - \textbf{Endogeneity:} better schools tend to be located in affluent 
 neighborhoods and students endowed with those priviledged backgrounds generally 
 achieve higher educational outcomes \parencite{fack2010}
