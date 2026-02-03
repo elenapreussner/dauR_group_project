@@ -128,55 +128,84 @@ source("scripts/6_robustness_checks.R")
 
 ## Research Question
    \begin{block}{Main question}
-To what extent does the local availability of upper secondary schools that offer an Abitur pathway, compared to other secondary schools, affect housing prices in North Rhine-Westphalia (NRW)?
+To what extent does the local availability of upper secondary schools that offer
+an Abitur pathway, compared to other secondary schools, affect housing prices in 
+North Rhine-Westphalia (NRW)?
 \end{block}
-- Goal: Estimating heterogeneity in the capitalization of secondary schools that offer the possibility to achieve higher educational outcomes.
-- We assume that parents are willing to pay a premium for their homes, if a school lies within 3km at which their children can make an Abitur (Gymnasium or Gesamtschule)
-- Therefore, we restrict our analysis on different types of secondary schools and exclude elementary schools and other specialised or private schools
+- Goal: Estimating heterogeneity in the capitalization of secondary schools that
+offer the possibility to achieve higher educational outcomes.
+- We assume that parents are willing to pay a premium for their homes, if a 
+school lies within 3km at which their children can make an Abitur (Gymnasium or 
+Gesamtschule)
+- Therefore, we restrict our analysis on different types of secondary schools 
+and exclude elementary schools and other specialised or private schools
 
 ## Motivation and Institutional Context 
-- School availability and quality in general are important determinants of housing decisions and are capitalized into housing prices (..)
-- However, existing evidence on capitalization differences across upper secondary school tracks is limited, while most hedonic price studies face endogeneity concerns.
+- School availability and quality in general are important determinants of 
+housing decisions and are capitalized into housing prices (..)
+- However, existing evidence on capitalization differences across upper 
+secondary school tracks is limited, while most hedonic price studies face 
+endogeneity concerns.
 - The \textbf{magnitude of capitalization effects may differ by school track}
-- Germany’s multi-track secondary school system provides a unique setting to study differential capitalization effects.
-- In NRW the 2008/09 reform increased freedom in school-choice and weakens formal residence–school links as it may \textbf{increase behavioral selection} into high-quality school areas.
+- Germany’s multi-track secondary school system provides a unique setting to 
+study differential capitalization effects.
+- In NRW the 2008/09 reform increased freedom in school-choice and weakens 
+formal residence–school links as it may \textbf{increase behavioral selection} 
+into high-quality school areas.
 
 \begin{block}{Key Insight:}
-    When school choice is flexible, households with strong school preferences are more likely to relocate to access better schools — reinforcing the link between school quality and housing prices. \parencite{bayer2007}
+    When school choice is flexible, households with strong school preferences 
+    are more likely to relocate to access better schools — reinforcing the link
+    between school quality and housing prices. \parencite{bayer2007}
     \end{block}
 
 # Theoretical Framework
 
 ## Tiebout sorting
 
-- The decision-making process of residents include the availability and quality of provided public goods and services within a municipality 
-- Under the assumption of perfect mobility, residents pick that community that exactly satisfies their preferences \parencite{tiebout1956}
-- If such a community or municipality is not feasible, a perfect substitute (if existent) is to be chosen
+- The decision-making process of residents include the availability and quality
+of provided public goods and services within a municipality 
+- Under the assumption of perfect mobility, residents pick that community that
+exactly satisfies their preferences \parencite{tiebout1956}
+- If such a community or municipality is not feasible, a perfect substitute (if 
+existent) is to be chosen
 
 ## What do parents value?
 
-- Educational quality is an important part of the set of considered public goods, because quality schooling is often decisive in later life-outcomes (e.g. labor market opportunities, gained income, health etc.) 
-- The way in which parents sort into the housing market directly influencing the level of residentual segregation \parencite{bayer2007}
-- Ongoing debate, which dimension of education is valued by parents (outputs or learning environments containing sociodemographic composition) \parencite{machin2011}
-- We want to test whether the availability of upper secondary schools is such a dimension 
+- Educational quality is an important part of the set of considered public 
+goods, because quality schooling is often decisive in later life-outcomes (e.g. 
+labor market opportunities, gained income, health etc.) 
+- The way in which parents sort into the housing market directly influencing the
+level of residentual segregation \parencite{bayer2007}
+- Ongoing debate, which dimension of education is valued by parents (outputs or 
+learning environments containing sociodemographic composition) 
+\parencite{machin2011}
+- We want to test whether the availability of upper secondary schools is such a 
+dimension 
 
 ## Capitalization mechanism
 
-- Parents are willing to pay a premium for housing units nearby top-tier school networks \parencite{jayantha2015}
+- Parents are willing to pay a premium for housing units nearby top-tier school 
+networks \parencite{jayantha2015}
 
 This capitalizes into the housing market via two mechanisms \parencite{la2015}:
 
-- Wealthier households that care about school quality bid up prices within the walking zone of a school
+- Wealthier households that care about school quality bid up prices within the 
+walking zone of a school
 - generation of spillovers through changes in neighborhood composition
 
 ## Hypothesis
 
 Based on the theoretical background, we expect the following results:
 
-- Education is one of the most important public services \parencite{zhang2020} and it is therefore reasonable to test the channel
+- Education is one of the most important public services \parencite{zhang2020} 
+and it is therefore reasonable to test the channel
 - Educational opportunities play a role in parents’ housing decisions
-- Parents value the opportunity to achieve higher educational outcomes for their children \parencite{hornig2025} because of their decisiveness for later life outcomes
-- Parents are therefore willing to pay a premium for houses near a secondary school offering the opportunity to obtain an *Abitur*
+- Parents value the opportunity to achieve higher educational outcomes for their 
+children \parencite{hornig2025} because of their decisiveness for later life 
+outcomes
+- Parents are therefore willing to pay a premium for houses near a secondary 
+school offering the opportunity to obtain an *Abitur*
 
 
 \begin{block}{Formal Hypothesis}
@@ -193,10 +222,14 @@ Based on the theoretical background, we expect the following results:
 
 ## Literature Insights (excerpt)
 
-- The empirical literature mainly focused on the capitalization effects of school quality
-- UK: Strong capitalization of \textbf{primary school} performance into housing prices. \parencite{gibbons2003}
-- US: Stronger price effects from \textbf{middle and high school} quality than from elementary schools.\parencite{sedgley2008}
-- France: Secondary school quality capitalized more strongly in areas without \textbf{private school alternatives}. \parencite{fack2010}
+- The empirical literature mainly focused on the capitalization effects of s
+chool quality
+- UK: Strong capitalization of \textbf{primary school} performance into housing 
+prices. \parencite{gibbons2003}
+- US: Stronger price effects from \textbf{middle and high school} quality than 
+from elementary schools.\parencite{sedgley2008}
+- France: Secondary school quality capitalized more strongly in areas without 
+\textbf{private school alternatives}. \parencite{fack2010}
 
     
 
@@ -208,36 +241,46 @@ Based on the theoretical background, we expect the following results:
 
 - Parents (Households) derive utility from the perceived quality of schooling \parencite{brunner2012}
 available to their child
-- Parents consider the availability of Abitur and non-Abitur upper secondary schools in their housing decisions.
+- Parents consider the availability of Abitur and non-Abitur upper secondary 
+schools in their housing decisions.
 
 **Empirical Assumptions:**
 
-- Parents’ preferences for their children’s education are reflected in hedonic price regressions.
-- Conditional on the controlling for both housing and neighborhood characteristics, the treatment assignment can considered to be random.
-- Within the treatment area and the control area, the capitalization effect is constant.
+- Parents’ preferences for their children’s education are reflected in hedonic 
+price regressions.
+- Conditional on the controlling for both housing and neighborhood 
+characteristics, the treatment assignment can considered to be random.
+- Within the treatment area and the control area, the capitalization effect is 
+constant.
 
 ## Assumptions (II)
 
-- Buildings inside and outside of the treatment zones share the same average housing and neighborhood characteristics.
+- Buildings inside and outside of the treatment zones share the same average 
+housing and neighborhood characteristics.
 - Offer prices are time-independently exceeding sale prices at a constant rate.
-- Property prices can be interpreted as the willingness to pay for amenities because they are determined by relevant characteristics
+- Property prices can be interpreted as the willingness to pay for amenities 
+because they are determined by relevant characteristics
 
 
 ## Data and Variables
 \textbf{Housing Data:}
 
 - Geo-referenced listings of sales properties \parencite{FDZ2023}
-- Variables: living area, site area, number of rooms, number of bathrooms, year of construction, cellar
+- Variables: living area, site area, number of rooms, number of bathrooms, year 
+of construction, cellar
 
 \vspace{0.2cm}
 \textbf{School Data}:
 
-- Locations and types of schools (Grammar School, Comprehensive School, etc. based on grid cells) 
+- Locations and types of schools (Grammar School, Comprehensive School, etc. 
+based on grid cells) 
 
 \vspace{0.2cm}
 \textbf{Regional Data:}
 
-- Includes information on neighborhood characteristics (e.g. income levels, migration rates, average age and the availability of infrastructure such as doctors or a supermarket)
+- Includes information on neighborhood characteristics (e.g. income levels, 
+migration rates, average age and the availability of infrastructure such as 
+doctors or a supermarket)
 
 
 ## Quasi-experimental approach
@@ -245,7 +288,8 @@ available to their child
 
   % -------- LEFT COLUMN --------
   \begin{column}{0.55\textwidth}
-    We define spatial treatment zones to estimate the causal effect of upper secondary schools on housing prices using grid-cells:
+    We define spatial treatment zones to estimate the causal effect of upper 
+    secondary schools on housing prices using grid-cells:
 
     \vspace{0.6em}
 
@@ -265,7 +309,9 @@ available to their child
 \end{columns}
 
 \begin{block}{Robustness check}
-As a robustness check, we exclude a \textbf{Buffer zone} of 1km around the treatment zone to prevent spillover contamination, therefore reducing the amount of control units
+As a robustness check, we exclude a \textbf{Buffer zone} of 1km around the 
+treatment zone to prevent spillover contamination, therefore reducing the amount 
+of control units
 \end{block}
 
 
@@ -294,12 +340,15 @@ lying in the non-treated zone as a proxy for the counterfactual.
 
 ## Matching Strategy
 Identification Assumption (CIA): $$ \ln(P_{0ij}), \ln(P_{1ij}) \;\perp\; D \;\big| X_i$$
-\textbf{Estimation method:} We use \textbf{matching} on observable covariates to compare treated and untreated buildings:
+\textbf{Estimation method:} We use \textbf{matching} on observable covariates to 
+compare treated and untreated buildings:
 
 - Building characteristics (e.g., living area, number of rooms, building age, )
-- Neighborhood characteristics (e.g., average income or age, share of immigrants, structural features)
+- Neighborhood characteristics (e.g., average income or age, share of 
+immigrants, structural features)
 
-After successful matching, the treatment effect is estimated through the following equation \parencite{tchatoka2021}:
+After successful matching, the treatment effect is estimated through the 
+following equation \parencite{tchatoka2021}:
 
 $$
 \begin{aligned}
@@ -312,7 +361,8 @@ $$
 
 
 ## Econometric Model (OLS Specification) - First model
-We estimate the following log-linear autoregressive hedonic regression for elementary and secondary schools each \parencite{lu2023}:
+We estimate the following log-linear autoregressive hedonic regression for 
+elementary and secondary schools each \parencite{lu2023}:
 
 $$
 \log(\text{P}_i)
@@ -330,13 +380,16 @@ $$
 - $D_i$: Is within treatment distance to a secondary school (=1) or not (=0)
 - $\mathbf{X}_i$: set of building characteristics 
 - $\mathbf{N}_i$: set of neighborhood characteristics
-- $\text{FE}_{r(i)}$: Regional fixed effects to account for spatial effects at the municipality level
+- $\text{FE}_{r(i)}$: Regional fixed effects to account for spatial effects at 
+the municipality level
 - $\varepsilon_i$: error term
 
 
 ## Multiple treatment regime - Second model
 
-We are especially interested in the price premium of an available school that offers academic track compared to other secondary schools (treatment heterogeneity).
+We are especially interested in the price premium of an available school that 
+offers academic track compared to other secondary schools (treatment 
+heterogeneity).
 
 The basic specifiaction is extended referring to a multiple treatment regime:
 
@@ -358,12 +411,22 @@ $$
 
 
 ## Challenges and Limitations
-- \textbf{Endogeneity:} better schools tend to be located in affluent neighborhoods and students endowed with those priviledged backgrounds generally achieve higher educational outcomes \parencite{fack2010}
-- \textbf{Assumptions}: It may be unrealistic that the capitalization effects of upper secondary schools are uniform across the whole space \parencite{wen2018}
-- \textbf{School access rules:} In some regions, school choice or private alternatives may weaken capitalization effects.
-- \textbf{Interpretation:} It is arguably that property prices can be interpreted as the willingness to pay for amenities \parencite{jayantha2015} and therefore the difference between the groups as a premium for educational opportunities
-- \textbf{Price validity:} Property prices from ImmoScout are \textit{asking prices} — not actual transaction prices. This has implications on the interpretations of the results and has to be taken into account.
-- \textbf{Data:} Incomplete sets of observed building ($\mathbf{X}_i$) and neighborhood ($\mathbf{N}_i$) characteristics
+- \textbf{Endogeneity:} better schools tend to be located in affluent 
+neighborhoods and students endowed with those priviledged backgrounds generally 
+achieve higher educational outcomes \parencite{fack2010}
+- \textbf{Assumptions}: It may be unrealistic that the capitalization effects of 
+upper secondary schools are uniform across the whole space \parencite{wen2018}
+- \textbf{School access rules:} In some regions, school choice or private 
+alternatives may weaken capitalization effects.
+- \textbf{Interpretation:} It is arguably that property prices can be 
+interpreted as the willingness to pay for amenities \parencite{jayantha2015} and 
+therefore the difference between the groups as a premium for educational 
+opportunities
+- \textbf{Price validity:} Property prices from ImmoScout are 
+\textit{asking prices} — not actual transaction prices. This has implications on 
+the interpretations of the results and has to be taken into account.
+- \textbf{Data:} Incomplete sets of observed building ($\mathbf{X}_i$) and 
+neighborhood ($\mathbf{N}_i$) characteristics
 
 # Results
 
