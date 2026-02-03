@@ -409,25 +409,6 @@ $$
 - All other variables are the same as for the main specification
 
 
-
-## Challenges and Limitations
-- \textbf{Endogeneity:} better schools tend to be located in affluent 
-neighborhoods and students endowed with those priviledged backgrounds generally 
-achieve higher educational outcomes \parencite{fack2010}
-- \textbf{Assumptions}: It may be unrealistic that the capitalization effects of 
-upper secondary schools are uniform across the whole space \parencite{wen2018}
-- \textbf{School access rules:} In some regions, school choice or private 
-alternatives may weaken capitalization effects.
-- \textbf{Interpretation:} It is arguably that property prices can be 
-interpreted as the willingness to pay for amenities \parencite{jayantha2015} and 
-therefore the difference between the groups as a premium for educational 
-opportunities
-- \textbf{Price validity:} Property prices from ImmoScout are 
-\textit{asking prices} — not actual transaction prices. This has implications on 
-the interpretations of the results and has to be taken into account.
-- \textbf{Data:} Incomplete sets of observed building ($\mathbf{X}_i$) and 
-neighborhood ($\mathbf{N}_i$) characteristics
-
 # Results
 
 ## Descriptives - Summary Statistics
@@ -616,7 +597,30 @@ modelsummary(
 cat("\\end{minipage}\n")
 ```
 
-# Policy Implications and further research
+# Conclusion 
+- Empirical studies on the capitalization of distance to (upper) secondary schools in housing prices are limited in the German context. 
+- However, our results indicate no statistically significant effects, in contrast to previous studies that find significant capitalization of school quality into housing prices.
+- That indicates that school quality may capitalize more strongly than distance to schools 
+- But our results are probably insignificant due to limitations of our analysis
+
+
+# Limitations
+- \textbf{Endogeneity:} better schools tend to be located in affluent 
+neighborhoods and students endowed with those priviledged backgrounds generally 
+achieve higher educational outcomes \parencite{fack2010}
+- \textbf{Assumptions}: It may be unrealistic that the capitalization effects of 
+upper secondary schools are uniform across the whole space \parencite{wen2018}
+- \textbf{School access rules:} In some regions, school choice or private
+alternatives may weaken capitalization effects.
+- \textbf{Interpretation:} It is arguably that property prices can be 
+interpreted as the willingness to pay for amenities \parencite{jayantha2015} and 
+therefore the difference between the groups as a premium for educational 
+opportunities
+- \textbf{Price validity:} Property prices from ImmoScout are 
+\textit{asking prices} — not actual transaction prices. This has implications on 
+the interpretations of the results and has to be taken into account.
+- \textbf{Data:} Incomplete set of observed neighborhood ($\mathbf{N}_i$) characteristics, 
+- \textbf{methodology:} We had to drop many double-treated observations as it lowered the sum of overall observations
 
 # Appendix
 
