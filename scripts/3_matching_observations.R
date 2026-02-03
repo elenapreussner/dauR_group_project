@@ -2,22 +2,16 @@
 #### prerequisites ####
 #######################
 
-library(rio)
 library(MatchIt)
-library(car)
-library(knitr)
 
 
 ###################################
 #### check balancing condition ####
 ###################################
 
-
 # evaluating the descriptives for our treatment and contol group
 # including a t-test on mean differences indicated a significant 
 # difference across groups and therefore, we check the balance condition
-
-
 
 ##### conduct balance check
 
@@ -61,12 +55,13 @@ ps_main <- matchit(
 
 summary(ps_main)
 
+
 # extract matched dataset
 
 matched_data_main <- match.data(ps_main)
 
 
-# check N
+# check n
 matched_data_main %>%
   count(school_nearby)
 
