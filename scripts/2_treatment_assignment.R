@@ -7,7 +7,7 @@ library(tidyverse)
 
 ##########################################################################
 ##### 1. identification of treated grid-cells with secondary schools #####
-##### Main specification #################################################´
+##### main specification #################################################´
 
 #### create treated-cell data-set for secondary schools (first order treatment)
 
