@@ -115,6 +115,7 @@ library(tibble)
 
 setwd("..")
 
+source("scripts/0_treatment_zone_visualization.R")
 source("scripts/1_data_preparation.R")
 source("scripts/2_treatment_assignment.R")
 source("scripts/3_matching_observations.R")
