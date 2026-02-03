@@ -69,3 +69,39 @@ t_stats <- map_dbl(vars, ~{
 balance_table <- balance_summary %>%
   select(Variable, `Means Treated`, `Means Control`, `Std. Mean Diff.`) %>%
   mutate(t_statistic = t_stats)
+
+##################################### 
+#### balance check plot #############
+#####################################
+
+balance_plot_data <- bind_rows(
+  summary(balance_check)$sum.all %>%
+    as.data.frame() %>%
+    rownames_to_column("Variable") %>%
+    mutate(method = "Before Matching") %>%
+    select(Variable, method, std_diff = `Std. Mean Diff.`),
+  summary(ps_main)$sum.matched %>%
+    as.data.frame() %>%
+    rownames_to_column("Variable") %>%
+    mutate(method = "After Matching") %>%
+    select(Variable, method, std_diff = `Std. Mean Diff.`)
+) %>%
+  filter(Variable != "distance") %>%
+  mutate(std_diff_abs = abs(std_diff))
+
+balance_plot <- ggplot(balance_plot_data, aes(x = std_diff_abs, y = Variable, 
+                                              color = method, shape = method)) +
+  geom_point(size = 3) +
+  geom_vline(xintercept = 0.1, linetype = "dashed", color = "black") +
+  labs(
+    x = "Standardized Mean Difference",  # Option 1
+    # x = "Balance (Std. Mean Diff.)",              # Option 2
+    # x = "Group Difference (standardized)",         # Option 3
+    y = "",
+    color = "Method",
+    shape = "Method"
+  ) +
+  scale_color_manual(values = c("Before Matching" = "#F8766D", "After Matching" = "#00BFC4")) +
+  scale_shape_manual(values = c("Before Matching" = 16, "After Matching" = 17)) +
+  theme_minimal() +
+  theme(legend.position = "right")

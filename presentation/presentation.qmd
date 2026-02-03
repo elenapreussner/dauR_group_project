@@ -390,6 +390,10 @@ balance_table %>%
 
 ## Descriptives - Scatterplot
 
+```{r, out.width="80%", fig.align="center"}
+#| echo: false
+balance_plot
+```
 
 ## Main specification
 
