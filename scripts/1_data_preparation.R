@@ -15,16 +15,17 @@ library(here)
 
 user <- Sys.getenv("USERNAME")
 
-# paths <- list(
-<<<<<<< HEAD
-#   bened = "C:/Users/bened/OneDrive/Desktop/Uni/Master Economic Policy Consulting/Wintersemester 2025-26/Data Analysis/dauR_group_project"
-#   julia = "C:/Users/julia/OneDrive/MASTER/3. Semester/R/")
-=======
-#   bened = "C:/Users/bened/OneDrive/Desktop/Uni/Master Economic Policy Consulting/Wintersemester 2025-26/Data Analysis/dauR_group_project",
-#   
->>>>>>> a4e34fac37fc0b039e33ccbc92fe6b76fd6d03f0
-# )
-# setwd(paths[[user]])
+paths <- list(
+
+  bened = "C:/Users/bened/OneDrive/Desktop/Uni/Master Economic Policy Consulting/Wintersemester 2025-26/Data Analysis/dauR_group_project",
+  julia = "C:/Users/julia/OneDrive/MASTER/3. Semester/R/")
+
+   bened = "C:/Users/bened/OneDrive/Desktop/Uni/Master Economic Policy Consulting/Wintersemester 2025-26/Data Analysis/dauR_group_project"
+   
+
+ )
+
+ setwd(paths[[user]])
 # getwd()
 #### import various data-sets ####
 
