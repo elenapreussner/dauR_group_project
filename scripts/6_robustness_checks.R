@@ -4,16 +4,8 @@
 # here, we exclude "buffer-cells" with the distance of 2 around the treated-cells
 
 library(tidyverse)
-library(olsrr)
-library(lmtest)
-library(sandwich)
-library(modelsummary)
-library(zoo)
 library(fixest)
-library(rio)
 library(MatchIt)
-library(car)
-library(knitr)
 
 
 #### create treated-cell dataset for secondary schools (first order treatment)
