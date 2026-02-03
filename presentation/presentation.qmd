@@ -389,7 +389,7 @@ balance_table %>%
   kable_styling(font_size = 8, latex_options = "scale_down")
 ```
 
-## Descriptives - Scatterplot
+## Balance Check
 
 ```{r, out.width="80%", fig.align="center"}
 #| echo: false
