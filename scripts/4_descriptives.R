@@ -113,5 +113,4 @@ balance_plot <- ggplot(balance_plot_data, aes(x = std_diff_abs, y = Variable,
                                 "After Matching"  = after_color)) +
   scale_shape_manual(values = c("Before Matching" = 16, "After Matching" = 17)) +
   theme_minimal() +
-  theme(panel.grid = element_blank(),
-        legend.position = "right")
+  theme(legend.position = "right")
