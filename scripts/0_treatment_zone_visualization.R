@@ -1,6 +1,11 @@
+#########################
+##### prerequisites #####
+#########################
+
 library(ggplot2)
 library(dplyr)
 library(RColorBrewer)
+
 
 ###############################
 ## create grid & assign zone ##
