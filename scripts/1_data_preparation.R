@@ -13,10 +13,10 @@ library(here)
 #setwd("C:/Users/bened/OneDrive/Desktop/Uni/Master Economic Policy Consulting/Wintersemester 2025-26/Data Analysis/dauR_group_project")
 
 
-# user <- Sys.getenv("USERNAME")
-# 
+user <- Sys.getenv("USERNAME")
+
 # paths <- list(
-#   bened = "C:/Users/bened/OneDrive/Desktop/Uni/Master Economic Policy Consulting/Wintersemester 2025-26/Data Analysis/dauR_group_project"
+#   bened = "C:/Users/bened/OneDrive/Desktop/Uni/Master Economic Policy Consulting/Wintersemester 2025-26/Data Analysis/dauR_group_project",
 #   
 # )
 # setwd(paths[[user]])

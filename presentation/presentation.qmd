@@ -480,7 +480,7 @@ modelsummary(
   ),
   
   #title = "Effect of Secondary School Proximity on House Prices",
-  stars = TRUE,
+  stars = c('*' = .10, '**' = .05, '***' = .01),
   gof_omit = "IC|Log|Adj",
   notes = "Note: Robust standard errors clustered at the municipality level in parentheses.",
   
