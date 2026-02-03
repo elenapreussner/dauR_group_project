@@ -266,22 +266,20 @@ because they are determined by relevant characteristics
 ## Data and Variables
 \textbf{Housing Data:}
 
-- Geo-referenced listings of sales properties \parencite{FDZ2023}
-- Variables: living area, site area, number of rooms, number of bathrooms, year 
-of construction, cellar
+- Geo-referenced listings of sales properties \parencite{rwi_immo_campus_2023}
+- Variables: living area, site area, number of rooms, number of bathrooms, year of construction, cellar
 
 \vspace{0.2cm}
 \textbf{School Data}:
-
-- Locations and types of schools (Grammar School, Comprehensive School, etc. 
-based on grid cells) 
+  
+  - Locations and types of schools (Grammar School, Comprehensive School, etc. based on grid cells) \parencite {nrw_schulministerium_opendata}
 
 \vspace{0.2cm}
 \textbf{Regional Data:}
 
-- Includes information on neighborhood characteristics (e.g. income levels, 
-migration rates, average age and the availability of infrastructure such as 
-doctors or a supermarket)
+- Includes information on neighborhood characteristics (e.g. income levels, migration rates, average age and the availability of infrastructure such as doctors or a supermarket) \parencite {destatis_auslaenderanteil_gitterzellen_2022, destatis_durchschnittsalter_gitterzellen, ldbnrw_verfuegbares_einkommen_gemeinden_2022, 
+  geofabrik_nrw, 
+  zensus2022_gitterzellen} 
 
 
 ## Quasi-experimental approach
