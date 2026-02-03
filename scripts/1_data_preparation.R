@@ -17,7 +17,7 @@ setwd("C:/Users/bened/OneDrive/Desktop/Uni/Master Economic Policy Consulting/Win
 # 
 # paths <- list(
 #   bened = "C:/Users/bened/OneDrive/Desktop/Uni/Master Economic Policy Consulting/Wintersemester 2025-26/Data Analysis/dauR_group_project"
-#   
+#   julia = "C:/Users/julia/OneDrive/MASTER/3. Semester/R/")
 # )
 # setwd(paths[[user]])
 # getwd()
