@@ -607,6 +607,7 @@ controls_table[7:12, ] %>%
     caption = "Neighborhood characteristics"
   )
 ```
+
 # Literature
 
 

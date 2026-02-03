@@ -13,9 +13,9 @@ models_main <- list(
   "Baseline"      = m1,
   "Intermediate"  = m2,
   "Full"          = m3,
-  "Baseline "     = m1_matched,
-  "Intermediate " = m2_matched,
-  "Full "         = m3_matched
+  "Baseline"     = m1_matched,
+  "Intermediate" = m2_matched,
+  "Full"         = m3_matched
 )
 
 table_main <- modelsummary(
@@ -24,7 +24,8 @@ table_main <- modelsummary(
   coef_map  = c("school_nearby" = "School nearby"),
   
   add_rows = data.frame(
-    term = c("Building controls", "Neighborhood controls", "Region fixed effects"),
+    term = c("Building controls", "Neighborhood controls", 
+             "Region fixed effects"),
     "(1)" = c("-", "-", "✔"),
     "(2)" = c("✔", "-", "✔"),
     "(3)" = c("✔", "✔", "✔"),
@@ -43,7 +44,8 @@ table_main <- modelsummary(
   title = "Effect of Secondary School Proximity on House Prices",
   stars = TRUE,
   gof_omit = "IC|Log|Adj",
-  notes = "Note: Standard errors clustered at the municipality level in parentheses.",
+  notes = 
+    "Note: Standard errors clustered at the municipality level in parentheses.",
   
   output = "latex"   
 ) |>
@@ -83,7 +85,8 @@ table_heterogeneity <- modelsummary(
   ),
   
   add_rows = data.frame(
-    term = c("Building controls", "Neighborhood controls", "Region fixed effects"),
+    term = c("Building controls", "Neighborhood controls", 
+             "Region fixed effects"),
     "(1)" = c("✔", "✔", "✔"),
     "(2)" = c("✔", "✔", "✔"),
     check.names = FALSE
@@ -91,7 +94,8 @@ table_heterogeneity <- modelsummary(
   
   title = "Effect of School with academic track proximity on House Prices",
   gof_omit = "IC|Log|Adj",
-  notes = "Note: Standard errors clustered at the municipality level in parentheses.",
+  notes = 
+    "Note: Standard errors clustered at the municipality level in parentheses.",
   
   output = "latex"  
 ) |>
@@ -109,8 +113,6 @@ table_heterogeneity
 #### save for presentation ####
 ###############################
 
-
-
 # main specification
 
 # writeLines(
@@ -125,7 +127,3 @@ table_heterogeneity
 #   as.character(table_heterogeneity),
 #   file.path("presentation/results_heterogeneity.tex")
 # )
-# 
-
-
-
