@@ -301,16 +301,3 @@ housing_full <- housing_data_NRW_control %>%
       select(ags, disposable_income_per_capita),
     by = "ags"
   )
-
-
-
-
-
-
-
-
-
-
-
-
-

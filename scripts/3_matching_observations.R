@@ -64,6 +64,3 @@ matched_data_main <- match.data(ps_main)
 # check n
 matched_data_main %>%
   count(school_nearby)
-
-
-
