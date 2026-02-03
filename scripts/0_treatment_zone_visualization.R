@@ -68,7 +68,7 @@ plot_no_buffer <- ggplot(grid_no_buffer, aes(x, y, fill = zone_no_buffer)) +
   theme(panel.grid = element_blank(),
         legend.position = "right",
         plot.title = element_text(hjust = 0.5, face = "bold"))
-plot_no_buffer
+
 ggsave("plot_zones_no_buffer.pdf", plot_no_buffer, width = 8, height = 6)
 
 
@@ -90,5 +90,5 @@ plot_with_buffer <- ggplot(grid, aes(x, y, fill = zone)) +
   theme(panel.grid = element_blank(),
         legend.position = "right",
         plot.title = element_text(hjust = 0.5, face = "bold"))
-plot_with_buffer
+
 ggsave("plot_zones_with_buffer.pdf", plot_with_buffer, width = 8, height = 6)
