@@ -115,5 +115,3 @@ balance_plot <- ggplot(balance_plot_data, aes(x = std_diff_abs, y = Variable,
   theme_minimal() +
   theme(panel.grid = element_blank(),
         legend.position = "right")
-
-ggsave("balance_check_plot.pdf", balance_plot, width = 8, height = 6)
