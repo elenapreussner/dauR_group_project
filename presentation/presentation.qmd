@@ -455,7 +455,7 @@ models_main <- list(
   "(3)" = m3_matched
 )
 cat("\\begin{minipage}{\\linewidth}\n")
-cat("\\textbf{Effect of Secondary School Proximity on House Prices}\\par\\vspace*{-3em}\n")
+cat("\\textbf{Effect of Secondary School Proximity on Housing Prices}\\par\\vspace*{-2em}\n")
 
 modelsummary(
   models_main,
@@ -480,7 +480,7 @@ modelsummary(
   ),
   
   #title = "Effect of Secondary School Proximity on House Prices",
-  stars = TRUE,
+  stars = c('*' = .10, '**' = .05, '***' = .01),
   gof_omit = "IC|Log|Adj",
   notes = "Note: Robust standard errors clustered at the municipality level in parentheses.",
   
@@ -503,7 +503,7 @@ cat("\\end{minipage}\n")
 #| echo: false
 
 cat("\\begin{minipage}{\\linewidth}\n")
-cat("\\textbf{Effect of School with academic track proximity on House Prices}\\par\\vspace*{-3em}\n")
+cat("\\textbf{Effect of School with Academic Track Proximity on Housing Prices}\\par\\vspace*{-2em}\n")
 modelsummary(
   list(
     "Full" = model_heterogeneity,
@@ -556,7 +556,7 @@ cat("\\end{minipage}\n")
 #| echo: false
 
 cat("\\begin{minipage}{\\linewidth}\n")
-cat("\\textbf{Effect on housing prices}\\par\\vspace*{-3em}\n")
+cat("\\textbf{Effect on Housing Prices}\\par\\vspace*{-2em}\n")
 modelsummary(
   list(
     "(1)"      = model_robustness,
@@ -620,7 +620,7 @@ opportunities
 \textit{asking prices} — not actual transaction prices. This has implications on 
 the interpretations of the results and has to be taken into account.
 - \textbf{Data:} Incomplete set of observed neighborhood ($\mathbf{N}_i$) characteristics, 
-- \textbf{methodology:} We had to drop many double-treated observations as it lowered the sum of overall observations
+- \textbf{Methodology:} We had to drop many double-treated observations as it lowered the sum of overall observations
 
 # Appendix
 
@@ -667,7 +667,8 @@ controls_table[1:6, ] %>%
   )
 ```
 
-## Controls (1/2)
+## Controls (2/2)
+
 ```{r}
 controls_table[7:12, ] %>%
   kable(
@@ -675,6 +676,17 @@ controls_table[7:12, ] %>%
     caption = "Neighborhood characteristics"
   )
 ```
+
+## Robustness Check - With Buffer Zone
+
+```{r}
+#| results: asis
+#| echo: false
+cat("\\begin{center}
+\\includegraphics[width=0.7\\textwidth]{plot_zones_with_buffer.pdf}
+\\end{center}")
+```
+
 
 # Literature
 
