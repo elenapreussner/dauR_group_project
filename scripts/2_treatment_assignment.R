@@ -4,10 +4,10 @@
 
 library(tidyverse)
 
+
 ##########################################################################
 ##### 1. identification of treated grid-cells with secondary schools #####
-##### Main specification #################################################
-
+##### Main specification #################################################´
 
 #### create treated-cell data-set for secondary schools (first order treatment)
 
@@ -62,6 +62,7 @@ control_cells <- schools %>%
 control_cells <- control_cells %>%  # reassemble grid-id
   mutate(ergg_1km = paste0(x, "_", y))
 
+
 #### match identified cells for each category in one data-set using grid-identifyer
 
 all_cells <- bind_rows(
@@ -113,11 +114,11 @@ all_cells <- all_cells %>%
 
 
 ##############################################################################
-##### 2. Create second treatment-variable if the schools offers "Abitur" #####
-###### Full specificatin including interaction term ##########################
+##### 2. create second treatment-variable if the schools offers "Abitur" #####
+###### full specification including interaction term #########################
 
 
-##### code Variable "abitur_nearby" (second order treatment) for interaction
+##### code variable "abitur_nearby" (second order treatment) for interaction
 
 all_cells <- all_cells %>% # generate school ID from auxiliary variable for all cells
   mutate(school_type_code = sub("t$", "", school_type))
@@ -129,8 +130,6 @@ all_cells <- all_cells %>%
   mutate(school_tag_code = sub("t$", "", school_tag)) # separates school_ID from treated indicator for importing school data
 
 
-
-
 #### match information with housing data
 
 full_dataset_main <- housing_full %>%   # attach information on treatment status and schools on housing data
@@ -138,7 +137,6 @@ full_dataset_main <- housing_full %>%   # attach information on treatment status
 
 
 #### exclude houses not lying in treated or control cells
-
 
 full_dataset_main_clean <- full_dataset_main %>%
   filter(
@@ -168,11 +166,11 @@ full_dataset_main_clean %>%
 ##### cleaning data-set #####
 #############################
 
-
 #### clean dataset of unnecessary variables and ovservations with NA's on relevant variables
 
 full_dataset_main_clean <- full_dataset_main_clean %>%
-  select(-geometry, -x, -y, -treated, -control, -source, -school_tag, -school_type) %>%
+  select(-geometry, -x, -y, -treated, -control, -source, -school_tag,
+         -school_type) %>%
   drop_na(
     living_area,
     site_area,
