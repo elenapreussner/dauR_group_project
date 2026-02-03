@@ -69,7 +69,8 @@ plot_no_buffer <- ggplot(grid_no_buffer, aes(x, y, fill = zone_no_buffer)) +
         legend.position = "right",
         plot.title = element_text(hjust = 0.5, face = "bold"))
 
-ggsave("plot_zones_no_buffer.pdf", plot_no_buffer, width = 8, height = 6)
+ggsave("presentation/plot_zones_no_buffer.pdf", plot = plot_no_buffer, 
+       width = 8, height = 6)
 
 
 # design with buffer zone
@@ -91,4 +92,5 @@ plot_with_buffer <- ggplot(grid, aes(x, y, fill = zone)) +
         legend.position = "right",
         plot.title = element_text(hjust = 0.5, face = "bold"))
 
-ggsave("plot_zones_with_buffer.pdf", plot_with_buffer, width = 8, height = 6)
+ggsave("presentation/plot_zones_with_buffer.pdf", plot = plot_with_buffer, 
+       width = 8, height = 6)
