@@ -272,14 +272,15 @@ because they are determined by relevant characteristics
 \vspace{0.2cm}
 \textbf{School Data}:
   
-  - Locations and types of schools (Grammar School, Comprehensive School, etc. based on grid cells) \parencite {nrw_schulministerium_opendata}
+- Locations and types of schools (Grammar School, Comprehensive School, etc. based on grid cells) \parencite {nrw_schulministerium_opendata}
 
-\vspace{0.2cm}
+
+## Data and Variables
 \textbf{Regional Data:}
 
 - Includes information on neighborhood characteristics (e.g. income levels, migration rates, average age and the availability of infrastructure such as doctors or a supermarket) \parencite {destatis_auslaenderanteil_gitterzellen_2022, destatis_durchschnittsalter_gitterzellen, ldbnrw_verfuegbares_einkommen_gemeinden_2022, 
-  geofabrik_nrw, 
-  zensus2022_gitterzellen} 
+geofabrik_nrw, 
+zensus2022_gitterzellen}
 
 
 ## Quasi-experimental approach
