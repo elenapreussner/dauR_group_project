@@ -121,7 +121,7 @@ source("scripts/2_treatment_assignment.R")
 source("scripts/3_matching_observations.R")
 source("scripts/4_descriptives.R")
 source("scripts/5_regression_analysis.R")
-source("scripts/7_robustness_checks.R")
+source("scripts/6_robustness_checks.R")
 ```
 
 # Introduction

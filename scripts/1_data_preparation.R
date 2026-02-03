@@ -10,7 +10,7 @@ library(here)
 
 #here("C:/Users/bened/OneDrive/Desktop/Uni/Master Economic Policy Consulting/Wintersemester 2025-26/Data Analysis/dauR_group_project")
 
-setwd("C:/Users/bened/OneDrive/Desktop/Uni/Master Economic Policy Consulting/Wintersemester 2025-26/Data Analysis/dauR_group_project")
+#setwd("C:/Users/bened/OneDrive/Desktop/Uni/Master Economic Policy Consulting/Wintersemester 2025-26/Data Analysis/dauR_group_project")
 
 
 # user <- Sys.getenv("USERNAME")
@@ -31,9 +31,8 @@ schools <- read_xlsx("data/school_data/school_data.xlsx")
 
 # housing data
 
-housing_data <- read.csv("C:/Users/bened/OneDrive/Desktop/Uni/Master Economic Policy Consulting/Wintersemester 2025-26/Data Analysis/CampusFile_HK_2022.csv", na = c("Other missing", "Implausible value"))
-#housing_data <- read_csv("~/Uni/Data Analysis Using R/CampusFile_HK_2022.csv", 
-                         #na = c("Other missing", "Implausible value"))
+#housing_data <- read.csv("C:/Users/bened/OneDrive/Desktop/Uni/Master Economic Policy Consulting/Wintersemester 2025-26/Data Analysis/CampusFile_HK_2022.csv", na = c("Other missing", "Implausible value"))
+housing_data <- read_csv("~/Uni/Data Analysis Using R/CampusFile_HK_2022.csv", na = c("Other missing", "Implausible value"))
 
 
 # data for neighborhood controls
