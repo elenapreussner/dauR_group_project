@@ -56,6 +56,7 @@ summary_4groups_table <- summary_4groups %>%
   select(var, school_nearby_mean, school_nearby_sd, abitur_mean, abitur_sd,
          non_abitur_mean, non_abitur_sd, control_mean, control_sd)
 
+
 ##################################### 
 #### balance check ##################
 #####################################
@@ -75,9 +76,13 @@ balance_table <- balance_summary %>%
   select(Variable, `Means Treated`, `Means Control`, `Std. Mean Diff.`) %>%
   mutate(t_statistic = t_stats)
 
+
 ##################################### 
 #### balance check plot #############
 #####################################
+
+before_color <- accent_colors[1]  
+after_color  <- accent_colors[3]  
 
 balance_plot_data <- bind_rows(
   summary(balance_check)$sum.all %>%
@@ -99,14 +104,16 @@ balance_plot <- ggplot(balance_plot_data, aes(x = std_diff_abs, y = Variable,
   geom_point(size = 3) +
   geom_vline(xintercept = 0.1, linetype = "dashed", color = "black") +
   labs(
-    x = "Standardized Mean Difference",  # Option 1
-    # x = "Balance (Std. Mean Diff.)",              # Option 2
-    # x = "Group Difference (standardized)",         # Option 3
+    x = "Standardized Mean Difference",
     y = "",
     color = "Method",
     shape = "Method"
   ) +
-  scale_color_manual(values = c("Before Matching" = "#F8766D", "After Matching" = "#00BFC4")) +
+  scale_color_manual(values = c("Before Matching" = before_color, 
+                                "After Matching"  = after_color)) +
   scale_shape_manual(values = c("Before Matching" = 16, "After Matching" = 17)) +
   theme_minimal() +
-  theme(legend.position = "right")
+  theme(panel.grid = element_blank(),
+        legend.position = "right")
+
+ggsave("balance_check_plot.pdf", balance_plot, width = 8, height = 6)
