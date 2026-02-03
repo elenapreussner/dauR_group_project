@@ -2,11 +2,12 @@
 ##### prerequisites #####
 #########################
 
-### load necessary packages
 library(tidyverse)
 library(readxl)
 library(sf)
 library(here)
+
+
 #here("C:/Users/bened/OneDrive/Desktop/Uni/Master Economic Policy Consulting/Wintersemester 2025-26/Data Analysis/dauR_group_project")
 
 #setwd("C:/Users/bened/OneDrive/Desktop/Uni/Master Economic Policy Consulting/Wintersemester 2025-26/Data Analysis/dauR_group_project")
@@ -22,18 +23,24 @@ library(here)
 # getwd()
 #### import various data-sets ####
 
+
 # raw school dataset
 
 schools <- read_xlsx("data/school_data/school_data.xlsx")
 
+
 # housing data
 
-housing_data <- read.csv("C:/Users/bened/OneDrive/Desktop/Uni/Master Economic Policy Consulting/Wintersemester 2025-26/Data Analysis/CampusFile_HK_2022.csv", na = c("Other missing", "Implausible value"))
-#housing_data <- read_csv("~/Uni/Data Analysis Using R/CampusFile_HK_2022.csv", na = c("Other missing", "Implausible value"))
+#housing_data <- read.csv("C:/Users/bened/OneDrive/Desktop/Uni/Master Economic Policy Consulting/Wintersemester 2025-26/Data Analysis/CampusFile_HK_2022.csv", na = c("Other missing", "Implausible value"))
+housing_data <- read_csv("~/Uni/Data Analysis Using R/CampusFile_HK_2022.csv", 
+                         na = c("Other missing", "Implausible value"))
+
 
 # data for neighborhood controls
 
-neighborhood_data <- read_xlsx("data/neighborhood_data/neighborhood_controls.xlsx", na = c("â€“"))
+neighborhood_data <- read_xlsx("data/neighborhood_data/neighborhood_controls.xlsx", 
+                               na = c("â€“"))
+
 income_data <- read_xlsx(
   "data/neighborhood_data/income_data.xlsx",
   skip = 2
@@ -41,13 +48,19 @@ income_data <- read_xlsx(
   select(1, last_col()) %>%
   slice(-(1:4))  
 
+
 # data for district/regional controls per "Regierungsbezirk
 
-pois_arnsberg    <- st_read(file.path("data/regional_district_data/arnsberg", "gis_osm_pois_free_1.shp"), quiet = TRUE)
-pois_detmold     <- st_read(file.path("data/regional_district_data/detmold", "gis_osm_pois_free_1.shp"), quiet = TRUE)
-pois_duesseldorf <- st_read(file.path("data/regional_district_data/duesseldorf", "gis_osm_pois_free_1.shp"), quiet = TRUE)
-pois_koeln       <- st_read(file.path("data/regional_district_data/koeln", "gis_osm_pois_free_1.shp"), quiet = TRUE)
-pois_muenster    <- st_read(file.path("data/regional_district_data/muenster", "gis_osm_pois_free_1.shp"), quiet = TRUE)
+pois_arnsberg    <- st_read(file.path("data/regional_district_data/arnsberg", 
+                                      "gis_osm_pois_free_1.shp"), quiet = TRUE)
+pois_detmold     <- st_read(file.path("data/regional_district_data/detmold", 
+                                      "gis_osm_pois_free_1.shp"), quiet = TRUE)
+pois_duesseldorf <- st_read(file.path("data/regional_district_data/duesseldorf", 
+                                      "gis_osm_pois_free_1.shp"), quiet = TRUE)
+pois_koeln       <- st_read(file.path("data/regional_district_data/koeln", 
+                                      "gis_osm_pois_free_1.shp"), quiet = TRUE)
+pois_muenster    <- st_read(file.path("data/regional_district_data/muenster", 
+                                      "gis_osm_pois_free_1.shp"), quiet = TRUE)
 
 # grid-cell ID data-set
 
@@ -61,11 +74,11 @@ grid_df <- st_read("data/grids/grid.geojson")
 packageVersion("rlang")
 packageVersion("ggplot2")
 find("list2")
+
+
 ####################
 ## school dataset ##
 ####################
-
-
 
 #### filter school data regarding relevant school types (secondary schools)
 
@@ -84,7 +97,6 @@ schools <- schools %>%
 ##################
 
 ##### housing data
-
 
 ### filter for houses located in NRW
 
@@ -158,25 +170,22 @@ neighborhood_data <- neighborhood_data %>%
 # clean and prepare income data for the join
 
 income_data <- income_data %>%
-  filter(
-    nchar(as.character(Gemeinden)) >= 5 &
-      nchar(as.character(Gemeinden)) <= 8 &
-      !is.na(suppressWarnings(as.numeric(Gemeinden)))
-  ) %>%
+  head(-15) %>%              # drop metadata rows
+  filter(nchar(trimws(Gemeinden)) != 3) %>% # keep only municipality-level codes
   rename(
     "ags" = "Gemeinden",
-    "disposable_income_per_capita" = "Verfügbares Einkommen der privaten Haushalte je Einwohner/-in"
+    "disposable_income_per_capita" = 
+      "Verfügbares Einkommen der privaten Haushalte je Einwohner/-in"
   ) %>%
   mutate(
     disposable_income_per_capita = as.numeric(disposable_income_per_capita),
-    
     ags = case_when(
-      nchar(ags) == 5 ~ paste0(ags, "000"),      
+      nchar(ags) == 5 ~ paste0(ags, "000"),  # expand codes to full AGS
       nchar(ags) == 6 ~ paste0(ags, "00"),
       nchar(ags) == 7 ~ paste0(ags, "0"),
       TRUE ~ ags
     ),
-    ags = sub("^0", "", ags),
+    ags = sub("^0", "", ags),                # remove present zeros 
     ags = as.numeric(ags)
   )
 
@@ -187,11 +196,16 @@ income_data <- income_data %>%
 
 
 ##### set CRS 
-pois_arnsberg    <- st_transform(pois_arnsberg,    25832) %>% mutate(bezirk = "arnsberg")
-pois_detmold     <- st_transform(pois_detmold,     25832) %>% mutate(bezirk = "detmold")
-pois_duesseldorf <- st_transform(pois_duesseldorf, 25832) %>% mutate(bezirk = "duesseldorf")
-pois_koeln       <- st_transform(pois_koeln,       25832) %>% mutate(bezirk = "koeln")
-pois_muenster    <- st_transform(pois_muenster,    25832) %>% mutate(bezirk = "muenster")
+pois_arnsberg    <- st_transform(pois_arnsberg, 25832) %>% 
+  mutate(bezirk = "arnsberg")
+pois_detmold     <- st_transform(pois_detmold, 25832) %>% 
+  mutate(bezirk = "detmold")
+pois_duesseldorf <- st_transform(pois_duesseldorf, 25832) %>% 
+  mutate(bezirk = "duesseldorf")
+pois_koeln       <- st_transform(pois_koeln, 25832) %>% 
+  mutate(bezirk = "koeln")
+pois_muenster    <- st_transform(pois_muenster, 25832) %>% 
+  mutate(bezirk = "muenster")
 
 
 ##### bind regional-datasets into one NRW-dataset
@@ -200,8 +214,10 @@ pois_nrw <- bind_rows(
   pois_arnsberg, pois_detmold, pois_duesseldorf, pois_koeln, pois_muenster
 )
 
+
 ##### filter for relevant POI's
-# to keep it simlpe, we have chosen a few central district characteristics to control for their presence/absence in each grid-cell
+# to keep it simple, we have chosen a few central district characteristics to 
+# control for their presence/absence in each grid-cell
 
 pois_nrw_relevant <- pois_nrw %>%
   filter(
@@ -249,7 +265,8 @@ grid__district_dummies <- pois_in_grid %>%
   pivot_wider(names_from = fclass, values_from = value, values_fill = 0L)
 
 
-# join those district dummies back with the full grid-cell dataset and code missings to zero
+# join those district dummies back with the full grid-cell dataset and code 
+# missings to zero
 
 grid_full_with_district_dummies <- grid_utm %>%
   left_join(grid__district_dummies, by = "grid_id") %>%
